@@ -1,5 +1,7 @@
 import Benefits from "./Benefits";
+import BestPractices from "./BestPractices";
 import Hero from "./Hero";
+import SuccessStories from "./SuccessStories";
 import TutorReview from "./TutorReview";
 
 export default function Page() {
@@ -10,6 +12,8 @@ export default function Page() {
 
                 <Benefits />
                 <TutorReview />
+                <BestPractices />
+                <SuccessStories />
             </div>
         </div>
     );
