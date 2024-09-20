@@ -9,10 +9,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: "#40A8CD",
+        secondary: "##A3D154",
+        black: "#000000",
+        white: "#ffffff"
       },
     },
+
   },
   plugins: [],
 };
