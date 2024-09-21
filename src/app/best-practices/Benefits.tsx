@@ -6,7 +6,7 @@ import comp_compens from '../public/images/best-practice/comp-compens.svg'
 import Heading from "../components/Heading";
 export default function Benefits() {
     return (
-        <section className="bg-gray-100 py-12 px-4 md:px-12">
+        <section className="bg-background_blue py-12 px-4 md:px-12">
             <div className="container mx-auto text-center">
                 {/* Heading */}
 

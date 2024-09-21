@@ -1,5 +1,6 @@
 // import { IconType } from "react-icons";
 interface ButtonProps {
+    classNames?: string,
     label: string;
     onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
     disabled?: boolean;
@@ -10,6 +11,7 @@ interface ButtonProps {
 }
 
 const Button: React.FC<ButtonProps> = ({
+    classNames,
     label,
     onClick = () => { },
     disabled,
@@ -25,13 +27,14 @@ const Button: React.FC<ButtonProps> = ({
             relative
             disabled:opacity-70
             disabled:cursor-not-allowed
-            rounded-lg
             hover:opacity-80
             transition
             w-full
+            h-full
+            ${classNames}
             ${outline ? "bg-white" : "bg-primary"}
-            ${outline ? "border-black" : "border-primarys"}
-            ${outline ? "text-black" : "text-white"}
+            ${outline ? "border-primary" : "border-white"}
+            ${outline ? "text-primary" : "text-white"}
             ${small ? "py-1" : "py-3"}
             ${small ? "text-sm" : "text-md"}
             ${small ? "font-light" : "font-semibold"}

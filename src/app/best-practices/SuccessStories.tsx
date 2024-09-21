@@ -17,7 +17,7 @@ export default function SuccessStories() {
                 <p className="max-w-2xl mb-6 font-light  lg:mb-8 md:text-md lg:text-lg ">Discover the transformative journey of our tutor through their teaching techniques. These stories speak to the impact our courses have had on their professional and personal lives. </p>
 
                 <div className="w-48 mb-6">
-                    <Button label="View More" onClick={() => { }} />
+                    <Button label="View More" onClick={() => { }} classNames="rounded-xl" />
                 </div>
 
 
