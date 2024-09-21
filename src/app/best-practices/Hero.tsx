@@ -6,7 +6,7 @@ import Button from "../components/Button";
 
 export default function Hero() {
     return (
-        <section className="bg-white md:px-4 pt-8 md:pt-16">
+        <section className=" md:px-4 pt-8 md:pt-16 text-black">
             <div className="grid px-4 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-12">
 
                 <div className="mr-auto place-self-center lg:col-span-7 p-4 md:p-8 ">

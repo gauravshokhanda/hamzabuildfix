@@ -5,7 +5,7 @@ import classroom from './../public/images/best-practice/classroom.svg'
 import communication from './../public/images/best-practice/communication.svg'
 export default function BestPractices() {
     return (
-        <section className="bg-background_blue py-12 px-4 md:px-12">
+        <section className="bg-background_blue text-black py-12 px-4 md:px-12">
             <div className="container mx-auto text-center">
                 {/* Heading */}
 

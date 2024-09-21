@@ -5,7 +5,7 @@ import file_icon from '../public/images/best-practice/file-icon.png'
 import Button from "../components/Button";
 export default function TutorResources() {
     return (
-        <div>
+        <div className="text-black">
             <Heading title="Tutor Resources" center />
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 py-2 md:px-8 xl:px-16 px-4">
                 <Card Heading="Lesson Planning" content={"Streamline your lesson creation with our easy-to-use templates and digital planners."} icon={file_icon} />

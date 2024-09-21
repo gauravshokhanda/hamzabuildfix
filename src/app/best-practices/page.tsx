@@ -1,5 +1,7 @@
 import Benefits from "./Benefits";
 import BestPractices from "./BestPractices";
+import Community from "./Community";
+import FAQ from "./FAQ";
 import Hero from "./Hero";
 import InspireAndTeach from "./InspireAndTeach";
 import SuccessJourneys from "./SuccessJourneys";
@@ -20,6 +22,8 @@ export default function Page() {
                 <SuccessJourneys />
                 <TutorResources />
                 <InspireAndTeach />
+                <Community />
+                <FAQ />
             </div>
         </div>
     );

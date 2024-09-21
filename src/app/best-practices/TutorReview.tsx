@@ -2,7 +2,7 @@ import Image from "next/image";
 import quote_image from '../public/images/best-practice/quote-image.png'
 export default function TutorReview() {
     return (
-        <section className="md:space-y-6">
+        <section className="md:space-y-6 text-black">
             <h2 className="text-3xl font-bold text-black mb-4 text-center">
                 What our <span className="text-primary">Tutors</span> are saying
             </h2>
