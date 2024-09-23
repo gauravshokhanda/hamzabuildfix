@@ -12,7 +12,7 @@ const CustomerSupport: React.FC = () => {
       <div className="relative flex flex-col lg:flex-row items-center lg:items-center justify-between bg-white py-16 px-6 lg:px-16 max-w-7xl mx-auto">
         
         {/* Left Section: Text and Info */}
-        <div className="lg:w-1/2 flex flex-col py-6 px-24 space-y-6 lg:self-center">
+        <div className="lg:w-1/2 flex flex-col py-6  px-5 md:px-24 space-y-6 lg:self-center">
           <div className="flex items-center space-x-3">
             <Image src={headsetIcon} alt="24/7 Support Icon" width={40} height={40} />
             <h2 className="text-3xl font-bold text-black">

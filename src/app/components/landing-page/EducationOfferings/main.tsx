@@ -7,7 +7,7 @@ import Card from './Card'; // Adjust the path as necessary
 const EducationalOfferings: React.FC = () => {
     return (
         <div className="EDU py-16 px-4 lg:px-8">
-            <div className="max-w-7xl mx-auto p-12">
+            <div className="max-w-7xl mx-auto p-5 md:p12">
                 {/* Title and Learn More Button in Flex Row */}
                 <div className="flex flex-col lg:flex-row justify-between items-center mb-8">
 
