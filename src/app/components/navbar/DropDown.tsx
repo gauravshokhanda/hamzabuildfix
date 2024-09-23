@@ -15,8 +15,8 @@ const Dropdown: React.FC<DropdownProps> = ({ label, items }) => {
         setIsOpen(!isOpen);
     };
 
-    const handleClickOutside = (event: any) => {
-        if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+    const handleClickOutside = (event: MouseEvent) => {
+        if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
             setIsOpen(false);
         }
     };
