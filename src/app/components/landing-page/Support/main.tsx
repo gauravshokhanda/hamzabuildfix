@@ -33,7 +33,7 @@ const CustomerSupport: React.FC = () => {
               </p>
             </li>
           </ul>
-          <button className="bg-primary text-white px-6 py-3 rounded-lg shadow-md w-max">
+          <button className="bg-primary hover:opacity-70 text-white px-6 py-3 rounded-lg shadow-md w-max">
             Contact us
           </button>
         </div>

@@ -32,7 +32,7 @@ const Card: React.FC<CardProps> = ({ icon, iconAlt, title, description, buttonLa
       </p>
 
       {/* Button */}
-      <button className="px-6 py-3 bg-primary text-white rounded-lg">
+      <button className="px-6 py-3 bg-primary hover:opacity-70 text-white rounded-lg">
         {buttonLabel}
       </button>
     </div>

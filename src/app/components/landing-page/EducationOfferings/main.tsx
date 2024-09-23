@@ -16,7 +16,7 @@ const EducationalOfferings: React.FC = () => {
                     </h2>
 
                     {/* Learn More Button */}
-                    <button className="mt-4 lg:mt-0 px-6 py-3 text-white bg-primary rounded-lg hover:bg-blue-600">
+                    <button className="mt-4 lg:mt-0 px-6 py-3 text-white bg-primary rounded-lg hover:opacity-70">
                         Learn More
                     </button>
                 </div>
