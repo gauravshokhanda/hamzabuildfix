@@ -1,7 +1,6 @@
 'use client'
 import React, { useState } from "react";
 import Button from "../components/Button";
-import Link from "next/link";
 
 export default function FAQ() {
     return (
@@ -10,7 +9,7 @@ export default function FAQ() {
             <div className="mr-auto place-self-center col-span-2  px-4 md:px-8 ">
 
                 <h2 className="text-4xl font-bold text-black mb-4 ">
-                    We've <span className="text-primary">got you</span> covered!
+                    We&apos;ve <span className="text-primary">got you</span> covered!
                 </h2>
 
                 <p className="mb-6 font-light  lg:mb-8 md:text-md lg:text-lg ">

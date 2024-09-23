@@ -13,7 +13,7 @@ export default function Hero() {
 
                     <h1 className="font-semibold text-xl">The Tafawwaq Tutor Experience</h1>
                     <h1 className="text-primary max-w-2xl mb-4 text-3xl font-extrabold tracking-tight leading-none md:text-4xl xl:text-5xl">Elevate Your Teaching Journey</h1>
-                    <p className="max-w-2xl mb-6 font-light  lg:mb-8 md:text-md lg:text-lg ">Embark on a journey of knowledge and skill enhancement with our online courses. Whether you're looking to acquire new expertise or refine existing talents, our diverse range of courses offers a flexible and engaging learning experience. Empower yourself today!</p>
+                    <p className="max-w-2xl mb-6 font-light  lg:mb-8 md:text-md lg:text-lg ">Embark on a journey of knowledge and skill enhancement with our online courses. Whether you&apos;re looking to acquire new expertise or refine existing talents, our diverse range of courses offers a flexible and engaging learning experience. Empower yourself today!</p>
 
                     <div className="w-48 mb-6">
                         <Button label="Learn More" onClick={() => { }} classNames="rounded-xl" />

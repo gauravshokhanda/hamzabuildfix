@@ -5,7 +5,7 @@ import HeroSection from './HeroSection';
 
 const FormSection: React.FC = () => {
   return (
-    <div className="text-black bg-white pb-10 lg:min-h-screen pt-10 flex flex-col items-center justify-center relative overflow-hidden">
+    <div className="text-black bg-white pb-10 pt-10 flex flex-col items-center justify-center relative overflow-hidden">
       {/* Background Shape */}
       <BackgroundShapes />
       <HeroSection />

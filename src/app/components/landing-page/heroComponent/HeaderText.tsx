@@ -1,7 +1,7 @@
 // HeaderText.tsx
 'use client'
 import React from 'react';
-import Button from '../../Button'
+import Button from '../../Button';
 const HeaderText: React.FC = () => {
   return (
     <>
@@ -12,10 +12,10 @@ const HeaderText: React.FC = () => {
         Build a global experience <br /> that customers love
       </h1>
 
-      <button className="mt-6 px-6 py-3 text-white bg-primary hover:opacity-70 rounded-lg">
-          Get Started
-        </button>
-   
+      <div className="w-48 ">
+        <Button label='Get Started' classNames='rounded-lg' />
+      </div>
+
 
     </>
   );

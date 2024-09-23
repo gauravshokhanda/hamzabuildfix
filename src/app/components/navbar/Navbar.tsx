@@ -10,11 +10,6 @@ import Dropdown from './DropDown';
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
-
-    const toggleOpen = useCallback(() => {
-        setIsOpen(value => !value);
-    }, []);
-
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
@@ -85,7 +80,7 @@ const Navbar = () => {
                 </div>
             </div>
 
-            <div className={`${isOpen ? 'max-h-full' : 'max-h-0'} md:hidden overflow-hidden transition-max-h duration-300 ease-in-out absolute w-full bg-white`}>
+            <div className={`${isOpen ? 'max-h-full' : 'max-h-0'} md:hidden overflow-hidden transition-max-h duration-300 ease-in-out absolute w-full bg-white z-50`}>
                 <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 transition-max-h duration-300 ease-in-out">
                     <div className='flex flex-col'>
                         <NavItem label='Home' link='/' />

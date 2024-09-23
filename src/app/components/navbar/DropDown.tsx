@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 interface DropdownProps {
     label: string,
-    items: any,
+    items: { href: string, label: string }[],
 }
 
 const Dropdown: React.FC<DropdownProps> = ({ label, items }) => {
@@ -48,7 +48,7 @@ const Dropdown: React.FC<DropdownProps> = ({ label, items }) => {
             </button>
             {isOpen && (
                 <div className="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-md z-10">
-                    {items.map((item: any, index: any) => (
+                    {items.map((item, index) => (
                         <Link
                             key={index}
                             href={item.href}

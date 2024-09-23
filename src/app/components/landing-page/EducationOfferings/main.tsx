@@ -1,8 +1,9 @@
+'use client'
 import React from 'react';
-import Image from 'next/image';
 import EduIcon from "../../../public/images/landing-page/Frame.png";
 import GroupIcon from "../../../public/images/landing-page/Group.png";
 import Card from './Card'; // Adjust the path as necessary
+import Button from '../../Button';
 
 const EducationalOfferings: React.FC = () => {
     return (
@@ -16,9 +17,9 @@ const EducationalOfferings: React.FC = () => {
                     </h2>
 
                     {/* Learn More Button */}
-                    <button className="mt-4 lg:mt-0 px-6 py-3 text-white bg-primary rounded-lg hover:opacity-70">
-                        Learn More
-                    </button>
+                    <div className="w-48">
+                        <Button label="Learn More" classNames='rounded-lg ' />
+                    </div>
                 </div>
 
                 {/* Cards Section */}

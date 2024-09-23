@@ -1,5 +1,7 @@
 // ContentSection.tsx
+'use client'
 import React from 'react';
+import Button from '../../Button';
 
 const ContentSection: React.FC = () => {
   return (
@@ -15,9 +17,10 @@ const ContentSection: React.FC = () => {
         Nunc scelerisque tincidunt elit. Vestibulum non mi ipsum. Cras pretium suscipit tellus sit amet aliquet.
         Vestibulum maximus lacinia massa non porttitor.
       </p>
-      <button className="bg-primary font-semibold px-6 py-3 rounded-lg shadow-md hover:opacity-70">
-        Become a teacher
-      </button>
+      <div className='w-48'>
+
+        <Button label={"Become a teacher"} classNames="rounded-lg" />
+      </div>
     </div>
   );
 };

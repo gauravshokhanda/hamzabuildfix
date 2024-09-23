@@ -12,11 +12,11 @@ export default function BestPractices() {
                 <Heading title="Best Practices for" spanned="Online Tutoring?" center={true} />
                 {/* Icon grid */}
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-8">
-                    <Card Heading="Lesson Planning" content={["Plan lessons that are interactive and tailored to your students’ needs.", "Incorporate multimedia elements like videos, quizzes, and presentations to make learning engaging.", "Set clear objectives for each lesson to keep students focused and motivated."]} icon={lesson_planning} />
+                    <Card Heading="Lesson Planning" content={["Plan lessons that are interactive and tailored to your students needs.", "Incorporate multimedia elements like videos, quizzes, and presentations to make learning engaging.", "Set clear objectives for each lesson to keep students focused and motivated."]} icon={lesson_planning} />
 
                     <Card Heading="Classroom Management" content={["Establish clear rules and expectations from the start to maintain order.", "Use breakout rooms or small groups to encourage collaboration among students.", "Monitor student engagement regularly and address distractions promptly."]} icon={classroom} />
 
-                    <Card Heading="Effective Communication" content={["Plan lessons that are interactive and tailored to your students’ needs.", "Incorporate multimedia elements like videos, quizzes, and presentations to make learning engaging.", "Set clear objectives for each lesson to keep students focused and motivated."]} icon={communication} />
+                    <Card Heading="Effective Communication" content={["Plan lessons that are interactive and tailored to your students needs.", "Incorporate multimedia elements like videos, quizzes, and presentations to make learning engaging.", "Set clear objectives for each lesson to keep students focused and motivated."]} icon={communication} />
                 </div>
             </div>
         </section>
