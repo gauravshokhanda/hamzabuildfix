@@ -38,3 +38,26 @@ body {
   color: rgba(29, 38, 58, 1);
   background: rgba(255, 255, 255, 1);
 }
+/* Navbar Styles */
+.rotate-90 {
+  transform: rotate(90deg);
+}
+
+.transition-transform {
+  transition-property: transform;
+}
+
+.transition-max-h {
+  transition-property: max-height;
+}
+
+/* navbar.css */
+.transition-max-h {
+  transition-property: max-height;
+  transition-duration: 0.3s;
+  /* Adjust the duration as needed */
+  transition-timing-function: ease-in-out;
+  /* Adjust the timing function as needed */
+}
+
+/* navbar.css */

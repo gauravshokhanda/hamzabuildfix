@@ -6,7 +6,7 @@ import Button from "../components/Button";
 
 export default function Hero() {
     return (
-        <section className="bg-white md:px-4 pt-8 md:pt-16">
+        <section className=" md:px-4 pt-8 md:pt-16 text-black">
             <div className="grid px-4 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-12">
 
                 <div className="mr-auto place-self-center lg:col-span-7 p-4 md:p-8 ">
@@ -16,7 +16,7 @@ export default function Hero() {
                     <p className="max-w-2xl mb-6 font-light  lg:mb-8 md:text-md lg:text-lg ">Embark on a journey of knowledge and skill enhancement with our online courses. Whether you're looking to acquire new expertise or refine existing talents, our diverse range of courses offers a flexible and engaging learning experience. Empower yourself today!</p>
 
                     <div className="w-48 mb-6">
-                        <Button label="Learn More" onClick={() => { }} />
+                        <Button label="Learn More" onClick={() => { }} classNames="rounded-xl" />
                     </div>
 
                     <div className="flex items-center gap-4">
