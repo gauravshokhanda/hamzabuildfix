@@ -26,6 +26,18 @@ body {
   }
 }
 
+.lineHeight{
+  line-height: normal;
+}
+.EDU{
+  background: rgba(246, 248, 250, 1);
+
+}
+.customShadow{
+  box-shadow: 0px 54px 100px 0px rgba(10, 4, 60, 0.1);
+  color: rgba(29, 38, 58, 1);
+  background: rgba(255, 255, 255, 1);
+}
 /* Navbar Styles */
 .rotate-90 {
   transform: rotate(90deg);
