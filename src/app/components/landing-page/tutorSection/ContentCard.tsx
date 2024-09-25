@@ -1,7 +1,9 @@
 // ContentCard.tsx
+'use client'
 import React from 'react';
 import Image from 'next/image';
 import { StaticImageData } from 'next/image';
+import Button from '../../Button';
 
 interface ContentCardProps {
   heading: string;
@@ -35,9 +37,10 @@ const ContentCard: React.FC<ContentCardProps> = ({
                 {para}
               </p>
             ))}
-            <button className="bg-primary text-white px-6 py-3 rounded-lg shadow-md hover:opacity-70">
-              {buttonText}
-            </button>
+            <div className="w-36">
+
+              <Button label={buttonText} classNames='rounded-lg' />
+            </div>
           </div>
           {/* Image Section */}
           <div className="relative lg:w-1/2 order-1 lg:order-2">
@@ -60,9 +63,10 @@ const ContentCard: React.FC<ContentCardProps> = ({
                 {para}
               </p>
             ))}
-            <button className="bg-primary text-white px-6 py-3 rounded-lg shadow-md hover:opacity-70">
-              {buttonText}
-            </button>
+            <div className="w-36">
+
+              <Button label={buttonText} classNames='rounded-lg' />
+            </div>
           </div>
         </>
       )}

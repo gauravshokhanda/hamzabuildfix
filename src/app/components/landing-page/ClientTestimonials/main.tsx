@@ -109,17 +109,22 @@ export default function ClientTestimonials() {
 
     return (
         <div className="p-4 md:p-8 bg-background_blue my-16">
-            <Heading title='What Our Clients Say About Us' center />
-            {testimonials.length > 3 && <div className="flex justify-center items-center mb-4 w-full gap-16">
-                <button className="cursor-pointer w-8" onClick={() => swiperInstance.slidePrev()}>
-                    <Image src={backArrow} alt='back arrow' width={100} height={100} />
-                </button> {/* Left Button */}
+            <div className="flex justify-center items-center mb-6 w-full gap-8 md:gap-16">
+                {
+                    testimonials.length > 3 &&
+                    <button className="cursor-pointer w-8" onClick={() => swiperInstance.slidePrev()}>
+                        <Image src={backArrow} alt='back arrow' width={100} height={100} />
+                    </button>
+                }
+                <h1 className='text-3xl font-semibold text-center'>What our clients say about us</h1>
 
+                {
+                    testimonials.length > 3 && <button className="cursor-pointer w-8" onClick={() => swiperInstance.slideNext()}>
+                        <Image src={nextArrow} alt='next arrow' width={100} height={100} />
+                    </button>
+                }
 
-                <button className="cursor-pointer w-8" onClick={() => swiperInstance.slideNext()}>
-                    <Image src={nextArrow} alt='next arrow' width={100} height={100} />
-                </button> {/* Left Button */}
-            </div>}
+            </div>
             <div className="px-2 lg:px-8">
                 <Swiper
                     // navigation
