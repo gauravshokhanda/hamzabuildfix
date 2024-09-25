@@ -6,16 +6,19 @@ import TOOLS from "../app/components/landing-page/LearningTools/main"
 import WHYUS from "../app/components/landing-page/whyUS/main"
 import SUPPORT from "../app/components/landing-page/Support/main"
 import FAQ from './components/FAQ'
+import TUTOR from '../app/components/landing-page/tutorSection/main'
 const page = () => {
   return (
     <div>
       <HERO />
       <EDU />
       <SECURE />
+      <TUTOR/>
       <TOOLS />
       <WHYUS />
       <SUPPORT />
       <FAQ />
+
 
     </div>
   )
