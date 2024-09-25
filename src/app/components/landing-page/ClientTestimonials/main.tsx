@@ -1,20 +1,20 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import Card from './Card';
+import { Swiper as SwiperCore } from 'swiper'; // Import the correct Swiper type
+
 import { Pagination, Navigation } from 'swiper/modules';
 import backArrow from '../../../public/images/landing-page/back.png'
 import nextArrow from '../../../public/images/landing-page/next.png'
 import Image from 'next/image';
 
 export default function ClientTestimonials() {
-    const [swiperInstance, setSwiperInstance] = useState<any>(null); // Store Swiper instance
+    const [swiperInstance, setSwiperInstance] = useState<SwiperCore | null>(null); // Store Swiper instance
     const [slidesPerView, setSlidesPerView] = useState<number | "auto" | undefined>(1); // Track current slidesPerView
-    const swiper = useSwiper();
-
 
     const bs = {
         320: {
@@ -111,14 +111,14 @@ export default function ClientTestimonials() {
             <div className="flex justify-center items-center mb-6 w-full gap-8 md:gap-16">
                 {
                     testimonials.length > 3 &&
-                    <button className="cursor-pointer w-8" onClick={() => swiperInstance.slidePrev()}>
+                    <button className="cursor-pointer w-8" onClick={() => swiperInstance?.slidePrev()}>
                         <Image src={backArrow} alt='back arrow' width={100} height={100} />
                     </button>
                 }
                 <h1 className='text-3xl font-semibold text-center'>What our clients say about us</h1>
 
                 {
-                    testimonials.length > 3 && <button className="cursor-pointer w-8" onClick={() => swiperInstance.slideNext()}>
+                    testimonials.length > 3 && <button className="cursor-pointer w-8" onClick={() => swiperInstance?.slideNext()}>
                         <Image src={nextArrow} alt='next arrow' width={100} height={100} />
                     </button>
                 }
