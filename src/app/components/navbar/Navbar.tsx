@@ -31,7 +31,7 @@ const Navbar = () => {
     }, []);
 
     return (
-        <nav className="bg-white border-b shadow-md">
+        <nav className="bg-white border-b shadow-md relative z-50">
             <div className="mx-auto px-4 md:px-10">
                 <div className="flex py-2  justify-between items-center">
                     <div className="flex">
@@ -80,24 +80,24 @@ const Navbar = () => {
                 </div>
             </div>
 
-            <div className={`${isOpen ? 'max-h-full' : 'max-h-0'} md:hidden overflow-hidden transition-max-h duration-300 ease-in-out absolute w-full bg-white z-50`}>
-                <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 transition-max-h duration-300 ease-in-out">
-                    <div className='flex flex-col'>
-                        <NavItem label='Home' link='/' />
-                        <NavItem label='About Us' link='/aboutus' />
-                        <NavItem label='Find a tutor' link='#' />
+            <div className={`${isOpen ? 'max-h-96' : 'max-h-0'} md:hidden overflow-hidden transition-all duration-300 ease-in-out absolute w-full bg-white z-50`}>
+                <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                    <div className="flex flex-col">
+                        <NavItem label="Home" link="/" />
+                        <NavItem label="About Us" link="/aboutus" />
+                        <NavItem label="Find a tutor" link="#" />
                     </div>
                     <div className="flex flex-col md:ml-6 space-y-2">
                         <div className='w-24 h-10'>
-                            <button className='rounded-full py-1 border-[1px] border-white bg-secondary w-full h-full text-white font-normal text-sm'>Login</button>
+                            <button className="rounded-full py-1 border-[1px] border-white bg-secondary w-full h-full text-white font-normal text-sm">Login</button>
                         </div>
-
-                        <div className='w-24 h-10'>
-                            <Button label='Signup' classNames='rounded-full' small />
+                        <div className="w-24 h-10">
+                            <Button label="Signup" classNames="rounded-full" small />
                         </div>
                     </div>
                 </div>
             </div>
+
         </nav>
     );
 };

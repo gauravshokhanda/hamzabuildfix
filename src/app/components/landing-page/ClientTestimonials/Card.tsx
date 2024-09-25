@@ -2,18 +2,15 @@ import Image from "next/image";
 
 interface CardProps {
     testimonial: { image: string; name: string; role: string; testimonial: string };
+    bgClass: string;
 }
 
-const Card: React.FC<CardProps> = ({ testimonial }) => {
+const Card: React.FC<CardProps> = ({ testimonial, bgClass }) => {
     return (
-        <div className="flex flex-col items-center justify-center h-[355px] w-full ">
-
-            <div className="bg-reviewMiddle bg-no-repeat bg-cover bg-center w-80 px-12 p-4 rounded-lg flex flex-col justify-start items-center min-h-[340px]">
-
-
+        <div className="flex flex-col items-center justify-center h-[355px] w-full">
+            <div className={`${bgClass} bg-no-repeat bg-cover bg-center w-80 px-12 p-4 flex flex-col justify-start items-center min-h-[348px]`}>
                 {/* Image container */}
-
-                <div className="-mt-4  absolute rounded-full w-16 h-16 max-w-36 max-h-36">
+                <div className="-mt-4 absolute rounded-full w-16 h-16 max-w-36 max-h-36">
                     <Image
                         src={testimonial.image}
                         alt={testimonial.name}

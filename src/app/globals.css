@@ -63,7 +63,18 @@ body {
 /* navbar.css */
 
 
-.borders{
-  border-radius:84%  16% 72% 28% / 32% 49% 51% 68%  ;
+/* Custom styles for Swiper controls */
 
+.swiper-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-pagination-bullet {
+  background-color: #000; /* Change the color of the dots */
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #007bff; /* Active bullet color */
 }
