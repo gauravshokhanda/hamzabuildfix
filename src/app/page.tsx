@@ -16,8 +16,8 @@ const page = () => {
       <SECURE />
       <TUTOR/>
       <TOOLS />
-      <WHYUS />
       <ClientTestimonials />
+      <WHYUS />
       <SUPPORT />
       <FAQ />
 
