@@ -6,7 +6,6 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import Card from './Card';
 import { Pagination, Navigation } from 'swiper/modules';
-import Heading from '../../Heading';
 import backArrow from '../../../public/images/landing-page/back.png'
 import nextArrow from '../../../public/images/landing-page/next.png'
 import Image from 'next/image';

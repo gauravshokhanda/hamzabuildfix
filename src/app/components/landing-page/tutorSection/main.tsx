@@ -13,7 +13,7 @@ const FindTutor: React.FC = () => {
         {/* Top Centered Heading and Paragraph */}
         <div className="w-full text-center mb-10 px-8 md:px-2">
           <h3 className="text-4xl lg:text-5xl font-semibold text-[#1D263A] mb-2">
-            Let's See <span className="text-primary">How it Works</span>
+            Let&apos;s See <span className="text-primary">How it Works</span>
           </h3>
           <p className="text-[#1D263A] text-base">
             Follow these simple steps to start your learning journey with us.
