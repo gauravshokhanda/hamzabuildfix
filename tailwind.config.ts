@@ -15,6 +15,11 @@ const config: Config = {
         white: "#ffffff",
         background_blue: "#F6F8FA"
       },
+      backgroundImage: {
+        'reviewLeft': "url('./public/images/landing-page/left-review.png')",
+        'reviewRight': "url('./public/images/landing-page/right-review.png')",
+        'reviewMiddle': "url('./public/images/landing-page/middle-review.png')",
+      },
     },
 
   },

@@ -1,11 +1,12 @@
 import React from 'react'
-import HERO from "../app/components/landing-page/heroComponent/main"
-import EDU from "../app/components/landing-page/EducationOfferings/main"
-import SECURE from "../app/components/landing-page/Secure/main"
-import TOOLS from "../app/components/landing-page/LearningTools/main"
-import WHYUS from "../app/components/landing-page/whyUS/main"
-import SUPPORT from "../app/components/landing-page/Support/main"
+import HERO from "./components/landing-page/heroComponent/main"
+import EDU from "./components/landing-page/EducationOfferings/main"
+import SECURE from "./components/landing-page/Secure/main"
+import TOOLS from "./components/landing-page/LearningTools/main"
+import WHYUS from "./components/landing-page/whyUS/main"
+import SUPPORT from "./components/landing-page/Support/main"
 import FAQ from './components/FAQ'
+import ClientTestimonials from './components/landing-page/ClientTestimonials/main'
 const page = () => {
   return (
     <div>
@@ -14,6 +15,7 @@ const page = () => {
       <SECURE />
       <TOOLS />
       <WHYUS />
+      <ClientTestimonials />
       <SUPPORT />
       <FAQ />
 
