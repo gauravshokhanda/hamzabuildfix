@@ -12,9 +12,9 @@ const page = () => {
   return (
     <div>
       <HERO />
-      <EDU />
-      <SECURE />
+      {/* <EDU /> */}
       <TUTOR/>
+      <SECURE />
       <TOOLS />
       <ClientTestimonials />
       <WHYUS />
