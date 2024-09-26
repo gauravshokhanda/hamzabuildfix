@@ -1,6 +1,5 @@
 import React from 'react'
 import HERO from "./components/landing-page/heroComponent/main"
-import EDU from "./components/landing-page/EducationOfferings/main"
 import SECURE from "./components/landing-page/Secure/main"
 import TOOLS from "./components/landing-page/LearningTools/main"
 import WHYUS from "./components/landing-page/whyUS/main"
@@ -12,8 +11,7 @@ const page = () => {
   return (
     <div>
       <HERO />
-      {/* <EDU /> */}
-      <TUTOR/>
+      <TUTOR />
       <SECURE />
       <TOOLS />
       <ClientTestimonials />
