@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.lineHeight{
+  line-height: normal;
+}
+.EDU{
+  background: rgba(246, 248, 250, 1);
+
+}
+.customShadow{
+  box-shadow: 0px 54px 100px 0px rgba(10, 4, 60, 0.1);
+  color: rgba(29, 38, 58, 1);
+  background: rgba(255, 255, 255, 1);
+}
+/* Navbar Styles */
+.rotate-90 {
+  transform: rotate(90deg);
+}
+
+.transition-transform {
+  transition-property: transform;
+}
+
+.transition-max-h {
+  transition-property: max-height;
+}
+
+/* navbar.css */
+.transition-max-h {
+  transition-property: max-height;
+  transition-duration: 0.3s;
+  /* Adjust the duration as needed */
+  transition-timing-function: ease-in-out;
+  /* Adjust the timing function as needed */
+}
+
+/* navbar.css */
+
+
+/* Custom styles for Swiper controls */
+
+.swiper-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-pagination-bullet {
+  background-color: #000; /* Change the color of the dots */
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #007bff; /* Active bullet color */
+}
