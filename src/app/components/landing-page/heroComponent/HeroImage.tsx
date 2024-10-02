@@ -5,7 +5,7 @@ import heroImage from '../../../public/images/landing-page/hero.png';
 
 const HeroImage: React.FC = () => {
   return (
-    <div className="md:p-8 relative flex items-center justify-center md:h-auto ">
+    <div className=" hidden    md:p-8 relative md:flex items-center justify-center md:h-auto ">
       <Image
         src={heroImage}
         alt="Hero Image"
