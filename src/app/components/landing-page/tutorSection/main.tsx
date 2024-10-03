@@ -11,7 +11,7 @@ const FindTutor: React.FC = () => {
 
       <div className="flex flex-col items-center py-16">
         {/* Top Centered Heading and Paragraph */}
-        <div className="w-full text-center mb-10 px-8 md:px-2">
+        <div className="w-full text-center px-8 md:px-2">
           <h3 className="text-4xl lg:text-5xl font-semibold text-[#1D263A] mb-2">
             Let&apos;s See <span className="text-primary">How it Works</span>
           </h3>

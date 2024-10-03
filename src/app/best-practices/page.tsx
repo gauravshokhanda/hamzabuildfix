@@ -4,8 +4,6 @@ import Community from "./Community";
 import FAQ from "../components/FAQ";
 import Hero from "./Hero";
 import InspireAndTeach from "./InspireAndTeach";
-import SuccessJourneys from "./SuccessJourneys";
-import SuccessStories from "./SuccessStories";
 import TutorResources from "./TutorResources";
 import TutorReview from "./TutorReview";
 
@@ -18,8 +16,6 @@ export default function Page() {
                 <Benefits />
                 <TutorReview />
                 <BestPractices />
-                <SuccessStories />
-                <SuccessJourneys />
                 <TutorResources />
                 <InspireAndTeach />
                 <Community />
