@@ -10,15 +10,17 @@ const CustomerSupport: React.FC = () => {
   return (
     <div className='bg-white'>
       <div className="relative flex flex-col lg:flex-row items-center lg:items-center justify-between bg-white py-16 px-6 lg:px-16 max-w-7xl mx-auto">
-        
+
         {/* Left Section: Text and Info */}
         <div className="lg:w-1/2 flex flex-col py-6  px-5 md:px-24 space-y-6 lg:self-center">
+
           <div className="flex items-center space-x-3">
             <Image src={headsetIcon} alt="24/7 Support Icon" width={40} height={40} />
             <h2 className="text-3xl font-bold text-black">
               <span className="text-secondary">24/7</span> Customer Support
             </h2>
           </div>
+
           <ul className="text-gray-600 space-y-4">
             <li className="flex items-start space-x-2">
               <span className="text-secondary font-bold">•</span>
@@ -39,7 +41,7 @@ const CustomerSupport: React.FC = () => {
         </div>
 
         {/* Right Section: Image and Decorative Shapes */}
-        <div className="relative lg:w-1/2 mt-10 lg:mt-0 z-10 flex justify-center items-center">
+        <div className="relative hidden md:flex lg:w-1/2 mt-10 lg:mt-0 z-10 justify-center items-center">
           <Image src={customerImage} alt="Customer Support" width={400} height={600} className="rounded-lg shadow-md z-10" />
 
           {/* Decorative Shapes */}
@@ -54,9 +56,10 @@ const CustomerSupport: React.FC = () => {
           </div>
         </div>
 
+
       </div>
     </div>
-  );
+  );    
 };
 
 export default CustomerSupport;
