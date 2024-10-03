@@ -7,7 +7,7 @@ import logo3 from '../../../public/images/landing-page/security1.png'; // New lo
 const SecureLearningEnvironment: React.FC = () => {
   return (
     <div className="bg-[#FFFFFF] py-16 px-4 lg:px-8">
-      <div className="max-w-7xl  p-6 md:p-12 mx-auto">
+      <div className="max-w-7xl md:p-12 mx-auto">
         {/* Title */}
         <h2 className="text-4xl font-bold text-gray-800 mb-12 text-center">
           Secure and Safe Learning <br />Environment
@@ -37,7 +37,7 @@ const SecureLearningEnvironment: React.FC = () => {
             title="Data Encryption"
             description="Advanced encryption ensures that your data is always secure."
             buttonLabel="Learn More"
-            
+
           />
         </div>
 
