@@ -12,7 +12,7 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ icon, iconAlt, title, description, buttonLabel }) => {
   return (
-    <div className="bg-white rounded-lg shadow-lg p-8 flex flex-col items-center">
+    <div className="bg-white rounded-lg shadow-lg p-8 flex flex-col items-center    ">
       {/* Icon */}
       <div className={`bg-secondary p-4 rounded-full mb-6`}>
         <Image

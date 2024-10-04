@@ -107,15 +107,16 @@ export default function ClientTestimonials() {
     }, [swiperInstance]);
 
     return (
-        <div className="p-4 md:p-8 bg-background_blue my-16">
-            <div className="flex justify-center items-center mb-6 w-full gap-8 md:gap-16">
+        <div className='bg-background_blue'>
+        <div className="p-4 ">
+            <div className="flex justify-center items-center mt-4 md:mt-8 mb-8 w-full gap-8 md:gap-16">
                 {
                     testimonials.length > 3 &&
                     <button className="cursor-pointer w-8" onClick={() => swiperInstance?.slidePrev()}>
                         <Image src={backArrow} alt='back arrow' width={100} height={100} />
                     </button>
                 }
-                <h1 className='text-3xl font-semibold text-center'>What our clients say about us</h1>
+                <h1 className='text-3xl text-[#1D263A] font-semibold text-center'>What our clients say about us</h1>
 
                 {
                     testimonials.length > 3 && <button className="cursor-pointer w-8" onClick={() => swiperInstance?.slideNext()}>
@@ -126,7 +127,8 @@ export default function ClientTestimonials() {
             </div>
             <div className="px-2 lg:px-8">
                 <Swiper
-                    // navigation
+                    // Enable loop
+                    loop={true}  // Add this line to enable looping
                     breakpoints={bs}
                     pagination={{ clickable: true }}
                     modules={[Navigation, Pagination]}
@@ -136,8 +138,8 @@ export default function ClientTestimonials() {
                         setSwiperInstance(swiper); // Capture Swiper instance
                         setSlidesPerView(swiper.params.slidesPerView); // Set initial slidesPerView
                     }}
-
                 >
+
 
                     {testimonials.map((testimonial, index) => (
                         <SwiperSlide key={index} className='mb-8'>
@@ -149,6 +151,7 @@ export default function ClientTestimonials() {
                     ))}
                 </Swiper>
             </div>
+        </div>
         </div>
     );
 }

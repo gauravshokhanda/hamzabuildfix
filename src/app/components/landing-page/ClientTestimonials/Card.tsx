@@ -22,7 +22,7 @@ const Card: React.FC<CardProps> = ({ testimonial, bgClass }) => {
 
                 {/* Card content */}
                 <div className="pt-16 flex flex-col items-center">
-                    <h3 className="text-lg font-semibold">{testimonial.name}</h3>
+                    <h3 className="text-lg text-[#525252] font-semibold">{testimonial.name}</h3>
                     <p className="text-gray-500 text-sm">{testimonial.role}</p>
                     <p className="mt-4 text-gray-600 text-sm text-center">{testimonial.testimonial}</p>
                 </div>
