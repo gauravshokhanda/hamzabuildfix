@@ -7,6 +7,12 @@
   --foreground: #171717;
 }
 
+input::placeholder,
+input:-ms-input-placeholder,
+input::-ms-input-placeholder,
+input:-moz-placeholder {
+  color: #ffffff;
+}
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -15,8 +21,6 @@
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -26,14 +30,13 @@ body {
   }
 }
 
-.lineHeight{
+.lineHeight {
   line-height: normal;
 }
-.EDU{
+.EDU {
   background: rgba(246, 248, 250, 1);
-
 }
-.customShadow{
+.customShadow {
   box-shadow: 0px 54px 100px 0px rgba(10, 4, 60, 0.1);
   color: rgba(29, 38, 58, 1);
   background: rgba(255, 255, 255, 1);
@@ -61,7 +64,6 @@ body {
 }
 
 /* navbar.css */
-
 
 /* Custom styles for Swiper controls */
 
