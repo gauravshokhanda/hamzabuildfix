@@ -6,13 +6,19 @@ import Image from 'next/image';
 import Button from '../Button';
 import NavItem from './NavItem';
 import Dropdown from './DropDown';
+import useAdminRoute from '@/hooks/useAdminRoute';
 
 const Navbar = () => {
+    const adminRoute = useAdminRoute();
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
+
+    if(adminRoute){
+        return null;
+    }
 
     const menuRef = useRef<HTMLDivElement>(null);
 
