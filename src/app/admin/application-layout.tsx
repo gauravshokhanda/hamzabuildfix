@@ -77,7 +77,7 @@ function AccountDropdownMenu({
 }
 
 export function ApplicationLayout({ children }: { children: React.ReactNode }) {
-  let pathname = usePathname();
+  const pathname = usePathname();
 
   return (
     <SidebarLayout
@@ -87,7 +87,7 @@ export function ApplicationLayout({ children }: { children: React.ReactNode }) {
           <NavbarSection>
             <div className=" flex items-center w-full justify-between px-5">
               <p className=" text-xl text-primary hidden md:block">
-                {/* @ts-ignore */}
+                {/* @ts-expect-error - pathnameNames does not contain all routes, fallback needed */}
                 {pathnameNames[pathname]}
               </p>
               <Searchbar />
@@ -96,14 +96,17 @@ export function ApplicationLayout({ children }: { children: React.ReactNode }) {
                   <LanguageChanger />
                 </div>
                 <Dropdown>
-                  <DropdownButton className=" shrink-0" as={NavbarItem}>
-                    <img
+                  <DropdownButton className="shrink-0" as={NavbarItem}>
+                    <Image
                       src="https://images.unsplash.com/photo-1726809448984-2e7f60cc6e97?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                      className=" w-[44px] h-[44px] shrink-0 border rounded-full"
+                      width={44}
+                      height={44}
+                      alt="Admin profile image"
+                      className="w-[44px] h-[44px] shrink-0 border rounded-full"
                     />
-                    <div className=" hidden lg:block">
-                      <p className=" text-sm">Hamza</p>
-                      <p className=" text-xs text-text_secondary">Admin</p>
+                    <div className="hidden lg:block">
+                      <p className="text-sm">Hamza</p>
+                      <p className="text-xs text-text_secondary">Admin</p>
                     </div>
                   </DropdownButton>
                   <AccountDropdownMenu anchor="bottom end" />
@@ -117,7 +120,7 @@ export function ApplicationLayout({ children }: { children: React.ReactNode }) {
         <Sidebar className="relative">
           <SidebarHeader className="w-full flex items-center justify-center font-medium">
             <Link href="/">
-              <Image src={logo} className="h-12 w-12" alt="" />
+              <Image src={logo} width={48} height={48} alt="Logo" />
             </Link>
           </SidebarHeader>
 
@@ -189,28 +192,7 @@ export function ApplicationLayout({ children }: { children: React.ReactNode }) {
             <div className=" md:hidden flex justify-center">
               <LanguageChanger />
             </div>
-
-            {/* <SidebarSection>
-              <SidebarItem href="/admin#">
-                <QuestionMarkCircleIcon />
-                <SidebarLabel>Support</SidebarLabel>
-              </SidebarItem>
-              <SidebarItem href="/admin#">
-                <SparklesIcon />
-                <SidebarLabel>Changelog</SidebarLabel>
-              </SidebarItem>
-            </SidebarSection> */}
           </SidebarBody>
-
-          {/* <SidebarFooter className="p-0 max-lg:hidden">
-            <Dropdown>
-              <DropdownButton className="!p-0" as={SidebarItem}>
-                <span className="flex min-w-0 items-center gap-3 p-0">asd</span>
-                <ChevronUpIcon />
-              </DropdownButton>
-              <AccountDropdownMenu anchor="top start" />
-            </Dropdown>
-          </SidebarFooter> */}
         </Sidebar>
       }
     >
@@ -220,7 +202,7 @@ export function ApplicationLayout({ children }: { children: React.ReactNode }) {
 }
 
 const pathnameNames = {
-  "/admin/tutor-management": "Tutorial Management",
+  "/admin/tutor-management": "Tutor Management",
   "/admin/content-creation": "Content Creation",
   "/admin/feedback-and-complaints": "Feedback & Complaints",
   "/admin/user-interation": "User Interaction",
@@ -230,7 +212,13 @@ const LanguageChanger = () => {
   return (
     <Dropdown>
       <DropdownButton as={NavbarItem}>
-        <img src={usaflag} className="w-5 h-5 rounded-full" alt="" />
+        <Image
+          width={20}
+          height={20}
+          src={usaflag}
+          className="w-5 h-5 rounded-full"
+          alt=""
+        />
         <div className=" ">Eng (US)</div>
         <ChevronDownIcon />
       </DropdownButton>

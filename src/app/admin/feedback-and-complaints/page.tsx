@@ -2,6 +2,7 @@
 import clsx from "clsx";
 import { useState } from "react";
 import { PaperAirplaneIcon } from "@heroicons/react/20/solid";
+import Image from "next/image";
 
 export default function Home() {
   const [message, setMessage] = useState("");
@@ -34,51 +35,45 @@ export default function Home() {
   ];
 
   return (
-    <div className=" flex flex-col md:gap-5 flex-1 w-full h-full">
-      <div className=" md:border border-y md:rounded-2xl flex flex-col p-4">
-        <div className=" flex  flex-row justify-between">
-          <p className=" text-[#3A5377]">Mr Ahmad</p>
-          <span
-            className={`bg-[#FE98001f] text-[#FE9800] text-[13px] flex items-center justify-center
-            rounded-md px-2.5 py-1.5
-            `}
-          >
+    <div className="flex flex-col md:gap-5 flex-1 w-full h-full">
+      <div className="md:border border-y md:rounded-2xl flex flex-col p-4">
+        <div className="flex flex-row justify-between">
+          <p className="text-[#3A5377]">Mr Ahmad</p>
+          <span className="bg-[#FE98001f] text-[#FE9800] text-[13px] flex items-center justify-center rounded-md px-2.5 py-1.5">
             <p>Pending</p>
           </span>
         </div>
-        <p className=" text-sm mt-4">
+        <p className="text-sm mt-4">
           Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged.
+          industry...
         </p>
       </div>
-      <div className=" md:border border-y md:rounded-2xl overflow-hidden w-full h-full flex flex-col p-4 relative">
+      <div className="md:border border-y md:rounded-2xl overflow-hidden w-full h-full flex flex-col p-4 relative">
         {/* Header */}
-        <div className=" flex items-center gap-3.5 border-b pb-4">
-          <img
+        <div className="flex items-center gap-3.5 border-b pb-4">
+          <Image
+            width={36}
+            height={36}
             src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D"
             alt=""
-            className=" w-9 h-9 rounded-full"
+            className="w-9 h-9 rounded-full"
           />
-          <div className=" text-sm">
-            <p className=" text-text_primary font-semibold">Mr Ahmad</p>
-            <div className=" divide-x-2 flex flex-row space-x-2">
-              <p className=" text-[#606060]">MR. Ahmad</p>
-              <p className=" text-[#606060] pl-2">21 Feb 2020</p>
-              <p className=" text-[#606060] pl-2">Last Reply: 24 min ago</p>
+          <div className="text-sm">
+            <p className="text-text_primary font-semibold">Mr Ahmad</p>
+            <div className="divide-x-2 flex flex-row space-x-2">
+              <p className="text-[#606060]">MR. Ahmad</p>
+              <p className="text-[#606060] pl-2">21 Feb 2020</p>
+              <p className="text-[#606060] pl-2">Last Reply: 24 min ago</p>
             </div>
           </div>
 
-          <button className=" absolute top-2 right-2 bg-primary text-xs md:text-sm px-3 md:px-4 rounded-md py-1 text-white">
+          <button className="absolute top-2 right-2 bg-primary text-xs md:text-sm px-3 md:px-4 rounded-md py-1 text-white">
             Mark As Resolved
           </button>
         </div>
 
-        <div className=" flex flex-col justify-between w-full h-full">
-          <div className="flex flex-col space-y-4 my-4">
+        <div className="flex flex-col justify-between w-full h-full">
+          <div className="flex flex-col space-y-4 my-4 overflow-y-auto">
             {messages.map((message, index) => (
               <div
                 key={index}
@@ -88,18 +83,20 @@ export default function Home() {
               >
                 <div
                   className={clsx(
-                    " flex gap-5",
+                    "flex gap-5",
                     message.type === "me" ? "flex-row-reverse" : "flex-row"
                   )}
                 >
-                  <div className=" shrink-0 flex flex-col text-xs justify-center items-center text-gray-500">
-                    <img
+                  <div className="shrink-0 flex flex-col text-xs justify-center items-center text-gray-500">
+                    <Image
+                      width={36}
+                      height={36}
                       src={message.img}
                       alt=""
-                      className=" w-6 h-6 rounded-full"
+                      className="w-6 h-6 rounded-full"
                     />
-                    <div className=" mt-1">{message.date}</div>
-                    <div className=" mt-1">{message.time}</div>
+                    <div className="mt-1">{message.date}</div>
+                    <div className="mt-1">{message.time}</div>
                   </div>
                   <div
                     className={`${
@@ -114,19 +111,20 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <div className=" flex items-center gap-3.5 border-t pt-4">
-            <div className=" flex justify-between w-full">
-              <div className=" flex gap-3 items-center">
+
+          <div className="flex items-center gap-3.5 border-t pt-4">
+            <div className="flex justify-between w-full">
+              <div className="flex gap-3 items-center">
                 <Smily />
                 <input
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   type="text"
                   placeholder="Type a message here"
-                  className=" outline-none"
+                  className="outline-none"
                 />
               </div>
-              <div className=" flex gap-3 items-center">
+              <div className="flex gap-3 items-center">
                 <AttachIcon />
                 <MicIcon />
                 <div>

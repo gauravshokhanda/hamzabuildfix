@@ -2,7 +2,7 @@
 
 import * as Headless from "@headlessui/react";
 import clsx from "clsx";
-import { LayoutGroup, motion } from "framer-motion";
+import { LayoutGroup } from "framer-motion";
 import React, { Fragment, forwardRef, useId } from "react";
 import { TouchTarget } from "./button";
 import { Link } from "./link";
@@ -68,7 +68,7 @@ export function SidebarSection({
   className,
   ...props
 }: React.ComponentPropsWithoutRef<"div">) {
-  let id = useId();
+  const id = useId();
 
   return (
     <LayoutGroup id={id}>
@@ -136,7 +136,7 @@ export const SidebarItem = forwardRef(function SidebarItem(
   ),
   ref: React.ForwardedRef<HTMLAnchorElement | HTMLButtonElement>
 ) {
-  let classes = clsx(
+  const classes = clsx(
     // Base
     "flex w-full items-center gap-3 rounded-lg px-4 py-2.5 text-left text-base/6 font-medium sm:py-3.5 sm:text-sm/5",
     current ? "text-white" : "text-text_secondary",

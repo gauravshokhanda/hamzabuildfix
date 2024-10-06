@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -21,13 +22,15 @@ function BlogCard({
   image,
   time,
   author,
-  href
+  href,
 }: Props) {
   return (
     <Link href={href} className=" flex gap-5">
-      <img
+      <Image
+        width={150}
+        height={150}
         src={image}
-        alt=""
+        alt="Banner"
         className=" aspect-square md:max-w-[200px] max-w-[150px] rounded-2xl"
       />
       <div className=" flex h-full justify-evenly flex-col">
@@ -35,7 +38,13 @@ function BlogCard({
         <div className=" font-semibold text-lg">{title}</div>
         <div className=" text-sm line-clamp-2">{description}</div>
         <div className=" flex items-center gap-3">
-          <img src={author.avatar} alt="" className=" w-10 h-10 rounded-full" />
+          <Image
+            width={40}
+            height={40}
+            alt="avatar"
+            src={author.avatar}
+            className=" w-10 h-10 rounded-full"
+          />
           <div>
             <p className=" text-[#555555] text-sm md:text-base font-normal">
               {author.name}

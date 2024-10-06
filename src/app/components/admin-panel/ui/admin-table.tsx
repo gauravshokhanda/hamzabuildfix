@@ -7,12 +7,31 @@ import {
   TableHeader,
   TableRow,
 } from "./table";
-import { BarsArrowDownIcon } from "@heroicons/react/20/solid";
 import clsx from "clsx";
 import Arrow from "../../../public/images/arrow.png";
 import Image from "next/image";
 
-function AdminTable({ format, data }: { format: any[]; data: any[] }) {
+interface FormatData {
+  title: string;
+  key: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  component: React.ComponentType<any>;
+  showSort?: boolean;
+  onclick?: () => void;
+}
+
+interface DataItem {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  [key: string]: any;
+  slug?: string;
+}
+
+interface AdminTableProps {
+  format: FormatData[];
+  data: DataItem[];
+}
+
+function AdminTable({ format, data }: AdminTableProps) {
   return (
     <div>
       <Table className="px-5 [--gutter:theme(spacing.6)] lg:[--gutter:theme(spacing.10)]">
@@ -22,21 +41,24 @@ function AdminTable({ format, data }: { format: any[]; data: any[] }) {
               <TableHeader key={formatData.title}>
                 <div
                   className={clsx(
-                    " flex items-center w-full",
+                    "flex items-center w-full",
                     formatData.showSort
                       ? "justify-between"
                       : "justify-center text-center"
                   )}
                 >
-                  <p className=" font-medium text-[#0A090B]">
+                  <p className="font-medium text-[#0A090B]">
                     {formatData.title}
                   </p>
-                  {formatData.showSort && (
-                    <button onClick={formatData.onclick}>
+                  {formatData.showSort && formatData.onclick && (
+                    <button
+                      onClick={formatData.onclick}
+                      aria-label={`Sort by ${formatData.title}`}
+                    >
                       <Image
                         src={Arrow}
-                        alt="arrow"
-                        className=" hover:opacity-75"
+                        alt="Sort arrow"
+                        className="hover:opacity-75"
                       />
                     </button>
                   )}
@@ -46,22 +68,23 @@ function AdminTable({ format, data }: { format: any[]; data: any[] }) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {data.map((data, index) => (
-            <TableRow key={index} href={data.slug} title={`data #${data}`}>
+          {data.map((dataItem, index) => (
+            <TableRow
+              key={index}
+              href={dataItem.slug}
+              title={`Row data #${index}`}
+            >
               {format.map((formatData) => {
                 const Component = formatData.component;
+                const cellData = dataItem[formatData.key];
 
                 return (
-                  <TableCell>
-                    <Component
-                      {...data}
-                      // @ts-ignore
-                      {...(typeof data[formatData.key] === "string"
-                        ? // @ts-ignore
-                          { children: data[formatData.key] }
-                        : // @ts-ignore
-                          data[formatData.key])}
-                    />
+                  <TableCell key={formatData.key}>
+                    {typeof cellData === "string" ? (
+                      <Component>{cellData}</Component>  // Render the string content between the tags
+                    ) : (
+                      <Component {...cellData} {...dataItem} />
+                    )}
                   </TableCell>
                 );
               })}

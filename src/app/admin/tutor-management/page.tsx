@@ -3,6 +3,7 @@ import AdminContainer from "@/app/components/admin-panel/ui/admin-container";
 import { Text } from "@/app/components/admin-panel/ui/text";
 import AdminTable from "@/app/components/admin-panel/ui/admin-table";
 import { Button } from "@/app/components/admin-panel/ui/button";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -30,7 +31,7 @@ export default function Home() {
     </div>
   );
 }
-const ActionsButtons = ({ ...data }) => {
+const ActionsButtons = () => {
   return (
     <div className="flex items-center gap-3 w-full justify-center">
       <Button color="button_primary" className=" bg-primary cursor-pointer">
@@ -42,7 +43,7 @@ const ActionsButtons = ({ ...data }) => {
     </div>
   );
 };
-const ActionsButton = ({ ...data }) => {
+const ActionsButton = () => {
   return (
     <div className="flex items-center gap-3 w-full justify-center">
       <Button color="button_primary" className=" bg-primary cursor-pointer">
@@ -57,7 +58,13 @@ const ActionProfile = ({ ...data }) => {
 
   return (
     <div className="flex items-center gap-3  w-full justify-center md:justify-start pl-3 md:pl-0">
-      <img src={avatar} className="w-10 h-10 rounded-lg shrink-0" />
+      <Image
+        width={40}
+        height={40}
+        alt="Avatar"
+        src={avatar}
+        className="w-10 h-10 rounded-lg shrink-0"
+      />
       <div>
         <p className=" text-[#555555] font-normal">{name}</p>
         <p className=" text-sm font-medium  text-[#344054]">{department}</p>
