@@ -9,11 +9,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: "#40A8CD",
+        primary: "#42ABD1",
         secondary: "#A3D154",
         black: "#000000",
         white: "#ffffff",
-        background_blue: "#F6F8FA"
+        background_blue: "#F6F8FA",
+        icon_color: "#A3AFB0",
+        text_primary: "#3A5377",
+        text_secondary: "#66797C",
+        button_primary: "#00adef",
       },
       backgroundImage: {
         'reviewLeft': "url('./public/images/landing-page/left-review.png')",
@@ -23,6 +27,8 @@ const config: Config = {
     },
 
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+  ],
 };
 export default config;

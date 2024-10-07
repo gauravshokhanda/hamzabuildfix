@@ -6,15 +6,16 @@ import Image from 'next/image';
 import Button from '../Button';
 import NavItem from './NavItem';
 import Dropdown from './DropDown';
+import useAdminRoute from '@/hooks/useAdminRoute';
 
 const Navbar = () => {
+    const adminRoute = useAdminRoute();
     const [isOpen, setIsOpen] = useState(false);
+    const menuRef = useRef<HTMLDivElement>(null);
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
-
-    const menuRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
@@ -30,10 +31,14 @@ const Navbar = () => {
         };
     }, []);
 
+    if (adminRoute) {
+        return null;
+    }
+
     return (
         <nav className="bg-white border-b shadow-md relative z-50">
             <div className="mx-auto px-4 md:px-10">
-                <div className="flex py-2  justify-between items-center">
+                <div className="flex py-2 justify-between items-center">
                     <div className="flex">
                         <div className="flex-shrink-0 flex items-center">
                             <Link href="/">
@@ -42,7 +47,7 @@ const Navbar = () => {
                         </div>
                     </div>
 
-                    <div className="hidden md:block lg:pl-14 ">
+                    <div className="hidden md:block lg:pl-14">
                         <div className="ml-6 flex items-baseline space space-x-4 lg:space-x-6">
                             <NavItem label='Home' link='/' />
                             <NavItem label='About Us' link='/aboutus' />

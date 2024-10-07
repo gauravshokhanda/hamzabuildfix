@@ -1,8 +1,16 @@
+"use client";
 import Image from "next/image";
 import logo from './../public/images/logo.png'
 import Link from "next/link";
+import useAdminRoute from "@/hooks/useAdminRoute";
 
 export default function Footer() {
+    
+    const adminRoute = useAdminRoute();
+    if(adminRoute){
+        return null;
+    }
+
 
     return (
         <footer className="bg-black text-white pt-16 pb-8 px-6 md:px-16 w-full">
