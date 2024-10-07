@@ -34,11 +34,14 @@ export default function Home() {
 const ActionsButtons = () => {
   return (
     <div className="flex items-center gap-3 w-full justify-center">
-      <Button color="button_primary" className=" bg-primary cursor-pointer">
-        Approve
+      <Button outline className=" text-secondary cursor-pointer border-secondary">
+        Details
       </Button>
       <Button outline className=" text-primary cursor-pointer">
         Reject
+      </Button>
+      <Button color="button_primary" className=" bg-primary cursor-pointer">
+        Approve
       </Button>
     </div>
   );
