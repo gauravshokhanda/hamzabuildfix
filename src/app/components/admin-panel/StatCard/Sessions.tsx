@@ -32,7 +32,27 @@ const ActionsButton = () => {
 };
 
 // Reusable component for both Tutor and Student profiles
-const ProfileDisplay = ({ name, avatar, department }) => {
+const ProfileDisplayTutor = ({ ...data }) => {
+  const { name, avatar, department } = data.tutor;
+  return (
+    <div className="flex items-center gap-3 w-full justify-center md:justify-start pl-3 md:pl-0">
+      <Image
+        width={40}
+        height={40}
+        alt="Avatar"
+        src={avatar}
+        className="w-10 h-10 rounded-lg shrink-0"
+      />
+      <div>
+        <p className=" text-[#555555] font-normal">{name}</p>
+        <p className=" text-sm font-medium text-[#344054]">{department}</p>
+      </div>
+    </div>
+  );
+};
+
+const ProfileDisplayStudent = ({ ...data }) => {
+  const { name, avatar, department } = data.student;
   return (
     <div className="flex items-center gap-3 w-full justify-center md:justify-start pl-3 md:pl-0">
       <Image
@@ -62,30 +82,14 @@ const tableFormatCert = [
   {
     key: "tutor",
     title: "Tutor Name",
-    component: (data: {
-      tutor: { name: string; avatar: StaticImageData; department: string };
-    }) => (
-      <ProfileDisplay
-        name={data.tutor.name}
-        avatar={data.tutor.avatar}
-        department={data.tutor.department}
-      />
-    ),
+    component: ProfileDisplayTutor,
     showSort: true,
     onclick: () => console.log("clicked"),
   },
   {
     key: "student",
     title: "Student Name",
-    component: (data: {
-      student: { name: string; avatar: StaticImageData; department: string };
-    }) => (
-      <ProfileDisplay
-        name={data.student.name}
-        avatar={data.student.avatar}
-        department={data.student.department}
-      />
-    ),
+    component: ProfileDisplayStudent,
     showSort: true,
     onclick: () => console.log("clicked"),
   },
