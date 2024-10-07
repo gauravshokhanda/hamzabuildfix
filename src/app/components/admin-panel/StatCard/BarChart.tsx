@@ -11,26 +11,6 @@ import {
 } from "recharts";
 import { useMediaQuery } from "@mui/material";
 
-const RoundedBar = (props) => {
-  const { fill, x, y, width, height } = props;
-  const radius = 2;
-  return (
-    <path
-      d={`M${x + radius},${y} 
-           L${x + width - radius},${y} 
-           C${x + width},${y} ${x + width},${y + radius} ${x + width},${
-        y + radius
-      } 
-           L${x + width},${y + height} 
-           L${x},${y + height} 
-           L${x},${y + radius} 
-           C${x},${y} ${x + radius},${y} ${x + radius},${y}
-           Z`}
-      fill={fill}
-    />
-  );
-};
-
 const data = [
   {
     name: "Jan",
@@ -167,21 +147,21 @@ const BarChartInsight = () => {
           stackId="a"
           fill="#029CD7"
           barSize={32}
-          shape={RoundedBar}
+          radius={[2, 2, 0, 0]}
         />
         <Bar
           dataKey="uv"
           stackId="a"
           fill="#04B4F8"
           barSize={32}
-          shape={RoundedBar}
+          radius={[2, 2, 0, 0]}
         />
         <Bar
           dataKey="wv"
           stackId="a"
           fill="#9DE4FF"
           barSize={32}
-          shape={RoundedBar}
+          radius={[2, 2, 0, 0]}
         />
       </BarChart>
     </ResponsiveContainer>
