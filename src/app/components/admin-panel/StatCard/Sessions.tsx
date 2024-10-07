@@ -2,7 +2,7 @@
 import AdminContainer from "@/app/components/admin-panel/ui/admin-container";
 import { Text } from "@/app/components/admin-panel/ui/text";
 import AdminTable from "@/app/components/admin-panel/ui/admin-table";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 
 export default function Sessions() {
   return (
