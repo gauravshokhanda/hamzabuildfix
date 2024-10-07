@@ -63,7 +63,7 @@ const tableFormatCert = [
     key: "tutor",
     title: "Tutor Name",
     component: (data: {
-      tutor: { name: String; avatar: StaticImageData; department: String };
+      tutor: { name: string; avatar: StaticImageData; department: string };
     }) => (
       <ProfileDisplay
         name={data.tutor.name}
@@ -78,7 +78,7 @@ const tableFormatCert = [
     key: "student",
     title: "Student Name",
     component: (data: {
-      student: { name: String; avatar: StaticImageData; department: String };
+      student: { name: string; avatar: StaticImageData; department: string };
     }) => (
       <ProfileDisplay
         name={data.student.name}
