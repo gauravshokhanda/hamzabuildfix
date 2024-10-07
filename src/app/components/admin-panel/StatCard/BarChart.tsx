@@ -1,5 +1,5 @@
 "use client";
-import React, { PureComponent } from "react";
+import React from "react";
 import {
   BarChart,
   Bar,
@@ -11,7 +11,7 @@ import {
 } from "recharts";
 import { useMediaQuery } from "@mui/material";
 
-const RoundedBar = (props: any) => {
+const RoundedBar = (props) => {
   const { fill, x, y, width, height } = props;
   const radius = 2;
   return (

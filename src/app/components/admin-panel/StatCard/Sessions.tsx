@@ -2,8 +2,7 @@
 import AdminContainer from "@/app/components/admin-panel/ui/admin-container";
 import { Text } from "@/app/components/admin-panel/ui/text";
 import AdminTable from "@/app/components/admin-panel/ui/admin-table";
-import { Button } from "@/app/components/admin-panel/ui/button";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 export default function Sessions() {
   return (
@@ -64,7 +63,7 @@ const tableFormatCert = [
     key: "tutor",
     title: "Tutor Name",
     component: (data: {
-      tutor: { name: any; avatar: any; department: any };
+      tutor: { name: String; avatar: StaticImageData; department: String };
     }) => (
       <ProfileDisplay
         name={data.tutor.name}
@@ -79,7 +78,7 @@ const tableFormatCert = [
     key: "student",
     title: "Student Name",
     component: (data: {
-      student: { name: any; avatar: any; department: any };
+      student: { name: String; avatar: StaticImageData; department: String };
     }) => (
       <ProfileDisplay
         name={data.student.name}
