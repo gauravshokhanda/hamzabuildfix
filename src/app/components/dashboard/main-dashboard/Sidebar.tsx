@@ -37,7 +37,7 @@ const Sidebar: React.FC = () => {
   ];
 
   return (
-    <div className="bg-white h-screen p-6 flex flex-col border border-r border-[#3F3F441A]">
+    <div className="bg-white h-screen p-6 sticky top-0 w-full flex flex-col border border-r border-[#3F3F441A]">
       <div className="mb-12 text-center">
         <Link href="/">
           <Image
