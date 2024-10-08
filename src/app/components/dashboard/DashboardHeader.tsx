@@ -9,6 +9,11 @@ const DashboardHeader = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const pathname = usePathname();
 
+  // Exclude paths "/dashboard/my-students" and "/dashboard/my-stats"
+  const shouldShowScheduleButton =
+    !pathname.includes("/dashboard/my-students") &&
+    !pathname.includes("/dashboard/my-stats");
+
   return (
     <>
       {isModalOpen && <ScheduleALesson onClose={() => setIsModalOpen(false)} />}
@@ -18,7 +23,7 @@ const DashboardHeader = () => {
           Good Morning, <span className="font-bold">Samantha</span> 😃
         </div>
         <div className="flex items-center gap-4">
-          {!pathname.includes("/dashboard/my-students") && (
+          {shouldShowScheduleButton && (
             <button
               onClick={() => setIsModalOpen(true)}
               className="bg-[#42ABD1] text-white px-6 py-3 rounded-md mr-3"
