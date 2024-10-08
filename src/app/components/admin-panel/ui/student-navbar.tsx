@@ -1,6 +1,6 @@
 import React from "react";
 
-function StudentNavbar({ showExtraButton }: { showExtraButton: JSX.Element }) {
+function StudentNavbar({ showExtraButton }: { showExtraButton?: JSX.Element }) {
   return (
     <div className=" flex justify-between w-full mt-5 flex-wrap gap-3">
       <h2 className=" text-2xl">

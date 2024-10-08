@@ -2,9 +2,10 @@
 import { Button } from "@/app/components/admin-panel/ui/button";
 import StudentNavbar from "@/app/components/admin-panel/ui/student-navbar";
 import TutorReportViewButton from "../components/admin-panel/Student/TutorReportViewButton";
-import { MessageIcon, RecordIcon } from "./recordings/page";
 import clsx from "clsx";
 import Image from "next/image";
+import RecordIcon from "../components/admin-panel/Student/RecordIcon";
+import MessageIcon from "../components/admin-panel/Student/MessageIcon";
 
 export default function Home() {
   return (

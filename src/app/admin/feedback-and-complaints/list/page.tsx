@@ -5,7 +5,7 @@ import AdminTable from "@/app/components/admin-panel/ui/admin-table";
 import { Button } from "@/app/components/admin-panel/ui/button";
 import Searchbar from "@/app/components/admin-panel/ui/Searchbar";
 import { Badge, BadgeProps } from "@/app/components/admin-panel/ui/badge";
-import { Paginations } from "../../content-management/page";
+import Paginations from "@/app/components/admin-panel/Student/Paginations";
 
 export default function Home() {
   return (

@@ -4,16 +4,10 @@ import { Button } from "@/app/components/admin-panel/ui/button";
 import Searchbar from "@/app/components/admin-panel/ui/Searchbar";
 import { default as TabComponent } from "@/app/components/admin-panel/ui/Tabs";
 import BlogCard from "@/app/components/admin-panel/blog/BlogCard";
-import {
-  Pagination,
-  PaginationGap,
-  PaginationList,
-  PaginationNext,
-  PaginationPage,
-  PaginationPrevious,
-} from "@/app/components/admin-panel/ui/pagination";
+
 import { Fragment, useState } from "react";
 import CareerCard from "@/app/components/admin-panel/blog/CareerCard";
+import Paginations from "@/app/components/admin-panel/Student/Paginations";
 
 export default function Home() {
   const [tabIndex, setTabIndex] = useState(0);
@@ -166,29 +160,3 @@ const careers = [
     timing: "Full-time",
   },
 ];
-
-export const Paginations = () => {
-  return (
-    <Pagination>
-      <PaginationPrevious
-        className=" border w-fit text-black pt-3 pb-2 rounded-xl"
-        href="?page=2"
-      />
-      <PaginationList>
-        <PaginationPage href="?page=1">1</PaginationPage>
-        <PaginationPage href="?page=2">2</PaginationPage>
-        <PaginationPage href="?page=3" current>
-          3
-        </PaginationPage>
-        <PaginationGap />
-        <PaginationPage href="?page=8">8</PaginationPage>
-        <PaginationPage href="?page=9">9</PaginationPage>
-        <PaginationPage href="?page=9">10</PaginationPage>
-      </PaginationList>
-      <PaginationNext
-        className=" border w-fit text-black rounded-xl"
-        href="?page=4"
-      />
-    </Pagination>
-  );
-};
