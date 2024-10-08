@@ -5,17 +5,24 @@ function AdminContainer({
   title,
   rightComponent,
   footer,
+  showCount = null,
 }: {
   children: React.ReactNode;
   title: string;
   rightComponent: React.ReactNode;
   footer?: React.ReactNode;
+  showCount?: number | null;
 }) {
   return (
     <div className="md:border rounded-2xl overflow-hidden w-full h-full flex flex-col">
       <div className="flex w-full justify-between p-3 md:p-5 border-b items-center gap-3">
         <h3 className="md:text-xl font-bold text-text_primary">
-          {title}: <span className="text-[#A3D154]">25</span>
+          {title}
+          {showCount && (
+            <>
+              : <span className="text-[#A3D154]">25</span>
+            </>
+          )}
         </h3>
         {rightComponent}
       </div>
