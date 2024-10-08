@@ -1,4 +1,5 @@
 "use client";
+import DashboardHeader from "../components/dashboard/DashboardHeader";
 import Sidebar from "../components/dashboard/main-dashboard/Sidebar";
 
 export default function RootLayout({
@@ -13,7 +14,10 @@ export default function RootLayout({
           <div className="col-span-2">
             <Sidebar />
           </div>
-          <div className="col-span-10">{children}</div>
+          <div className="col-span-10 p-6">
+            <DashboardHeader />
+            {children}
+          </div>
         </div>
       </body>
     </html>
