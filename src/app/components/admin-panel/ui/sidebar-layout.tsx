@@ -3,6 +3,7 @@
 import * as Headless from "@headlessui/react";
 import React, { useState } from "react";
 import { NavbarItem } from "./navbar";
+import useTeacherRoute from "@/hooks/useTeacherRoute";
 
 function OpenMenuIcon() {
   return (
@@ -57,6 +58,7 @@ export function SidebarLayout({
   sidebar: React.ReactNode;
 }>) {
   const [showSidebar, setShowSidebar] = useState(false);
+  const teacherRoute = useTeacherRoute();
 
   return (
     <div className="relative isolate flex min-h-svh w-full bg-white max-lg:flex-col lg:bg-white dark:bg-zinc-900 dark:lg:bg-zinc-950">
@@ -84,7 +86,11 @@ export function SidebarLayout({
           </div>
           <div className="min-w-0 flex-1">{navbar}</div>
         </header>
-        <div className="min-w-0 lg:flex hidden border-b">{navbar}</div>
+        <div
+          className={`min-w-0 lg:flex ${teacherRoute ? "hidden" : "border-b"}`}
+        >
+          {navbar}
+        </div>
         <div className="grow  lg:bg-white lg:p-5 lg:shadow-sm dark:lg:bg-zinc-900 dark:lg:ring-white/10">
           {children}
         </div>
