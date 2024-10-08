@@ -3,9 +3,11 @@
 import React, { useState } from "react";
 import ScheduleALesson from "./main-dashboard/ScheduleALesson";
 import { Bell } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 const DashboardHeader = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <>
@@ -16,12 +18,14 @@ const DashboardHeader = () => {
           Good Morning, <span className="font-bold">Samantha</span> 😃
         </div>
         <div className="flex items-center gap-4">
-          <button
-            onClick={() => setIsModalOpen(true)}
-            className="bg-[#42ABD1] text-white px-6 py-3 rounded-md mr-3"
-          >
-            Schedule a Lesson
-          </button>
+          {!pathname.includes("/dashboard/my-students") && (
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="bg-[#42ABD1] text-white px-6 py-3 rounded-md mr-3"
+            >
+              Schedule a Lesson
+            </button>
+          )}
           <Bell className="text-gray-600" />
         </div>
       </div>

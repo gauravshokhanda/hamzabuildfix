@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import {
   Calendar,
@@ -13,18 +15,25 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import logo from "../../../public/images/logo.png";
+import { usePathname } from "next/navigation";
 
 const Sidebar: React.FC = () => {
+  const pathname = usePathname();
+
   const menuItems = [
-    { icon: LayoutDashboard, label: "Dashboard" },
-    { icon: Calendar, label: "My Schedule" },
-    { icon: GraduationCap, label: "My Students" },
-    { icon: MessageSquareMore, label: "Message" },
-    { icon: Video, label: "Videos" },
-    { icon: ChartLine, label: "My Stats" },
-    { icon: Star, label: "Reviews" },
-    { icon: CreditCard, label: "Payments" },
-    { icon: User, label: "My Accounts" },
+    { icon: LayoutDashboard, label: "Dashboard", link: "/dashboard" },
+    { icon: Calendar, label: "My Schedule", link: "/dashboard/my-schedule" },
+    {
+      icon: GraduationCap,
+      label: "My Students",
+      link: "/dashboard/my-students",
+    },
+    { icon: MessageSquareMore, label: "Message", link: "/dashboard/message" },
+    { icon: Video, label: "Videos", link: "/dashboard/videos" },
+    { icon: ChartLine, label: "My Stats", link: "/dashboard/my-stats" },
+    { icon: Star, label: "Reviews", link: "/dashboard/reviews" },
+    { icon: CreditCard, label: "Payments", link: "/dashboard/payments" },
+    { icon: User, label: "My Accounts", link: "/dashboard/my-accounts" },
   ];
 
   return (
@@ -55,15 +64,17 @@ const Sidebar: React.FC = () => {
         <ul className="space-y-2">
           {menuItems.map((item, index) => (
             <li key={index}>
-              <a
-                href="#"
+              <Link
+                href={item.link}
                 className={`flex items-center gap-4 p-3 rounded-lg ${
-                  index === 0 ? "bg-[#A3D154] text-white" : "text-[#3F3F44]"
+                  item.link === pathname
+                    ? "bg-[#A3D154] text-white"
+                    : "text-[#3F3F44]"
                 }`}
               >
                 <item.icon size={20} />
                 <span>{item.label}</span>
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

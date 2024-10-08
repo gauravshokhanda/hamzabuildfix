@@ -10,7 +10,6 @@ import DashboardHeader from "../DashboardHeader";
 const MainDashboard: React.FC = () => {
   return (
     <>
-      <DashboardHeader />
       <div className="grid grid-cols-12 gap-6">
         <div className="col-span-4">
           <div className="relative h-full overflow-hidden rounded-lg shadow-xl">
