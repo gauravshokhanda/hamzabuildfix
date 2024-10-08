@@ -9,7 +9,7 @@ import career3 from "../public/images/career/career3.svg";
 
 export default function Hero() {
   return (
-    <div className=" bg-background_blue p-4">
+    <div className=" bg-background_blue px-4 pt-4 pb-20">
       <div className="relative py-36 md:py-40 max-w-screen-xl m-auto rounded-xl overflow-hidden">
         <Image
           className="absolute left-0 top-0 w-full h-full object-cover"
