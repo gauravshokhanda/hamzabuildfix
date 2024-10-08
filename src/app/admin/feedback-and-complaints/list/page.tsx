@@ -4,7 +4,6 @@ import { Text } from "@/app/components/admin-panel/ui/text";
 import AdminTable from "@/app/components/admin-panel/ui/admin-table";
 import { Button } from "@/app/components/admin-panel/ui/button";
 import Searchbar from "@/app/components/admin-panel/ui/Searchbar";
-import Image from "next/image";
 import { Badge, BadgeProps } from "@/app/components/admin-panel/ui/badge";
 import { Paginations } from "../../content-management/page";
 

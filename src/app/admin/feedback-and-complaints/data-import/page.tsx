@@ -1,8 +1,6 @@
 "use client";
 import clsx from "clsx";
 import { useState } from "react";
-import { PaperAirplaneIcon } from "@heroicons/react/20/solid";
-import Image from "next/image";
 import { Button } from "@/app/components/admin-panel/ui/button";
 
 export default function Home() {
@@ -24,17 +22,17 @@ export default function Home() {
             Export your files for backup to cloud for safe use.
           </p>
         </div>
-        <div className=" flex gap-2">
+        <div className=" flex gap-2 text-sm">
           <Button
             outline
-            className=" text-[#000] cursor-pointer border-text_secondary md:text-base text-sm"
+            className=" !text-[#000] cursor-pointer border-text_secondary !py-2"
           >
             <DownloadIcon />
             Download Data
           </Button>
           <Button
             color="button_primary"
-            className=" bg-secondary cursor-pointer md:text-base text-sm"
+            className=" bg-secondary cursor-pointer !py-2"
           >
             <PlusIcon />
             Backup now
@@ -47,30 +45,31 @@ export default function Home() {
 }
 
 const FileManage = () => {
-  const [files, setFiles] = useState<File[] | null>([]);
+  const [files, setFiles] = useState<File[]>([]); // Changed to File[] to avoid null state
 
   const handleFile = (e: React.ChangeEvent<HTMLInputElement>) => {
-    // @ts-ignore - TS doesn't know about files
+    // @ts-expect-error - TS doesn't know about files
     const file = e.target.files[0];
     setFiles((prev) => {
-      return [...(prev || []), file];
+      return [...prev, file]; // Removed the null check since it defaults to an empty array
     });
   };
+
   return (
-    <div className=" w-full flex flex-col gap-4 items-center justify-center max-w-[512px]">
+    <div className="w-full flex flex-col gap-4 items-center justify-center max-w-[512px]">
       <input type="file" onChange={handleFile} className="hidden" id="file" />
       <label
         htmlFor="file"
         className="cursor-pointer flex flex-col mt-4 py-4 gap-4 items-center justify-center w-full border border-dashed rounded-2xl"
       >
-        <div className=" bg-[#F2F4F75f] p-2 rounded-full flex items-center justify-center">
-          <div className=" bg-[#F2F4F7] p-2 rounded-full flex items-center justify-center">
+        <div className="bg-[#F2F4F75f] p-2 rounded-full flex items-center justify-center">
+          <div className="bg-[#F2F4F7] p-2 rounded-full flex items-center justify-center">
             <UploadIcon />
           </div>
         </div>
         <div>
           <p className="text-text_secondary">
-            <span className=" text-secondary font-semibold pr-2">
+            <span className="text-secondary font-semibold pr-2">
               Click to upload
             </span>
             or drag and drop
@@ -80,20 +79,17 @@ const FileManage = () => {
           </p>
         </div>
       </label>
-      {files &&
-        files.map((file, index) => (
-          <FileCard
-            file={file}
-            progress={index === 0 ? 100 : Math.floor(Math.random() * 100)}
-            size={file.size}
-            removeFile={() => {
-              setFiles((prev) => {
-                if (!prev) return null;
-                return prev?.filter((f) => f !== file);
-              });
-            }}
-          />
-        ))}
+      {files.map((file, index) => (
+        <FileCard
+          key={file.name} // Add a unique key prop
+          file={file}
+          progress={index === 0 ? 100 : Math.floor(Math.random() * 100)}
+          size={file.size}
+          removeFile={() => {
+            setFiles((prev) => prev.filter((f) => f !== file));
+          }}
+        />
+      ))}
     </div>
   );
 };

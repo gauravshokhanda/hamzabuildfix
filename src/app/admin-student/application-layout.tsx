@@ -10,11 +10,7 @@ import {
   DropdownLabel,
   DropdownMenu,
 } from "@/app/components/admin-panel/ui/dropdown";
-import {
-  Navbar,
-  NavbarItem,
-  NavbarSection,
-} from "@/app/components/admin-panel/ui/navbar";
+import { NavbarItem } from "@/app/components/admin-panel/ui/navbar";
 import {
   Sidebar,
   SidebarBody,
@@ -35,16 +31,12 @@ import {
 import {
   UserIcon,
   ClockIcon,
-  ChatBubbleOvalLeftIcon,
-  PlusCircleIcon,
-  ChartPieIcon,
   ChartBarSquareIcon,
   Squares2X2Icon,
 } from "@heroicons/react/20/solid";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import Searchbar from "@/app/components/admin-panel/ui/Searchbar";
 import { PencilIcon } from "@heroicons/react/16/solid";
 
 function AccountDropdownMenu({
@@ -81,41 +73,7 @@ export function ApplicationLayout({ children }: { children: React.ReactNode }) {
 
   return (
     <SidebarLayout
-      navbar={
-        <Navbar className=" h-[87px] ">
-          {/* <NavbarSpacer /> */}
-          <NavbarSection>
-            <div className=" flex items-center w-full justify-between px-5">
-              <p className=" text-xl text-primary hidden md:block">
-                {/* @ts-expect-error - pathnameNames does not contain all routes, fallback needed */}
-                {pathnameNames[pathname]}
-              </p>
-              <Searchbar />
-              <div className=" flex items-center gap-4">
-                <div className=" hidden md:flex">
-                  <LanguageChanger />
-                </div>
-                <Dropdown>
-                  <DropdownButton className="shrink-0" as={NavbarItem}>
-                    <Image
-                      src="https://images.unsplash.com/photo-1726809448984-2e7f60cc6e97?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                      width={44}
-                      height={44}
-                      alt="Admin profile image"
-                      className="w-[44px] h-[44px] shrink-0 border rounded-full"
-                    />
-                    <div className="hidden lg:block">
-                      <p className="text-sm">Hamza</p>
-                      <p className="text-xs text-text_secondary">Admin</p>
-                    </div>
-                  </DropdownButton>
-                  <AccountDropdownMenu anchor="bottom end" />
-                </Dropdown>
-              </div>
-            </div>
-          </NavbarSection>
-        </Navbar>
-      }
+      navbar={<></>}
       sidebar={
         <Sidebar className="relative">
           <SidebarHeader className="w-full flex items-center justify-center font-medium">
@@ -125,66 +83,80 @@ export function ApplicationLayout({ children }: { children: React.ReactNode }) {
           </SidebarHeader>
 
           <SidebarBody>
-            <SidebarSection>
-              <SidebarItem href="/admin-student" current={pathname === "/admin-student"}>
+            <Dropdown>
+              <DropdownButton
+                className="shrink-0 mb-4 rounded-2xl  bg-[#F7F7F7]"
+                as={NavbarItem}
+              >
+                <div className=" flex items-center justify-between w-full gap-2">
+                  <Image
+                    src="https://images.unsplash.com/photo-1726809448984-2e7f60cc6e97?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    width={44}
+                    height={44}
+                    alt="Admin profile image"
+                    className="w-[44px] h-[44px] shrink-0 border rounded-full"
+                  />
+                  <div className=" lg:block">
+                    <p className="text-sm">Hamza</p>
+                    <p className="text-xs text-text_secondary">Student</p>
+                  </div>
+                  <ChevronDownIcon className=" w-5 h-5 text-text_secondary" />
+                </div>
+              </DropdownButton>
+              <AccountDropdownMenu anchor="bottom end" />
+            </Dropdown>
+            <SidebarSection className=" border-t pt-3">
+              <SidebarItem
+                href="/admin-student"
+                bgColor="bg-secondary"
+                current={pathname === "/admin-student"}
+              >
                 <Squares2X2Icon />
                 <SidebarLabel>Dashboard</SidebarLabel>
               </SidebarItem>
               <SidebarItem
-                href="/admin-student/tutor-management"
-                current={pathname.startsWith("/admin-student/tutor-management")}
+                href="/admin-student/recordings"
+                bgColor="bg-secondary"
+                current={pathname.startsWith("/admin-student/recordings")}
               >
                 <UserIcon />
-                <SidebarLabel>Tutor Management</SidebarLabel>
+                <SidebarLabel>Recordings</SidebarLabel>
               </SidebarItem>
               <SidebarItem
-                href="/admin-student/content-management"
-                current={pathname.startsWith("/admin-student/content-management")}
+                href="/admin-student/find-a-tutor"
+                bgColor="bg-secondary"
+                current={pathname.startsWith("/admin-student/find-a-tutor")}
               >
                 <PencilIcon />
-                <SidebarLabel>Content Management</SidebarLabel>
+                <SidebarLabel>Find a Tutor</SidebarLabel>
               </SidebarItem>
               <SidebarItem
                 href="/admin-student/session-oversight"
-                current={pathname.startsWith("/admin-student/session-oversight")}
+                bgColor="bg-secondary"
+                current={pathname.startsWith(
+                  "/admin-student/session-oversight"
+                )}
               >
                 <ClockIcon />
-                <SidebarLabel>Session Oversight</SidebarLabel>
+                <SidebarLabel>Message</SidebarLabel>
               </SidebarItem>
               <SidebarItem
                 href="/admin-student/user-interaction"
+                bgColor="bg-secondary"
                 current={pathname.startsWith("/admin-student/user-interaction")}
               >
                 <UserCircleIcon />
-                <SidebarLabel>User Interaction</SidebarLabel>
+                <SidebarLabel>Payments</SidebarLabel>
               </SidebarItem>
               <SidebarItem
                 href="/admin-student/insights-and-reporting"
-                current={pathname.startsWith("/admin-student/insights-and-reporting")}
+                bgColor="bg-secondary"
+                current={pathname.startsWith(
+                  "/admin-student/insights-and-reporting"
+                )}
               >
                 <ChartBarSquareIcon />
-                <SidebarLabel>Insights & Reporting</SidebarLabel>
-              </SidebarItem>
-              <SidebarItem
-                href="/admin-student/analytic-dashboard"
-                current={pathname.startsWith("/admin-student/analytic-dashboard")}
-              >
-                <ChartPieIcon />
-                <SidebarLabel>Analytic Dashboard</SidebarLabel>
-              </SidebarItem>
-              <SidebarItem
-                href="/admin-student/feedback-and-complaints"
-                current={pathname.startsWith("/admin-student/feedback-and-complaints")}
-              >
-                <ChatBubbleOvalLeftIcon />
-                <SidebarLabel>Feedback & Complaints</SidebarLabel>
-              </SidebarItem>
-              <SidebarItem
-                href="/admin-student/data-export-and-import"
-                current={pathname.startsWith("/admin-student/data-export-and-import")}
-              >
-                <PlusCircleIcon />
-                <SidebarLabel>Data Export and Import</SidebarLabel>
+                <SidebarLabel>Resource Center</SidebarLabel>
               </SidebarItem>
             </SidebarSection>
 
@@ -200,13 +172,6 @@ export function ApplicationLayout({ children }: { children: React.ReactNode }) {
     </SidebarLayout>
   );
 }
-
-const pathnameNames = {
-  "/admin-student/tutor-management": "Tutor Management",
-  "/admin-student/content-creation": "Content Creation",
-  "/admin-student/feedback-and-complaints": "Feedback & Complaints",
-  "/admin-student/user-interation": "User Interaction",
-};
 
 const LanguageChanger = () => {
   return (

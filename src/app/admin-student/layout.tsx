@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type React from "react";
 import { ApplicationLayout } from "./application-layout";
+import 'react-range-slider-input/dist/style.css';
 
 export const metadata: Metadata = {
   title: {

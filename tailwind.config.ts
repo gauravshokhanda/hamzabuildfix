@@ -18,6 +18,7 @@ const config: Config = {
         text_primary: "#3A5377",
         text_secondary: "#66797C",
         button_primary: "#00adef",
+        admin_button: "#1294F2"
       },
       backgroundImage: {
         'reviewLeft': "url('./public/images/landing-page/left-review.png')",
