@@ -1,6 +1,7 @@
 import React from "react";
 import { IoLocationSharp } from "react-icons/io5";
 import { FaCalendar } from "react-icons/fa";
+import Link from "next/link";
 interface obProp {
   location: string;
   name: string;
@@ -39,9 +40,12 @@ export default function Jobs() {
               <FaCalendar />
               {date}
             </div>
-            <button className=" bg-[#20bfa9] px-4 text-white text-sm py-2 rounded-md">
+            <Link
+              href="/career-apply"
+              className=" bg-[#20bfa9] px-4 text-white text-sm py-2 rounded-md"
+            >
               Apply Now
-            </button>
+            </Link>
           </div>
         </div>
       ))}
