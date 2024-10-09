@@ -3,6 +3,7 @@ import Heading from "../components/Heading";
 
 import { blogCardData } from "./blog-data";
 import Image from "next/image";
+import Pagination from "../components/Pagination";
 
 export default function People() {
   return (
@@ -14,11 +15,13 @@ export default function People() {
             title="We help people solving their finance problems smartly."
           />
         </div>
-        <div className=" grid grid-cols-1 gap-6 mt-10 md:grid-cols-2 lg:grid-cols-3 md:px-14">
+        <div className=" grid grid-cols-1 gap-6 mt-10 md:grid-cols-2 lg:grid-cols-3 md:px-14 mb-10">
           {blogCardData.map((card, idx) => (
             <PeopoleCard key={idx} {...card} />
           ))}
         </div>
+
+        <Pagination />
       </div>
     </div>
   );

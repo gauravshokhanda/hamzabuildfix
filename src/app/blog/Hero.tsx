@@ -3,7 +3,7 @@ import blogHeroImage from "../public/images/blog/blog-video.svg";
 import Image from "next/image";
 export default function Hero() {
   return (
-    <div className=" flex lg:flex-row flex-col bg-primary max-w-screen-2xl m-auto">
+    <div className=" flex lg:flex-row flex-col bg-primary">
       <div className="  text-white px-10 md:px-20 py-20 my-auto basis-1/2">
         <h1 className=" text-xl md:text-4xl mb-10 tracking-tighter max-w-xs md:max-w-max">
           “It was super easy to share my unique concept. I got exactly what I
@@ -18,7 +18,11 @@ export default function Hero() {
         </div>
       </div>
       <div className="basis-1/2">
-        <Image src={blogHeroImage} alt="hero blog" />
+        <Image
+          className=" w-full h-full object-cover"
+          src={blogHeroImage}
+          alt="hero blog"
+        />
       </div>
     </div>
   );

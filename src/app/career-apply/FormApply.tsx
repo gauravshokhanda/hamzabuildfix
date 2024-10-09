@@ -5,12 +5,12 @@ export default function FormApply() {
         apply for this job
       </div>
       <div className=" max-w-screen-md m-auto py-20 px-4">
-        <form className=" p-6 bg-white shadow-md rounded-md">
+        <form className=" p-6 bg-white rounded-md">
           {/* First Name and Last Name */}
           <div className="flex gap-4 mb-4">
             <div className="w-1/2">
               <label
-                className="block text-gray-700 font-bold mb-2"
+                className="block text-[#66797c] font-bold mb-2"
                 htmlFor="firstName"
               >
                 First Name
@@ -25,7 +25,7 @@ export default function FormApply() {
             </div>
             <div className="w-1/2">
               <label
-                className="block text-gray-700 font-bold mb-2"
+                className="block text-[#66797c] font-bold mb-2"
                 htmlFor="lastName"
               >
                 Last Name
@@ -43,7 +43,7 @@ export default function FormApply() {
           {/* Email */}
           <div className="mb-4">
             <label
-              className="block text-gray-700 font-bold mb-2"
+              className="block text-[#66797c] font-bold mb-2"
               htmlFor="email"
             >
               Email
@@ -59,7 +59,7 @@ export default function FormApply() {
           <div className=" flex gap-4 mb-4 ">
             <div className="w-1/2">
               <label
-                className="block text-gray-700 font-bold mb-2"
+                className="block text-[#66797c] font-bold mb-2"
                 htmlFor="gender"
               >
                 Gender
@@ -78,7 +78,7 @@ export default function FormApply() {
             {/* Location */}
             <div className="w-1/2">
               <label
-                className="block text-gray-700 font-bold mb-2"
+                className="block text-[#66797c] font-bold mb-2"
                 htmlFor="location"
               >
                 Location
@@ -97,10 +97,11 @@ export default function FormApply() {
           {/* Target Base Salary */}
           <div className="mb-4">
             <label
-              className="block text-gray-700 font-bold mb-2"
+              className="block text-[#66797c] font-bold mb-2"
               htmlFor="salary"
             >
-              What is your target base salary for this role?
+              What is your target base salary for this role?{" "}
+              <span className=" text-red-600">*</span>
             </label>
             <input
               className="w-full px-3 py-2 border border-gray/35 rounded-md focus:outline-none  "
@@ -114,12 +115,19 @@ export default function FormApply() {
           {/* File Upload */}
           <div className="mb-4">
             <label
-              className="block text-gray-700 font-bold mb-2"
+              className="block text-[#66797c] font-bold mb-2"
               htmlFor="file"
             >
-              Upload Resume
+              Resume <span className=" text-red-600">*</span>
             </label>
-            <button type="button" className=" font-bold py-2 px-4 rounded">
+            <p className=" text-[#a1a1a1">
+              Attach resume as .pdf, .doc, .docx, .odt, .txt, or .rtf (limit
+              5MB) or paste resume
+            </p>
+            <button
+              type="button"
+              className=" font-bold py-2 px-4  bg-[#efefef] text-[#707070] mt-4 rounded-md"
+            >
               Choose File
             </button>
           </div>

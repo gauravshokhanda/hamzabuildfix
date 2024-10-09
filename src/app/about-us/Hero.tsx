@@ -1,6 +1,10 @@
 import React from "react";
 import imageHero from "../public/images/about-us/aboutus-hero.png";
 import Image from "next/image";
+import { TfiEmail } from "react-icons/tfi";
+import { FaInstagram } from "react-icons/fa6";
+import { RiFacebookCircleLine } from "react-icons/ri";
+import { PiTwitterLogo } from "react-icons/pi";
 
 export default function Hero() {
   return (
@@ -26,7 +30,33 @@ export default function Hero() {
             Explore More
           </button>
         </div>
+        <div className=" absolute -right-32 top-1/2  rotate-90 -translate-y-1/2  flex-col md:flex-row items-center gap-3 md:gap-6 hidden md:flex ">
+          <div className=" flex gap-3 text-[#39c6ff]">
+            <Icon>
+              <PiTwitterLogo />
+            </Icon>
+
+            <Icon>
+              <RiFacebookCircleLine />
+            </Icon>
+            <Icon>
+              <FaInstagram />
+            </Icon>
+          </div>
+          <div className=" flex items-center text-white gap-2">
+            <TfiEmail />
+            <span>myjourney@email.com</span>
+          </div>
+        </div>
       </div>
     </div>
+  );
+}
+
+function Icon({ children }: { children: React.ReactElement }) {
+  return (
+    <button className=" w-8 h-8 backdrop-blur rounded-lg text-2xl flex justify-center items-center">
+      {children}
+    </button>
   );
 }
