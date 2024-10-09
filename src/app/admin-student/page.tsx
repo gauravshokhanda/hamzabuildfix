@@ -6,6 +6,7 @@ import clsx from "clsx";
 import Image from "next/image";
 import RecordIcon from "../components/admin-panel/Student/RecordIcon";
 import MessageIcon from "../components/admin-panel/Student/MessageIcon";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -65,9 +66,12 @@ const LessonCard = ({ level }: { level: string }) => {
         </ul>
       </div>
       <div className="flex flex-col justify-between items-center gap-1">
-        <button className="text-secondary font-medium text-[10px]">
+        <Link
+          href={`/admin-student/upcoming-lesson-details`}
+          className="text-secondary font-medium text-[10px]"
+        >
           Details
-        </button>
+        </Link>
         <Button
           color="button_primary"
           className="bg-primary text-white w-full md:py-1 !rounded-lg !text-xs"

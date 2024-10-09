@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button } from "../ui/button";
 import TutorProfile from "./TutorProfile";
+import { motion } from "framer-motion";
 
 function TeacherProfileModal() {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,6 +14,12 @@ function TeacherProfileModal() {
     setIsOpen(true);
   }
 
+  const slideInAnimation = {
+    hidden: { x: "100%" },
+    visible: { x: 0 },
+    exit: { x: "100%" },
+  };
+
   return (
     <>
       <Button
@@ -24,7 +31,14 @@ function TeacherProfileModal() {
       </Button>
       {isOpen && (
         <div className="fixed top-0 right-0 w-full h-screen bg-gray-900 bg-opacity-50 z-50 flex items-start justify-end">
-          <div className="max-w-[616px] w-full relative">
+          <motion.div
+            className="max-w-[616px] w-full relative"
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            variants={slideInAnimation}
+          >
             <TutorProfile />
             <button
               onClick={closeModal}
@@ -32,7 +46,7 @@ function TeacherProfileModal() {
             >
               {CircleIcon}
             </button>
-          </div>
+          </motion.div>
         </div>
       )}
     </>
