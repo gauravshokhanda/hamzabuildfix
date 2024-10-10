@@ -9,6 +9,7 @@ const nextConfig = {
             "images.pexels.com",
             "images.unsplash.com",
             "plus.unsplash.com",
+            "placehold.co",
         ]
     },
 

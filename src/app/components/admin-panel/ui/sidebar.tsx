@@ -128,9 +128,15 @@ export const SidebarItem = forwardRef(function SidebarItem(
   {
     current,
     className,
+    bgColor = "bg-primary",
     children,
     ...props
-  }: { current?: boolean; className?: string; children: React.ReactNode } & (
+  }: {
+    current?: boolean;
+    className?: string;
+    children: React.ReactNode;
+    bgColor?: string;
+  } & (
     | Omit<Headless.ButtonProps, "as" | "className">
     | Omit<React.ComponentPropsWithoutRef<typeof Link>, "type" | "className">
   ),
@@ -159,7 +165,7 @@ export const SidebarItem = forwardRef(function SidebarItem(
     "dark:data-[hover]:bg-white/5 dark:data-[slot=icon]:*:data-[hover]:fill-white",
     "dark:data-[active]:bg-white/5 dark:data-[slot=icon]:*:data-[active]:fill-white",
     "dark:data-[slot=icon]:*:data-[current]:fill-white",
-    current && "bg-primary text-white dark:bg-primary/5 dark:text-primary"
+    current && `${bgColor} text-white dark:bg-primary/5 dark:text-primary`
   );
 
   return (

@@ -118,8 +118,8 @@ export const NavbarItem = forwardRef(function NavbarItem(
       ) : (
         <Headless.Button
           {...props}
-          className={clsx("cursor-default", classes)}
-          data-current={current ? "true" : undefined}
+          className={clsx('cursor-default w-full', classes)}
+          data-current={current ? 'true' : undefined}
           ref={ref}
         >
           <TouchTarget>{children}</TouchTarget>
