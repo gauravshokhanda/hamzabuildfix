@@ -33,18 +33,9 @@ const StudentsTable = () => {
 
       <h2 className="text-2xl mt-16 mb-5">All Students</h2>
 
-      <div className="overflow-x-auto shadow-xl p-6">
-        <table className="w-full table-fixed">
-          <colgroup>
-            <col className="w-[20%]" /> {/* Student column */}
-            <col className="w-[20%]" /> {/* Actions column */}
-            <col className="w-[10%]" /> {/* Date column */}
-            <col className="w-[10%]" /> {/* Time column */}
-            <col className="w-[10%]" /> {/* Duration column */}
-            <col className="w-[10%]" /> {/* Subject column */}
-            <col className="w-[25%]" /> {/* Notes column */}
-          </colgroup>
-          <thead>
+      <div className="overflow-x-auto shadow-xl p-2 xl:p-6">
+        <table className="w-full table-auto xl:table-fixed">
+          <thead className="hidden xl:table-header-group">
             <tr className="bg-[#F7F7F7]">
               <th className="py-2 px-4 text-left font-medium text-[#3F3F4480] rounded-l-full">
                 Student
@@ -71,8 +62,11 @@ const StudentsTable = () => {
           </thead>
           <tbody>
             {students.map((student, index) => (
-              <tr key={index} className="border-b border-gray-200">
-                <td className="py-2 px-4">
+              <tr
+                key={index}
+                className="border-b border-gray-200 xl:table-row flex flex-col mb-4 xl:mb-0"
+              >
+                <td className="py-2 px-4 flex items-center xl:table-cell">
                   <div className="flex items-center">
                     <Image
                       src={logo}
@@ -84,7 +78,7 @@ const StudentsTable = () => {
                     <span className="truncate">{student.name}</span>
                   </div>
                 </td>
-                <td className="py-2 px-4">
+                <td className="py-2 px-4 xl:table-cell">
                   <button
                     onClick={() => setIsNotesModalOpen(true)}
                     className="border border-[#42ABD1] text-[#42ABD1] px-3 py-1 rounded-md text-sm mr-2 mb-1"
@@ -98,11 +92,24 @@ const StudentsTable = () => {
                     Reports
                   </button>
                 </td>
-                <td className="py-2 px-4">12-03-24</td>
-                <td className="py-2 px-4">12:23 pm</td>
-                <td className="py-2 px-4">3 hrs 12 min</td>
-                <td className="py-2 px-4">{student.subject}</td>
-                <td className="py-2 px-4 text-gray-500">
+                <td className="py-2 px-4 xl:table-cell">
+                  <span className="xl:hidden font-medium mr-2">Date:</span>
+                  12-03-24
+                </td>
+                <td className="py-2 px-4 xl:table-cell">
+                  <span className="xl:hidden font-medium mr-2">Time:</span>
+                  12:23 pm
+                </td>
+                <td className="py-2 px-4 xl:table-cell">
+                  <span className="xl:hidden font-medium mr-2">Duration:</span>3
+                  hrs 12 min
+                </td>
+                <td className="py-2 px-4 xl:table-cell">
+                  <span className="xl:hidden font-medium mr-2">Subject:</span>
+                  {student.subject}
+                </td>
+                <td className="py-2 px-4 text-gray-500 xl:table-cell">
+                  <span className="xl:hidden font-medium mr-2">Notes:</span>
                   <div className="break-words">
                     Lorem ipsum dolor sit amet is a dummy text used in printing
                     industry...

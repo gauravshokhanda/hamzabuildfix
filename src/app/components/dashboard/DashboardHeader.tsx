@@ -19,7 +19,7 @@ const DashboardHeader = () => {
       {isModalOpen && <ScheduleALesson onClose={() => setIsModalOpen(false)} />}
 
       <div className="flex justify-between items-center mb-6">
-        <div className="text-2xl">
+        <div className="text-xl lg:text-2xl">
           Good Morning, <span className="font-bold">Samantha</span> 😃
         </div>
         <div className="flex items-center gap-4">

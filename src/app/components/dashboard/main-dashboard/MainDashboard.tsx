@@ -5,13 +5,13 @@ import { Book, Clock, MessageSquare, TrendingUp, Video } from "lucide-react";
 import Image from "next/image";
 import logo from "../../../public/images/logo.png";
 import DashboardPNG from "../../../public/images/main-dashboard/dashboard.jpeg";
-import DashboardHeader from "../DashboardHeader";
 
 const MainDashboard: React.FC = () => {
   return (
     <>
-      <div className="grid grid-cols-12 gap-6">
-        <div className="col-span-4">
+      <div className="grid grid-cols-1 xl:grid-cols-12 gap-6">
+        {/* BIO Session */}
+        <div className="col-span-1 xl:col-span-4">
           <div className="relative h-full overflow-hidden rounded-lg shadow-xl">
             <Image
               src={DashboardPNG}
@@ -24,7 +24,9 @@ const MainDashboard: React.FC = () => {
               <h2 className="text-xl font-semibold mb-2">
                 Your BIO Session will begin in
               </h2>
-              <div className="text-6xl font-bold mb-2">00:12:58</div>
+              <div className="text-4xl xl:text-6xl font-bold mb-2">
+                00:12:58
+              </div>
               <p className="mb-4">45 min session</p>
               <button className="text-white bg-[#A3D154] px-4 py-2 mx-auto rounded-md flex items-center gap-2">
                 <Video />
@@ -34,7 +36,8 @@ const MainDashboard: React.FC = () => {
           </div>
         </div>
 
-        <div className="col-span-4">
+        {/* Upcoming Lessons */}
+        <div className="col-span-1 xl:col-span-4">
           <div className="bg-white p-6 rounded-lg shadow-md h-full">
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-xl text-[#42ABD1] font-semibold">
@@ -66,14 +69,15 @@ const MainDashboard: React.FC = () => {
           </div>
         </div>
 
-        <div className="col-span-4">
+        {/* Earnings */}
+        <div className="col-span-1 xl:col-span-4">
           <div className="bg-white rounded-lg shadow-md h-full">
             <div className="p-6">
               <div className="flex justify-between items-center mb-8">
                 <h2 className="text-2xl text-[#66797C]">Your Earnings</h2>
                 <TrendingUp className="text-black" />
               </div>
-              <div className="flex justify-between">
+              <div className="flex flex-col xl:flex-row justify-between">
                 <div>
                   <p className="text-xl text-gray-600">Today Earning</p>
                   <p className="text-4xl text-[#3F3F44]">$15,010</p>
@@ -101,6 +105,7 @@ const MainDashboard: React.FC = () => {
         </div>
       </div>
 
+      {/* Lesson Requests */}
       <div className="mt-6 shadow-md rounded-lg p-4">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-xl text-[#66797C] font-semibold">
@@ -110,7 +115,7 @@ const MainDashboard: React.FC = () => {
             View All
           </a>
         </div>
-        <div className="grid grid-cols-3 gap-36">
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 xl:gap-36">
           {[1, 2, 3].map((_, index) => (
             <div key={index} className="bg-white rounded-lg p-4 shadow-md">
               <div className="flex justify-between items-start mb-2">
