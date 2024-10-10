@@ -77,7 +77,7 @@ const MainDashboard: React.FC = () => {
                 <h2 className="text-2xl text-[#66797C]">Your Earnings</h2>
                 <TrendingUp className="text-black" />
               </div>
-              <div className="flex flex-col xl:flex-row justify-between">
+              <div className="flex flex-col gap-2 xl:gap-0 xl:flex-row justify-between">
                 <div>
                   <p className="text-xl text-gray-600">Today Earning</p>
                   <p className="text-4xl text-[#3F3F44]">$15,010</p>
@@ -143,7 +143,7 @@ const MainDashboard: React.FC = () => {
                     <Clock color="#A3D154" size={20} /> 23 hrs
                   </div>
                 </div>
-                <p className="text-3xl text-[#3F3F44] mb-2">$257</p>
+                <p className="text-xl md:text-3xl text-[#3F3F44] mb-2">$257</p>
               </div>
               <div className="flex gap-2">
                 <button className="flex-1 bg-[#DCF6AF] text-[#3F3F44] py-1 rounded-full text-sm">
