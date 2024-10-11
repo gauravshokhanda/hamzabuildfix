@@ -5,7 +5,6 @@ import Navbar from "./components/navbar/Navbar";
 
 import { usePathname } from "next/navigation";
 
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -15,12 +14,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-
+        {/* Conditionally render the Navbar */}
         {!pathname.includes("/dashboard") && <Navbar />}
-
-        <Navbar />
-
+        
         {children}
+        
+        {/* Conditionally render the Footer */}
         {!pathname.includes("/dashboard") && <Footer />}
       </body>
     </html>
