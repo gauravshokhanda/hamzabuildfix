@@ -6,18 +6,15 @@ import Image from "next/image";
 import Button from "../Button";
 import NavItem from "./NavItem";
 import Dropdown from "./DropDown";
-import useAdminRoute from "@/hooks/useAdminRoute";
-import useTeacherRoute from "@/hooks/useTeacherRoute";
 
 const Navbar = () => {
-  const adminRoute = useAdminRoute();
-  const teacherRoute = useTeacherRoute();
   const [isOpen, setIsOpen] = useState(false);
-  const menuRef = useRef<HTMLDivElement>(null);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -33,14 +30,10 @@ const Navbar = () => {
     };
   }, []);
 
-  if (adminRoute || teacherRoute) {
-    return null;
-  }
-
   return (
     <nav className="bg-white border-b shadow-md relative z-50">
       <div className="mx-auto px-4 md:px-10">
-        <div className="flex py-2 justify-between items-center">
+        <div className="flex py-2  justify-between items-center">
           <div className="flex">
             <div className="flex-shrink-0 flex items-center">
               <Link href="/">
@@ -49,10 +42,10 @@ const Navbar = () => {
             </div>
           </div>
 
-          <div className="hidden md:block lg:pl-14">
+          <div className="hidden md:block lg:pl-14 ">
             <div className="ml-6 flex items-baseline space space-x-4 lg:space-x-6">
               <NavItem label="Home" link="/" />
-              <NavItem label="About Us" link="/aboutus" />
+              <NavItem label="About Us" link="/about-us" />
               <NavItem label="Find a tutor" link="#" />
 
               <Dropdown
@@ -117,7 +110,7 @@ const Navbar = () => {
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           <div className="flex flex-col">
             <NavItem label="Home" link="/" />
-            <NavItem label="About Us" link="/aboutus" />
+            <NavItem label="About Us" link="/about-us" />
             <NavItem label="Find a tutor" link="#" />
           </div>
           <div className="flex flex-col md:ml-6 space-y-2">
