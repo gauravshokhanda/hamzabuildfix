@@ -2,7 +2,9 @@
 import "./globals.css";
 import Footer from "./components/footer";
 import Navbar from "./components/navbar/Navbar";
+
 import { usePathname } from "next/navigation";
+
 
 export default function RootLayout({
   children,
@@ -13,7 +15,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+
         {!pathname.includes("/dashboard") && <Navbar />}
+
+        <Navbar />
+
         {children}
         {!pathname.includes("/dashboard") && <Footer />}
       </body>
