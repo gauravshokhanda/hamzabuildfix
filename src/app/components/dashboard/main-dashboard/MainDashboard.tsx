@@ -52,6 +52,7 @@ const MainDashboard: React.FC = () => {
                 <div key={index} className="flex items-center gap-4">
                   <Image
                     src={logo}
+                    alt="Logo"
                     width={512}
                     height={512}
                     className="w-12 h-12 bg-gray-200 rounded-full"
