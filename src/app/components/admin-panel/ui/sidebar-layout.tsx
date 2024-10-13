@@ -4,6 +4,7 @@ import * as Headless from "@headlessui/react";
 import React, { useState } from "react";
 import { NavbarItem } from "./navbar";
 import useTeacherRoute from "@/hooks/useTeacherRoute";
+import useStudentRoute from "@/hooks/useStudentRoute";
 
 function OpenMenuIcon() {
   return (
@@ -59,6 +60,7 @@ export function SidebarLayout({
 }>) {
   const [showSidebar, setShowSidebar] = useState(false);
   const teacherRoute = useTeacherRoute();
+  const studentRoute = useStudentRoute();
 
   return (
     <div className="relative isolate flex min-h-svh w-full bg-white max-lg:flex-col lg:bg-white dark:bg-zinc-900 dark:lg:bg-zinc-950">
@@ -75,7 +77,7 @@ export function SidebarLayout({
       {/* Content */}
       <main className="flex flex-1 flex-col lg:min-w-0 lg:pl-64">
         {/* Navbar on mobile */}
-        <header className="flex items-center px-4 lg:hidden border-b">
+        <header className="flex items-center px-4 lg:hidden border-b border-[#cfcdcd]">
           <div className="py-2.5">
             <NavbarItem
               onClick={() => setShowSidebar(true)}
@@ -87,7 +89,9 @@ export function SidebarLayout({
           <div className="min-w-0 flex-1">{navbar}</div>
         </header>
         <div
-          className={`min-w-0 lg:flex ${teacherRoute ? "hidden" : "border-b"}`}
+          className={`min-w-0 lg:flex ${
+            teacherRoute || studentRoute ? "hidden" : "border-b"
+          }`}
         >
           {navbar}
         </div>

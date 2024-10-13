@@ -6,15 +6,21 @@ import Image from "next/image";
 import Button from "../Button";
 import NavItem from "./NavItem";
 import Dropdown from "./DropDown";
+import useStudentRoute from "@/hooks/useStudentRoute";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const studentRoute = useStudentRoute();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
   const menuRef = useRef<HTMLDivElement>(null);
+
+  if (studentRoute) {
+    return null;
+  }
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {

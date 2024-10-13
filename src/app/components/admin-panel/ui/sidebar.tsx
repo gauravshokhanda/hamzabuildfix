@@ -6,6 +6,7 @@ import { LayoutGroup } from "framer-motion";
 import React, { Fragment, forwardRef, useId } from "react";
 import { TouchTarget } from "./button";
 import { Link } from "./link";
+import useStudentRoute from "@/hooks/useStudentRoute";
 
 export function Sidebar({
   className,
@@ -142,6 +143,7 @@ export const SidebarItem = forwardRef(function SidebarItem(
   ),
   ref: React.ForwardedRef<HTMLAnchorElement | HTMLButtonElement>
 ) {
+  const studentRoute = useStudentRoute();
   const classes = clsx(
     // Base
     "flex w-full items-center gap-3 rounded-lg px-4 py-2.5 text-left text-base/6 font-medium sm:py-3.5 sm:text-sm/5",
@@ -165,7 +167,7 @@ export const SidebarItem = forwardRef(function SidebarItem(
     "dark:data-[hover]:bg-white/5 dark:data-[slot=icon]:*:data-[hover]:fill-white",
     "dark:data-[active]:bg-white/5 dark:data-[slot=icon]:*:data-[active]:fill-white",
     "dark:data-[slot=icon]:*:data-[current]:fill-white",
-    current && `${bgColor} text-white dark:bg-primary/5 dark:text-primary`
+    current && `${studentRoute ? "bg-[#A3D154]" : bgColor} text-white dark:bg-primary/5 dark:text-primary`
   );
 
   return (
