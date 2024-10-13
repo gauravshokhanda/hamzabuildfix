@@ -18,10 +18,6 @@ const Navbar = () => {
 
   const menuRef = useRef<HTMLDivElement>(null);
 
-  if (studentRoute) {
-    return null;
-  }
-
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
@@ -35,6 +31,10 @@ const Navbar = () => {
       document.removeEventListener("click", handleClickOutside);
     };
   }, []);
+
+  if (studentRoute) {
+    return null;
+  }
 
   return (
     <nav className="bg-white border-b shadow-md relative z-50">
