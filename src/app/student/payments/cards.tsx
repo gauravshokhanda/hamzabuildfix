@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import tabs from "../../public/images/student/tabs.svg";
+import tabs from "../../public/images/student/Tabs.svg";
 import master from "../../public/images/student/Mastercard.svg";
 
 const Cards = () => {
