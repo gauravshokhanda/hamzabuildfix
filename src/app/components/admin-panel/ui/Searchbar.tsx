@@ -1,4 +1,6 @@
+import useStudentRoute from "@/hooks/useStudentRoute";
 import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
+import clsx from "clsx";
 import React from "react";
 
 type Props = {
@@ -7,8 +9,14 @@ type Props = {
 
 function Searchbar({ placeholder = "Search here..." }: Props) {
   const [search, setSearch] = React.useState("");
+  const studentRoute = useStudentRoute();
   return (
-    <div className="  max-w-[368px] w-full bg-[#f5f5f6] rounded-xl h-[47px] flex items-center">
+    <div
+      className={clsx(
+        "max-w-[368px] w-full rounded-xl h-[47px] flex items-center",
+        studentRoute ? "bg-white" : "bg-[#f5f5f6]"
+      )}
+    >
       <MagnifyingGlassIcon className="w-6 h-6 text-[#b0b0b0] ml-5" />
       <input
         type="text"

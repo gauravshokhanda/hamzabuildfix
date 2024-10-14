@@ -7,19 +7,21 @@ import React, { forwardRef, useId } from "react";
 import { TouchTarget } from "./button";
 import { Link } from "./link";
 import useTeacherRoute from "@/hooks/useTeacherRoute";
+import useStudentRoute from "@/hooks/useStudentRoute";
 
 export function Navbar({
   className,
   ...props
 }: React.ComponentPropsWithoutRef<"nav">) {
   const teacherRoute = useTeacherRoute();
+  const studentRoute = useStudentRoute();
   return (
     <nav
       {...props}
       className={clsx(
         className,
         "flex flex-1 items-center gap-4",
-        teacherRoute ? "py-0" : "py-2.5"
+        teacherRoute || studentRoute ? "py-0" : "py-2.5"
       )}
     />
   );
@@ -118,8 +120,8 @@ export const NavbarItem = forwardRef(function NavbarItem(
       ) : (
         <Headless.Button
           {...props}
-          className={clsx('cursor-default w-full', classes)}
-          data-current={current ? 'true' : undefined}
+          className={clsx("cursor-default w-full", classes)}
+          data-current={current ? "true" : undefined}
           ref={ref}
         >
           <TouchTarget>{children}</TouchTarget>

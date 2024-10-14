@@ -6,9 +6,11 @@ import Image from "next/image";
 import Button from "../Button";
 import NavItem from "./NavItem";
 import Dropdown from "./DropDown";
+import useStudentRoute from "@/hooks/useStudentRoute";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const studentRoute = useStudentRoute();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -29,6 +31,10 @@ const Navbar = () => {
       document.removeEventListener("click", handleClickOutside);
     };
   }, []);
+
+  if (studentRoute) {
+    return null;
+  }
 
   return (
     <nav className="bg-white border-b shadow-md relative z-50">

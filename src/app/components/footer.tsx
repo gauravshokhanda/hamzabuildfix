@@ -4,12 +4,14 @@ import logo from "./../public/images/logo.png";
 import Link from "next/link";
 import useAdminRoute from "@/hooks/useAdminRoute";
 import useTeacherRoute from "@/hooks/useTeacherRoute";
+import useStudentRoute from "@/hooks/useStudentRoute";
 
 export default function Footer() {
   const adminRoute = useAdminRoute();
   const teacherRoute = useTeacherRoute();
+  const studentRoute = useStudentRoute();
 
-  if (adminRoute || teacherRoute) {
+  if (adminRoute || teacherRoute || studentRoute) {
     return null;
   }
 
