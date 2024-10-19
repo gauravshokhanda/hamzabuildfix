@@ -19,9 +19,10 @@ import Image from "next/image";
 import logo from "../../../public/images/logo.png";
 import { usePathname } from "next/navigation";
 
-const Sidebar: React.FC<{ isOpen: boolean; toggleSidebar: () => void }> = ({
+const Sidebar: React.FC<{ isOpen: boolean; role: string; toggleSidebar: () => void }> = ({
   isOpen,
   toggleSidebar,
+  role
 }) => {
   const pathname = usePathname();
 
@@ -71,7 +72,7 @@ const Sidebar: React.FC<{ isOpen: boolean; toggleSidebar: () => void }> = ({
           </div>
           <div>
             <h2 className="font-medium">Abeeda Alex</h2>
-            <p className="text-sm text-gray-600">Tutor</p>
+            <p className="text-sm text-gray-600">{role}</p>
           </div>
         </div>
         <div className="my-6 bg-[#00000024] w-full h-[1px]"></div>
