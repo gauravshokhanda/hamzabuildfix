@@ -1,4 +1,4 @@
-import MyStats from "@/app/components/dashboard/my-stats/MyStats";
+import MyStats from "../../components/dashboard/my-stats/MyStats";
 import React from "react";
 
 const page = () => {

@@ -1,4 +1,4 @@
-import StudentsTable from "@/app/components/dashboard/my-students/StudentsTable";
+import StudentsTable from "../../components/dashboard/my-students/StudentsTable";
 import React from "react";
 
 const page = () => {
