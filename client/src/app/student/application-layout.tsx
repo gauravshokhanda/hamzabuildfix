@@ -1,5 +1,5 @@
 "use client";
-import logo from "@/app/public/images/logo.png";
+import logo from "../public/images/logo.png";
 import avatar from "../public/images/session-oversight/avatar.svg";
 import down from "../public/images/dashnav/down.svg";
 import { Navbar, NavbarSection } from "../components/admin-panel/ui/navbar";
@@ -34,11 +34,7 @@ export function ApplicationLayout({ children }: { children: React.ReactNode }) {
               <p className="text-xl text-[#000000]">
                 {/* @ts-expect-error - pathnameNames does not contain all routes, fallback needed */}
                 {pathnameNames[pathname]}
-                <div className="flex items-center justify-end">
-                  <h1 className="text-[18px] md:text-[24px] md:mt-[45px]">
-                    Good Morning, <span className="font-bold">Samantha</span> 😄
-                  </h1>
-                </div>
+                
               </p>
             </div>
           </NavbarSection>
@@ -90,9 +86,9 @@ export function ApplicationLayout({ children }: { children: React.ReactNode }) {
                   className="size-6"
                 >
                   <path
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                     d="M12 2.25c-2.429 0-4.817.178-7.152.521C2.87 3.061 1.5 4.795 1.5 6.741v6.018c0 1.946 1.37 3.68 3.348 3.97.877.129 1.761.234 2.652.316V21a.75.75 0 0 0 1.28.53l4.184-4.183a.39.39 0 0 1 .266-.112c2.006-.05 3.982-.22 5.922-.506 1.978-.29 3.348-2.023 3.348-3.97V6.741c0-1.947-1.37-3.68-3.348-3.97A49.145 49.145 0 0 0 12 2.25ZM8.25 8.625a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25Zm2.625 1.125a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0Zm4.875-1.125a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25Z"
-                    clip-rule="evenodd"
+                    clipRule="evenodd"
                   />
                 </svg>
 
