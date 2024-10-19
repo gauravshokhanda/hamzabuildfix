@@ -6,7 +6,7 @@ import {
   PaginationNext,
   PaginationPage,
   PaginationPrevious,
-} from "@/app/components/admin-panel/ui/pagination";
+} from "../ui/pagination";
 
 function Paginations() {
   return (

@@ -3,8 +3,8 @@
 import * as Headless from "@headlessui/react";
 import React, { useState } from "react";
 import { NavbarItem } from "./navbar";
-import useTeacherRoute from "@/hooks/useTeacherRoute";
-import useStudentRoute from "@/hooks/useStudentRoute";
+import useTeacherRoute from "../../../../hooks/useTeacherRoute";
+import useStudentRoute from "../../../../hooks/useStudentRoute";
 
 function OpenMenuIcon() {
   return (

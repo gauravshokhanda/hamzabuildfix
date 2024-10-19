@@ -1,8 +1,8 @@
 "use client";
-import AdminContainer from "@/app/components/admin-panel/ui/admin-container";
-import { Text } from "@/app/components/admin-panel/ui/text";
-import AdminTable from "@/app/components/admin-panel/ui/admin-table";
-import { Button } from "@/app/components/admin-panel/ui/button";
+import AdminContainer from "../../components/admin-panel/ui/admin-container";
+import { Text } from "../../components/admin-panel/ui/text";
+import AdminTable from "../../components/admin-panel/ui/admin-table";
+import { Button } from "../../components/admin-panel/ui/button";
 import Image from "next/image";
 
 export default function Home() {

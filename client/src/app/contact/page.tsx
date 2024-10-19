@@ -8,7 +8,7 @@ import { RiFacebookCircleLine } from "react-icons/ri";
 import { PiTwitterLogo } from "react-icons/pi";
 
 // fonts
-import { jost } from "@/font";
+import { jost } from "../../font";
 export default function ContactPage() {
   return (
     <div className=" relative py-28 ">

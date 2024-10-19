@@ -2,7 +2,7 @@
 import logo from "@/app/public/images/logo.png";
 import avatar from "../public/images/session-oversight/avatar.svg";
 import down from "../public/images/dashnav/down.svg";
-import { Navbar, NavbarSection } from "@/app/components/admin-panel/ui/navbar";
+import { Navbar, NavbarSection } from "../components/admin-panel/ui/navbar";
 import {
   Sidebar,
   SidebarBody,
@@ -11,8 +11,8 @@ import {
   SidebarLabel,
   SidebarSection,
   SidebarSpacer,
-} from "@/app/components/admin-panel/ui/sidebar";
-import { SidebarLayout } from "@/app/components/admin-panel/ui/sidebar-layout";
+} from "../components/admin-panel/ui/sidebar";
+import { SidebarLayout } from "../components/admin-panel/ui/sidebar-layout";
 import { Squares2X2Icon } from "@heroicons/react/20/solid";
 import { usePathname } from "next/navigation";
 import Link from "next/link";

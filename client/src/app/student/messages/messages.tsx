@@ -1,5 +1,5 @@
 "use client";
-import Searchbar from "@/app/components/admin-panel/ui/Searchbar";
+import Searchbar from "../../components/admin-panel/ui/Searchbar";
 import Image from "next/image";
 import React from "react";
 import avatar from "../../public/images/session-oversight/avatar.svg";

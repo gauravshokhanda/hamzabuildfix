@@ -1,6 +1,6 @@
 "use client";
-import { Button } from "@/app/components/admin-panel/ui/button";
-import StudentNavbar from "@/app/components/admin-panel/ui/student-navbar";
+import { Button } from "../components/admin-panel/ui/button";
+import StudentNavbar from "../components/admin-panel/ui/student-navbar";
 import TutorReportViewButton from "../components/admin-panel/Student/TutorReportViewButton";
 import clsx from "clsx";
 import Image from "next/image";

@@ -9,8 +9,8 @@ import {
   DropdownItem,
   DropdownLabel,
   DropdownMenu,
-} from "@/app/components/admin-panel/ui/dropdown";
-import { NavbarItem } from "@/app/components/admin-panel/ui/navbar";
+} from "../components/admin-panel/ui/dropdown";
+import { NavbarItem } from "../components/admin-panel/ui/navbar";
 import {
   Sidebar,
   SidebarBody,
@@ -19,8 +19,8 @@ import {
   SidebarLabel,
   SidebarSection,
   SidebarSpacer,
-} from "@/app/components/admin-panel/ui/sidebar";
-import { SidebarLayout } from "@/app/components/admin-panel/ui/sidebar-layout";
+} from "../components/admin-panel/ui/sidebar";
+import { SidebarLayout } from "../components/admin-panel/ui/sidebar-layout";
 import {
   ArrowRightStartOnRectangleIcon,
   ChevronDownIcon,

@@ -1,8 +1,8 @@
 "use client";
 import clsx from "clsx";
 import { useState } from "react";
-import { Button } from "@/app/components/admin-panel/ui/button";
-import DownloadIcon from "@/app/components/admin-panel/Student/DownloadIcon";
+import { Button } from "../../components/admin-panel/ui/button";
+import DownloadIcon from "../../components/admin-panel/Student/DownloadIcon";
 import { PlusIcon } from "@heroicons/react/16/solid";
 
 export default function Home() {

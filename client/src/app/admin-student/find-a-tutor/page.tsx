@@ -1,16 +1,16 @@
 "use client";
-import StudentNavbar from "@/app/components/admin-panel/ui/student-navbar";
+import StudentNavbar from "../../components/admin-panel/ui/student-navbar";
 import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
 import {
   Dropdown,
   DropdownButton,
   DropdownItem,
   DropdownMenu,
-} from "@/app/components/admin-panel/ui/dropdown";
+} from "../../components/admin-panel/ui/dropdown";
 import { useRef, useState } from "react";
 // @ts-expect-error - No type definitions available
 import RangeSlider from "react-range-slider-input";
-import TeacherCard from "@/app/components/admin-panel/Student/TeacherCard";
+import TeacherCard from "../../components/admin-panel/Student/TeacherCard";
 
 export default function Home() {
   const [values, setValues] = useState(["0", "2000"]);

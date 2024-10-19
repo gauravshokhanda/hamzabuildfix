@@ -9,12 +9,12 @@ import {
   DropdownItem,
   DropdownLabel,
   DropdownMenu,
-} from "@/app/components/admin-panel/ui/dropdown";
+} from "../components/admin-panel/ui/dropdown";
 import {
   Navbar,
   NavbarItem,
   NavbarSection,
-} from "@/app/components/admin-panel/ui/navbar";
+} from "../components/admin-panel/ui/navbar";
 import {
   Sidebar,
   SidebarBody,
@@ -23,8 +23,8 @@ import {
   SidebarLabel,
   SidebarSection,
   SidebarSpacer,
-} from "@/app/components/admin-panel/ui/sidebar";
-import { SidebarLayout } from "@/app/components/admin-panel/ui/sidebar-layout";
+} from "../components/admin-panel/ui/sidebar";
+import { SidebarLayout } from "../components/admin-panel/ui/sidebar-layout";
 import {
   ArrowRightStartOnRectangleIcon,
   ChevronDownIcon,
@@ -44,7 +44,7 @@ import {
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import Searchbar from "@/app/components/admin-panel/ui/Searchbar";
+import Searchbar from "../components/admin-panel/ui/Searchbar";
 import { PencilIcon } from "@heroicons/react/16/solid";
 
 function AccountDropdownMenu({

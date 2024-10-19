@@ -6,7 +6,7 @@ import Image from "next/image";
 import Button from "../Button";
 import NavItem from "./NavItem";
 import Dropdown from "./DropDown";
-import useStudentRoute from "@/hooks/useStudentRoute";
+import useStudentRoute from "../../../hooks/useStudentRoute";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);

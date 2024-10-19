@@ -1,6 +1,6 @@
 import StatCardSection from "../../components/admin-panel/StatCard/StatCardSection";
 import { Comparison } from "../../components/admin-panel/StatCard/Comparison";
-import Sessions from "@/app/components/admin-panel/StatCard/Sessions";
+import Sessions from "../../components/admin-panel/StatCard/Sessions";
 
 export default function SessionOversight(): JSX.Element {
   return (

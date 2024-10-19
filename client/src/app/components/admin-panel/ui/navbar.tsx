@@ -6,8 +6,8 @@ import { LayoutGroup, motion } from "framer-motion";
 import React, { forwardRef, useId } from "react";
 import { TouchTarget } from "./button";
 import { Link } from "./link";
-import useTeacherRoute from "@/hooks/useTeacherRoute";
-import useStudentRoute from "@/hooks/useStudentRoute";
+import useTeacherRoute from "../../../../hooks/useTeacherRoute";
+import useStudentRoute from "../../../../hooks/useStudentRoute";
 
 export function Navbar({
   className,

@@ -1,5 +1,5 @@
 import React from "react";
-import { ChangePassword } from "@/app/components/teacher-panel/ChangePassword/ChangePassword";
+import { ChangePassword } from "../../components/teacher-panel/ChangePassword/ChangePassword";
 import Settings from "./settings";
 
 const page = () => {

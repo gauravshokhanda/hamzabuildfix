@@ -1,4 +1,4 @@
-import useStudentRoute from "@/hooks/useStudentRoute";
+import useStudentRoute from "../../../../hooks/useStudentRoute";
 import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
 import clsx from "clsx";
 import React from "react";

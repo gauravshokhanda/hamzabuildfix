@@ -1,11 +1,11 @@
 "use client";
-import AdminContainer from "@/app/components/admin-panel/ui/admin-container";
-import { Text } from "@/app/components/admin-panel/ui/text";
-import AdminTable from "@/app/components/admin-panel/ui/admin-table";
-import { Button } from "@/app/components/admin-panel/ui/button";
-import Searchbar from "@/app/components/admin-panel/ui/Searchbar";
-import { Badge, BadgeProps } from "@/app/components/admin-panel/ui/badge";
-import Paginations from "@/app/components/admin-panel/Student/Paginations";
+import AdminContainer from "../../components/admin-panel/ui/admin-container";
+import { Text } from "../../components/admin-panel/ui/text";
+import AdminTable from "../../components/admin-panel/ui/admin-table";
+import { Button } from "../../components/admin-panel/ui/button";
+import Searchbar from "../../components/admin-panel/ui/Searchbar";
+import { Badge, BadgeProps } from "../../components/admin-panel/ui/badge";
+import Paginations from "../../components/admin-panel/Student/Paginations";
 
 export default function Home() {
   return (

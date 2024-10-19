@@ -1,7 +1,7 @@
 "use client";
-import AdminContainer from "@/app/components/admin-panel/ui/admin-container";
-import { Text } from "@/app/components/admin-panel/ui/text";
-import AdminTable from "@/app/components/admin-panel/ui/admin-table";
+import AdminContainer from "../ui/admin-container";
+import { Text } from "../ui/text";
+import AdminTable from "../ui/admin-table";
 import Image from "next/image";
 
 export default function Sessions() {

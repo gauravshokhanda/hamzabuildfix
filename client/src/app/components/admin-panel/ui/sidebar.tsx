@@ -6,7 +6,7 @@ import { LayoutGroup } from "framer-motion";
 import React, { Fragment, forwardRef, useId } from "react";
 import { TouchTarget } from "./button";
 import { Link } from "./link";
-import useStudentRoute from "@/hooks/useStudentRoute";
+import useStudentRoute from "../../../../hooks/useStudentRoute";
 
 export function Sidebar({
   className,

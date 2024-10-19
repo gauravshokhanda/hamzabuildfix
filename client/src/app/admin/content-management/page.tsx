@@ -1,13 +1,13 @@
 "use client";
-import AdminContainer from "@/app/components/admin-panel/ui/admin-container";
-import { Button } from "@/app/components/admin-panel/ui/button";
-import Searchbar from "@/app/components/admin-panel/ui/Searchbar";
-import { default as TabComponent } from "@/app/components/admin-panel/ui/Tabs";
-import BlogCard from "@/app/components/admin-panel/blog/BlogCard";
+import AdminContainer from "../../components/admin-panel/ui/admin-container";
+import { Button } from "../../components/admin-panel/ui/button";
+import Searchbar from "../../components/admin-panel/ui/Searchbar";
+import { default as TabComponent } from "../../components/admin-panel/ui/Tabs";
+import BlogCard from "../../components/admin-panel/blog/BlogCard";
 
 import { Fragment, useState } from "react";
-import CareerCard from "@/app/components/admin-panel/blog/CareerCard";
-import Paginations from "@/app/components/admin-panel/Student/Paginations";
+import CareerCard from "../../components/admin-panel/blog/CareerCard";
+import Paginations from "../../components/admin-panel/Student/Paginations";
 
 export default function Home() {
   const [tabIndex, setTabIndex] = useState(0);

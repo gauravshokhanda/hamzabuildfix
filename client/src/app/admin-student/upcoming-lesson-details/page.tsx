@@ -1,10 +1,10 @@
 "use client";
-import { Text } from "@/app/components/admin-panel/ui/text";
-import { Button } from "@/app/components/admin-panel/ui/button";
+import { Text } from "../../components/admin-panel/ui/text";
+import { Button } from "../../components/admin-panel/ui/button";
 import Image from "next/image";
-import StudentNavbar from "@/app/components/admin-panel/ui/student-navbar";
-import RecordIcon from "@/app/components/admin-panel/Student/RecordIcon";
-import MessageIcon from "@/app/components/admin-panel/Student/MessageIcon";
+import StudentNavbar from "../../components/admin-panel/ui/student-navbar";
+import RecordIcon from "../../components/admin-panel/Student/RecordIcon";
+import MessageIcon from "../../components/admin-panel/Student/MessageIcon";
 
 export default function Home() {
   return (

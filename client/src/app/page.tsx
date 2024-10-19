@@ -5,7 +5,7 @@ import TOOLS from "./components/landing-page/LearningTools/main";
 import WHYUS from "./components/landing-page/whyUS/main";
 import SUPPORT from "./components/landing-page/Support/main";
 import FAQ from "./components/FAQ";
-import TUTOR from "../app/components/landing-page/tutorSection/main";
+import TUTOR from "./components/landing-page/tutorSection/main";
 import ClientTestimonials from "./components/landing-page/ClientTestimonials/main";
 const page = () => {
   return (
