@@ -6,87 +6,64 @@ import {
   AcademicCapIcon,
   GlobeAltIcon,
   MapPinIcon,
-  BanknotesIcon
+  BanknotesIcon,
 } from "@heroicons/react/24/outline";
-
-const reviews = [
-  {
-    title: "The seller did a fantastic job of designing my website",
-    rating: 5,
-    name: "Hannah Schmitt",
-    date: "December 8, 2024",
-    image:
-      "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80",
-    text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged....",
-  },
-  {
-    title: "The seller did a fantastic job of designing my website",
-    rating: 5,
-    name: "Hannah Schmitt",
-    date: "December 8, 2024",
-    image:
-      "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80",
-    text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged....",
-  },
-  {
-    title: "The seller did a fantastic job of designing my website",
-    rating: 5,
-    name: "Hannah Schmitt",
-    date: "December 8, 2024",
-    image:
-      "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80",
-    text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged....",
-  },
-];
+import reviews from "../../../lib/reviews_data.json"
 
 export default function Profile() {
   return (
     <div className="bg-gray-100 min-h-screen py-8 px-4 rounded-lg overflow-auto">
       <div className="max-w-7xl mx-auto bg-white lg:p-16 p-4 rounded-lg shadow-md overflow-auto">
-        <div className="flex gap-16 items-center mt-4 ml-4">
-          <div className="w-48 h-48">
-            <Image
-              src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=456&h=456&q=80"
-              alt="Profile Picture"
-              className="rounded-full"
-              height={456}
-              width={456}
-            />
-          </div>
-          <div className="flex gap-3 flex-col items-start">
-            <div>
-              <h1 className="text-2xl font-semibold">Alexson David</h1>
-              <p className="text-gray-600 whitespace-nowrap mt-1">
-                My clients describe my training style as motivating and life
-                changing.
-              </p>
-              <div className="flex items-center space-x-4 text-gray-500 mt-2">
-                <span>UI Designer</span>
-                <span>•</span>
-                <span className="flex items-center gap-2"><MapPinIcon className="h-4 w-4 inline-block" /> London, UK</span>
-                <span>•</span>
-                <span className="flex items-center gap-2"><BanknotesIcon className="h-4 w-4 inline-block" /> $44 / hour</span>
-                <span>•</span>
-                <span className="flex items-center">
-                  <span className="mr-1">⭐</span> 4.6
-                </span>
-              </div>
-            </div>
-            <div className="flex gap-3 mt-2">
-              <button className="bg-none border border-stone-300 text-[#42ABD1] px-8 py-2 rounded-md">
-                Message
-              </button>
-              <button className="bg-[#42ABD1] text-white px-8 py-2 rounded-md">
-                Schedule a session
-              </button>
-            </div>
-          </div>
-        </div>
+      <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-center mt-4 ml-4">
+  <div className="w-32 h-32 md:w-48 md:h-48">
+    <Image
+      src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=456&h=456&q=80"
+      alt="Profile Picture"
+      className="rounded-full"
+      height={456}
+      width={456}
+    />
+  </div>
+  <div className="flex gap-3 flex-col items-center md:items-start">
+    <div className="text-center md:text-left">
+      <h1 className="text-xl md:text-2xl font-semibold">Alexson David</h1>
+      <p className="text-gray-600 mt-1 md:whitespace-nowrap">
+        My clients describe my training style as motivating and life changing.
+      </p>
+      <div className="flex flex-wrap justify-center md:justify-start items-center space-x-2 md:space-x-4 text-gray-500 mt-2">
+        <span>UI Designer</span>
+        <span className="hidden md:inline">•</span>
+        <span className="flex items-center gap-2">
+          <MapPinIcon className="h-4 w-4 inline-block" /> London, UK
+        </span>
+        <span className="hidden md:inline">•</span>
+        <span className="flex items-center gap-2">
+          <BanknotesIcon className="h-4 w-4 inline-block" /> $44 / hour
+        </span>
+        <span className="hidden md:inline">•</span>
+        <span className="flex items-center">
+          <span className="mr-1">⭐</span> 4.6
+        </span>
+      </div>
+    </div>
+    <div className="flex flex-col md:flex-row gap-3 mt-2">
+      <button className="bg-none border border-stone-300 text-[#42ABD1] px-6 md:px-8 py-2 rounded-md">
+        Message
+      </button>
+      <button className="bg-[#42ABD1] text-white px-6 md:px-8 py-2 rounded-md">
+        Schedule a session
+      </button>
+    </div>
+  </div>
+</div>
+
         <div className="border-t border-stone-300 my-12"></div>
 
-        <h2 className="text-2xl font-semibold xl:text-left text-center">About</h2>
+        <h2 className="text-2xl font-semibold xl:text-left text-center">
+          About
+        </h2>
         <div className="flex xl:flex-row flex-col gap-20 justify-between items-center">
-          <div className="w-4/6">
+          <div className="w-4/6 flex gap-6 flex-col justify-center items-center">
             <div>
               <div>
                 <Image
@@ -120,24 +97,24 @@ export default function Profile() {
             </div>
 
             <div className="max-w-md pb-8">
-      <h3 className="text-lg font-semibold mb-4">Schedule</h3>
-      <div className="flex justify-between mb-2">
-        <span className="text-gray-700">Monday - Thursday</span>
-        <span className="text-gray-500">09:30 AM – 05:00 PM</span>
-      </div>
-      <div className="flex justify-between mb-2">
-        <span className="text-gray-700">Friday</span>
-        <span className="text-gray-500">09:30 AM – 01:00 PM</span>
-      </div>
-      <div className="flex justify-between">
-        <span className="text-gray-700">Saturday – Sunday</span>
-        <span className="text-gray-500">Holiday</span>
-      </div>
-    </div>
+              <h3 className="text-lg font-semibold mb-4">Schedule</h3>
+              <div className="flex justify-between mb-2">
+                <span className="text-gray-700">Monday - Thursday</span>
+                <span className="text-gray-500">09:30 AM – 05:00 PM</span>
+              </div>
+              <div className="flex justify-between mb-2">
+                <span className="text-gray-700">Friday</span>
+                <span className="text-gray-500">09:30 AM – 01:00 PM</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-gray-700">Saturday – Sunday</span>
+                <span className="text-gray-500">Holiday</span>
+              </div>
+            </div>
 
-    <h3 className="text-lg font-semibold mb-4">Education</h3>
+            <h3 className="text-lg font-semibold mb-4">Education</h3>
 
-            <div className="px-6 py-8 bg-white border border-stone-100 rounded-lg shadow-md">
+            <div className="px-6 py-8 bg-white border border-stone-100 rounded-lg shadow-md min-w-96">
               <div className="flex items-start mb-10">
                 <div className="w-8 h-8 bg-blue-100 text-[#42ABD1] rounded-full flex items-center justify-center mr-4">
                   M
@@ -189,9 +166,11 @@ export default function Profile() {
               </div>
             </div>
 
-    <h3 className="text-lg font-semibold mb-4 mt-8">Work and Experience</h3>
+            <h3 className="text-lg font-semibold mb-4 mt-8">
+              Work and Experience
+            </h3>
 
-            <div className="px-6 py-8 bg-white border border-stone-100 rounded-lg shadow-md">
+            <div className="px-6 py-8 bg-white border border-stone-100 rounded-lg shadow-md min-w-96">
               <div className="flex items-start mb-10">
                 <div className="w-8 h-8 bg-blue-100 text-[#42ABD1] rounded-full flex items-center justify-center mr-4">
                   M
@@ -243,18 +222,18 @@ export default function Profile() {
               </div>
             </div>
 
+            <h3 className="text-lg font-semibold mb-4 mt-8">Awards</h3>
 
-
-    <h3 className="text-lg font-semibold mb-4 mt-8">Awards</h3>
-
-            <div className="px-6 py-8 bg-white border border-stone-100 rounded-lg shadow-md">
+            <div className="px-6 py-8 bg-white border border-stone-100 rounded-lg shadow-md min-w-96">
               <div className="flex items-start mb-10">
                 <div className="w-8 h-8 bg-blue-100 text-[#42ABD1] rounded-full flex items-center justify-center mr-4">
                   M
                 </div>
                 <div className="flex-1">
                   <div className="flex gap-6 items-center">
-                    <h3 className="font-semibold">Perfect Attandance Program</h3>
+                    <h3 className="font-semibold">
+                      Perfect Attandance Program
+                    </h3>
                     <span className="text-xs text-[#42ABD1] bg-blue-100 px-2 py-0.5 rounded-xl">
                       2012 - 2014
                     </span>
@@ -298,19 +277,6 @@ export default function Profile() {
                 </div>
               </div>
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
           </div>
 
           <div className="w-2/6 flex gap-6 flex-col justify-center items-center">
@@ -404,7 +370,7 @@ export default function Profile() {
               </p>
             </div>
 
-            {reviews.map((review, idx) => (
+            {reviews.reviews.map((review, idx) => (
               <div
                 className="lg:max-w-sm w-96 px-4 py-6 bg-white rounded-lg shadow-md"
                 key={idx}
