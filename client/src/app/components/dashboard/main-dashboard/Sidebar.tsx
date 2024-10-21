@@ -19,7 +19,7 @@ import Image from "next/image";
 import logo from "../../../public/images/logo.png";
 import { usePathname } from "next/navigation";
 
-const Sidebar: React.FC<{ isOpen: boolean; role: string; toggleSidebar: () => void }> = ({
+const Sidebar: React.FC<{ isOpen: boolean; role?: string; toggleSidebar: () => void }> = ({
   isOpen,
   toggleSidebar,
   role
