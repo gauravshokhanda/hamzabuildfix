@@ -1,6 +1,6 @@
 "use client";
 
-import logo from "../../app/public/images/logo.png";
+import logo from "../public/images/logo.png";
 
 import {
   Dropdown,
