@@ -52,7 +52,7 @@ const Navbar = () => {
             <div className="ml-6 flex items-baseline space space-x-4 lg:space-x-6">
               <NavItem label="Home" link="/" />
               <NavItem label="About Us" link="/about-us" />
-              <NavItem label="Find a tutor" link="#" />
+              <NavItem label="Find a tutor" link="/find-a-tutor" />
 
               <Dropdown
                 label="Become a tutor"
