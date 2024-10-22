@@ -40,7 +40,7 @@ const UserSchema: Schema<IUser> = new mongoose.Schema(
       { type: mongoose.Schema.Types.ObjectId, ref: 'Lesson', default: [] },
     ],
     lessonsBooked: [
-      { type: mongoose.Schema.Types.ObjectId, ref: 'Lesson', default: [] }, 
+      { type: mongoose.Schema.Types.ObjectId, ref: 'Lesson', default: [] },
     ],
     authentication: {
       password: { type: String, required: true, select: false },

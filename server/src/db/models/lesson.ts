@@ -12,8 +12,16 @@ export interface ILesson extends Document {
 const LessonSchema: Schema<ILesson> = new mongoose.Schema(
   {
     subject: { type: String, required: true },
-    teacher: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
-    student: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true }, 
+    teacher: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
+      required: true,
+    },
+    student: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
+      required: true,
+    },
     date: { type: Date, required: true },
     duration: { type: Number, required: true },
     status: {

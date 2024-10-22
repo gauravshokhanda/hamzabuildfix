@@ -7,8 +7,10 @@ dotenv.config();
 const MONGO_URL = process.env.DB_URL;
 
 if (!MONGO_URL) {
-  logger.error('MongoDB connection string (DB_URL) is missing in environment variables.');
-  process.exit(1); 
+  logger.error(
+    'MongoDB connection string (DB_URL) is missing in environment variables.',
+  );
+  process.exit(1);
 }
 
 const connectDB = async (): Promise<void> => {
@@ -16,11 +18,11 @@ const connectDB = async (): Promise<void> => {
 
   try {
     await mongoose.connect(MONGO_URL);
-    
+
     logger.info('Successfully connected to MongoDB');
   } catch (error: any) {
-    logger.error(`Error connecting to MongoDB: ${error.message}`); 
-    process.exit(1); 
+    logger.error(`Error connecting to MongoDB: ${error.message}`);
+    process.exit(1);
   }
 
   mongoose.connection.on('connected', () => {
