@@ -37,7 +37,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="bg-white border-b shadow-md relative z-50">
+    <nav className="bg-white shadow-lg relative z-50">
       <div className="mx-auto px-4 md:px-10">
         <div className="flex py-2  justify-between items-center">
           <div className="flex">
@@ -57,13 +57,15 @@ const Navbar = () => {
               <Dropdown
                 label="Become a tutor"
                 items={[
-                  { label: "Become a tutor", href: "/gameserver" },
-                  { label: "Become a tutor", href: "/gameserver" },
+                  { label: "Career", href: "/career" },
                 ]}
               />
               <Dropdown
-                label="Resources"
-                items={[{ label: "Resources", href: "/resources" }]}
+              label="Resources"
+              items={[
+                { label: "Best Practices", href: "/best-practices" },
+                { label: "Feedback", href: "/feedback" }
+              ]}
               />
             </div>
           </div>

@@ -67,7 +67,7 @@ const LessonCard = ({ level }: { level: string }) => {
       </div>
       <div className="flex flex-col justify-between items-center gap-1">
         <Link
-          href={`/admin-student/upcoming-lesson-details`}
+          href={`/student/upcoming-lesson-details`}
           className="text-secondary font-medium text-[10px]"
         >
           Details

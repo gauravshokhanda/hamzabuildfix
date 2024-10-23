@@ -2,7 +2,7 @@ export default function FormApply() {
   return (
     <div>
       <div className=" bg-background_blue text-3xl text-header px-4 py-10 text-center font-semibold">
-        apply for this job
+        Apply For This Job
       </div>
       <div className=" max-w-screen-md m-auto py-20 px-4">
         <form className=" p-6 bg-white rounded-md">

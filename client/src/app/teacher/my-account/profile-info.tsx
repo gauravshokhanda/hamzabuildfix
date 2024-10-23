@@ -234,7 +234,7 @@ const ProfileInfo = () => {
         <iframe
           width="100%"
           height="400"
-          src="https://www.youtube.com/embed/U4aFbyzrTdc"
+          src="https://www.youtube.com/embed/YSul9yrAvN4?si=SOEHhFIp8ftqKLQN"
           title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen

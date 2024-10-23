@@ -73,7 +73,7 @@ export function ApplicationLayout({ children }: { children: React.ReactNode }) {
                 current={pathname.startsWith("/student/my-account")}
               >
                 <UserIcon />
-                <SidebarLabel>My Acoounnt</SidebarLabel>
+                <SidebarLabel>My Account</SidebarLabel>
               </SidebarItem>
               <SidebarItem
                 href="/student/messages"
