@@ -71,13 +71,17 @@ const Navbar = () => {
           <div className="hidden md:block">
             <div className="flex items-center md:ml-6 space-x-4">
               <div className="w-36">
-                <button className="rounded-full py-3 border-2 border-white bg-secondary w-full h-full text-white font-semibold text-md">
-                  Login
-                </button>
+                <Link href="/login">
+                  <button className="rounded-full py-3 border-2 border-white bg-secondary w-full h-full text-white font-semibold text-md">
+                    Login
+                  </button>
+                </Link>
               </div>
 
               <div className="w-36">
-                <Button label="Signup" classNames="rounded-full" />
+                <Link href="/signUp">
+                  <Button label="Signup" classNames="rounded-full" />
+                </Link>
               </div>
             </div>
           </div>

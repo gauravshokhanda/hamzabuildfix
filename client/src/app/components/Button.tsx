@@ -19,6 +19,10 @@ const Button: React.FC<ButtonProps> = ({
     small,
     // icon: Icon
 }) => {
+    // Check if a custom text color class is already present
+    const isCustomTextColor = classNames?.includes('text-');
+    const bgColor = classNames?.includes('bg-')
+
     return (
         <button
             onClick={onClick}
@@ -31,17 +35,17 @@ const Button: React.FC<ButtonProps> = ({
             transition
             w-full
             h-full
-            ${classNames}
-            ${outline ? "bg-white" : "bg-primary"}
+            ${isCustomTextColor ? '' : 'text-white'} // Default to white if no custom color is present
+            ${outline ? "bg-white" : ""} // Default primary color
             ${outline ? "border-primary" : "border-transparent"}
-            ${outline ? "text-primary" : "text-white"}
             ${small ? "py-1" : "py-3"}
             ${small ? "text-sm" : "text-md"}
             ${small ? "font-light" : "font-semibold"}
             ${small ? "border-[1px]" : "border-2"}
+            ${bgColor ? '' : 'bg-primary'}
+            ${classNames}  // Ensure custom classes come last to override defaults
         `}
         >
-            {/* {Icon && <Icon size={24} className='absolute left-4 top-3' />} */}
             {label}
         </button>
     );
