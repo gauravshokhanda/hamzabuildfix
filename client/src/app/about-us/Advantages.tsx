@@ -4,10 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 // icons
-import experts from "../public/images/about-us/experts.svg";
-import comprehensive from "../public/images/about-us/comprehensive.svg";
-import user_friendly from "../public/images/about-us/user-friendly.svg";
-import learning from "../public/images/about-us/learning.svg";
+import experts from "public/images/about-us/experts.svg";
+import comprehensive from "public/images/about-us/comprehensive.svg";
+import user_friendly from "public/images/about-us/user-friendly.svg";
+import learning from "public/images/about-us/learning.svg";
 import { FaArrowRightLong } from "react-icons/fa6";
 
 export default function Advantages() {

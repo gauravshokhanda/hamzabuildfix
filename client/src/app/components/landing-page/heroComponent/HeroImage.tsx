@@ -1,7 +1,7 @@
 // HeroImage.tsx
 import React from 'react';
 import Image from 'next/image';
-import heroImage from '../../../public/images/landing-page/hero.png';
+import heroImage from 'public/images/landing-page/hero.png';
 
 const HeroImage: React.FC = () => {
   return (

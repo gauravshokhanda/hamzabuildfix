@@ -1,8 +1,8 @@
 'use client';
 import React from 'react';
 import Image from 'next/image';
-import groupImage from '../public/images/pageNotFound/404.png';
-import walkingMan from '../public/images/pageNotFound/Group.png';
+import groupImage from 'public/images/pageNotFound/404.png';
+import walkingMan from 'public/images/pageNotFound/Group.png';
 import Link from 'next/link';
 
 const PageNotFound = () => {

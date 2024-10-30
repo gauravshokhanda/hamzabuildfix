@@ -1,8 +1,8 @@
 import React from "react";
-import upImage from "../../public/images/student/upImage.svg";
-import upFile from "../../public/images/student/upFile.svg";
-import emoji from "../../public/images/student/emoji.svg";
-import voice from "../../public/images/student/voice.svg";
+import upImage from "public/images/student/upImage.svg";
+import upFile from "public/images/student/upFile.svg";
+import emoji from "public/images/student/emoji.svg";
+import voice from "public/images/student/voice.svg";
 import Image from "next/image";
 
 function ChatInput() {

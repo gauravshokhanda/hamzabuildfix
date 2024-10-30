@@ -2,9 +2,9 @@
 
 import React, { useState } from 'react';
 import InputField from '../components/InputField';
-import bg from "../public/images/auth/bg.png";
-import facebook from "../public/images/auth/facebook.png";
-import google from "../public/images/auth/google.png";
+import bg from "public/images/auth/bg.png";
+import facebook from "public/images/auth/facebook.png";
+import google from "public/images/auth/google.png";
 import Button from '../components/Button';
 import { useRouter } from 'next/navigation';
 

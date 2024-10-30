@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import eye from "../../../public/images/my-account/Eye.svg";
+import eye from "public/images/my-account/Eye.svg";
 
 export const ChangePassword = () => {
   return (

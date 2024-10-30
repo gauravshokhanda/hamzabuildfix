@@ -1,11 +1,11 @@
 import Image from "next/image";
 import React from "react";
 
-import careerHero from "../public/images/career/career-home.svg";
+import careerHero from "public/images/career/career-home.svg";
 
-import career1 from "../public/images/career/career1.svg";
-import career2 from "../public/images/career/career2.svg";
-import career3 from "../public/images/career/career3.svg";
+import career1 from "public/images/career/career1.svg";
+import career2 from "public/images/career/career2.svg";
+import career3 from "public/images/career/career3.svg";
 
 export default function Hero() {
   return (

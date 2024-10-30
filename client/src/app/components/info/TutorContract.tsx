@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import InputField from "../InputField";
-import uploadIcon from "../../public/images/auth/upload.png";
+import uploadIcon from "public/images/auth/upload.png";
 
 const TutorContract = () => {
     const [firstName, setFirstName] = useState("");

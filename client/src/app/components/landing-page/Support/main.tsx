@@ -1,10 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
-import customerImage from '../../../public/images/landing-page/Rectangle 503.png';
-import headsetIcon from '../../../public/images/landing-page/headset.png';
-import leftBottomShape from '../../../public/images/landing-page/leftBottom.png';
-import rightTopShape from '../../../public/images/landing-page/rightBottom.png';
-import ellipseShape from '../../../public/images/landing-page/Ellipse 5.png';
+import customerImage from 'public/images/landing-page/Rectangle 503.png';
+import headsetIcon from 'public/images/landing-page/headset.png';
+import leftBottomShape from 'public/images/landing-page/leftBottom.png';
+import rightTopShape from 'public/images/landing-page/rightBottom.png';
+import ellipseShape from 'public/images/landing-page/Ellipse 5.png';
 
 const CustomerSupport: React.FC = () => {
   return (

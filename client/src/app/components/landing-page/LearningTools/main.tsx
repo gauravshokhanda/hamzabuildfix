@@ -1,8 +1,8 @@
 // InteractiveLearningTools.tsx
 import React from 'react';
 import Image from 'next/image';
-import bg1 from '../../../public/images/landing-page/bg1.png';
-import bg2 from '../../../public/images/landing-page/bg2.png';
+import bg1 from 'public/images/landing-page/bg1.png';
+import bg2 from 'public/images/landing-page/bg2.png';
 import Section from './Section';
 
 const InteractiveLearningTools: React.FC = () => {

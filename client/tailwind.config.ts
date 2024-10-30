@@ -29,9 +29,9 @@ const config: Config = {
 
       },
       backgroundImage: {
-        reviewLeft: "url('./public/images/landing-page/left-review.png')",
-        reviewRight: "url('./public/images/landing-page/right-review.png')",
-        reviewMiddle: "url('./public/images/landing-page/middle-review.png')",
+        // reviewLeft: "url('./public/images/landing-page/left-review.png')",
+        // reviewRight: "url('./public/images/landing-page/right-review.png')",
+        // reviewMiddle: "url('./public/images/landing-page/middle-review.png')",
 
         bgHero:
           "linear-gradient(rgba(64, 168, 205, 0.67), rgba(32, 84, 103, 0.67))",

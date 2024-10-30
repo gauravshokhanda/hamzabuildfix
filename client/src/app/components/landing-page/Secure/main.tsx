@@ -1,8 +1,8 @@
 import React from 'react';
 import Card from './Card';
-import logo1 from '../../../public/images/landing-page/security1.png';
-import logo2 from '../../../public/images/landing-page/securty2.png';
-import logo3 from '../../../public/images/landing-page/security1.png'; // New logo
+import logo1 from 'public/images/landing-page/security1.png';
+import logo2 from 'public/images/landing-page/securty2.png';
+import logo3 from 'public/images/landing-page/security1.png'; // New logo
 
 const SecureLearningEnvironment: React.FC = () => {
   return (

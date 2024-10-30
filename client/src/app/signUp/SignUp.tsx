@@ -1,9 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import Button from "../components/Button";
-import bg from "../public/images/auth/bg.png";
-import facebook from "../public/images/auth/facebook.png";
-import google from "../public/images/auth/google.png";
+import bg from "public/images/auth/bg.png";
+import facebook from "public/images/auth/facebook.png";
+import google from "public/images/auth/google.png";
 import InputField from "../components/InputField";
 import { useRouter } from "next/navigation";
 import Link from "next/link";

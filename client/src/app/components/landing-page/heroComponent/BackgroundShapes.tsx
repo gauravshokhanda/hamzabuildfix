@@ -1,6 +1,6 @@
 // BackgroundShapes.tsx
 import React from 'react';
-import backgroundShape from "../../../public/images/landing-page/shape-3.png.png"
+import backgroundShape from "public/images/landing-page/shape-3.png.png"
 import Image from 'next/image';
 
 const BackgroundShapes: React.FC = () => {

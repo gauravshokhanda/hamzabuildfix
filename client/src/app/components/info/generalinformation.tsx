@@ -4,7 +4,7 @@ import InputField from "../InputField";
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';  // Importing styles for react-phone-input-2
 import Dropdown from "./Dropdown";
-import uploadIcon2 from "../../public/images/auth/upload2.png";
+import uploadIcon2 from "public/images/auth/upload2.png";
 
 const GeneralInformationForm: React.FC = () => {
   // State for form fields

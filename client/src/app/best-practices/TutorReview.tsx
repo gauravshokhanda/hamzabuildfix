@@ -1,5 +1,5 @@
 import Image from "next/image";
-import quote_image from '../public/images/best-practice/quote-image.png'
+import quote_image from 'public/images/best-practice/quote-image.png'
 export default function TutorReview() {
     return (
         <section className="md:space-y-6 text-black">

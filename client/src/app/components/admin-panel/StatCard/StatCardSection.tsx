@@ -1,7 +1,7 @@
 import React from "react";
 import StatCard from "./StatCard";
-import arrowUp from "../../../public/images/session-oversight/arrow-up.svg";
-import arrowDown from "../../../public/images/session-oversight/arrow-down.svg";
+import arrowUp from "public/images/session-oversight/arrow-up.svg";
+import arrowDown from "public/images/session-oversight/arrow-down.svg";
 import UpChart from "./UpChart";
 import DownChart from "./DownChart";
 

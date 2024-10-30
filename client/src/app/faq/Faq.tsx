@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from "react";
-import faq_bg from '../public/images/FAQ/faq_bg.png';
+import faq_bg from 'public/images/FAQ/faq_bg.png';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FaSearch } from "react-icons/fa";
 

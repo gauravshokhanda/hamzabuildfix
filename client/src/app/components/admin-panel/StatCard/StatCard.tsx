@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image, { StaticImageData } from "next/image";
-import threedot from "../../../public/images/session-oversight/threedot.svg";
+import threedot from "public/images/session-oversight/threedot.svg";
 
 const StatCard = ({
   title,

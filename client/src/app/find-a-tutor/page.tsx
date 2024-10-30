@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
-import searchIcon from "../public/images/landing-page/searchIcon.png";
-import bottomArrow from "../public/images/landing-page/bottomArrow.png";
+import searchIcon from "public/images/landing-page/searchIcon.png";
+import bottomArrow from "public/images/landing-page/bottomArrow.png";
 import TutorCard from "../components/TutorCard";
 import { MdNavigateNext } from "react-icons/md";
 import { GrFormPrevious } from "react-icons/gr";

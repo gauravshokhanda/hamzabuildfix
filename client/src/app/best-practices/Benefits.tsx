@@ -1,8 +1,8 @@
 import Image from "next/image";
-import flex_sch from "../public/images/best-practice/flex-sch.svg";
-import advanced_tech from "../public/images/best-practice/advanced-tech.svg";
-import access_cb from "../public/images/best-practice/access-cb.svg";
-import comp_compens from "../public/images/best-practice/comp-compens.svg";
+import flex_sch from "public/images/best-practice/flex-sch.svg";
+import advanced_tech from "public/images/best-practice/advanced-tech.svg";
+import access_cb from "public/images/best-practice/access-cb.svg";
+import comp_compens from "public/images/best-practice/comp-compens.svg";
 import Heading from "../components/Heading";
 export default function Benefits() {
   return (

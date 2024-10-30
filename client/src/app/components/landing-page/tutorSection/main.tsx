@@ -2,7 +2,7 @@
 import React from 'react';
 
 import ContentCard from './ContentCard'; // Import the ContentCard component
-import tutorGroupImage1 from '../../../public/images/landing-page/tutorGroup.png';
+import tutorGroupImage1 from 'public/images/landing-page/tutorGroup.png';
 
 
 const FindTutor: React.FC = () => {

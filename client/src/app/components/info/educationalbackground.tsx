@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCloudArrowUp } from "@fortawesome/free-solid-svg-icons";
 import Dropdown from "./Dropdown";
 import { useState } from "react";
-import uploadIcon2 from "../../public/images/auth/upload2.png";
+import uploadIcon2 from "public/images/auth/upload2.png";
 const Educationalbackground = () => {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const degreeOptions = [

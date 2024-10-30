@@ -2,7 +2,7 @@
 import Searchbar from "../../components/admin-panel/ui/Searchbar";
 import Image from "next/image";
 import React from "react";
-import avatar from "../../public/images/session-oversight/avatar.svg";
+import avatar from "public/images/session-oversight/avatar.svg";
 
 const Messages = () => {
   const messages = [

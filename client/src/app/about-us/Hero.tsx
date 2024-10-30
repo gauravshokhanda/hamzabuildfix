@@ -1,5 +1,5 @@
 import React from "react";
-import imageHero from "../public/images/about-us/aboutus-hero.png";
+import imageHero from "public/images/about-us/aboutus-hero.png";
 import Image from "next/image";
 import { TfiEmail } from "react-icons/tfi";
 import { FaInstagram } from "react-icons/fa6";

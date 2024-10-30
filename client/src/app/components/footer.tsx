@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import logo from "./../public/images/logo.png";
+import logo from "public/images/logo.png";
 import Link from "next/link";
 import useAdminRoute from "../../hooks/useAdminRoute";
 import useTeacherRoute from "../../hooks/useTeacherRoute";

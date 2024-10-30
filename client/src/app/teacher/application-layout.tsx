@@ -1,7 +1,7 @@
 "use client";
-import logo from "../public/images/logo.png";
-import avatar from "../public/images/session-oversight/avatar.svg";
-import down from "../public/images/dashnav/down.svg";
+import logo from "public/images/logo.png";
+import avatar from "public/images/session-oversight/avatar.svg";
+import down from "public/images/dashnav/down.svg";
 import { Navbar, NavbarSection } from "../components/admin-panel/ui/navbar";
 import {
   Sidebar,

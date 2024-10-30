@@ -1,9 +1,9 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-import down from "../../../public/images/dashnav/down.svg";
-import cc from "../../../public/images/session-oversight/CC.svg";
-import pc from "../../../public/images/session-oversight/PC.svg";
+import down from "public/images/dashnav/down.svg";
+import cc from "public/images/session-oversight/CC.svg";
+import pc from "public/images/session-oversight/PC.svg";
 import Example from "./ComparisonChart";
 
 export const Comparison = (): JSX.Element => {

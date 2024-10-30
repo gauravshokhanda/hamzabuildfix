@@ -8,8 +8,8 @@ import Card from './Card';
 import { Swiper as SwiperCore } from 'swiper'; // Import the correct Swiper type
 
 import { Pagination, Navigation } from 'swiper/modules';
-import backArrow from '../../../public/images/landing-page/back.png'
-import nextArrow from '../../../public/images/landing-page/next.png'
+import backArrow from 'public/images/landing-page/back.png'
+import nextArrow from 'public/images/landing-page/next.png'
 import Image from 'next/image';
 
 export default function ClientTestimonials() {

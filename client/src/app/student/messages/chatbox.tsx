@@ -1,9 +1,9 @@
 import React from "react";
-import avatar from "../../public/images/session-oversight/avatar.svg";
+import avatar from "public/images/session-oversight/avatar.svg";
 import Image from "next/image";
-import pin from "../../public/images/student/pin.svg";
-import threedot from "../../public/images/session-oversight/threedot.svg";
-import seen from "../../public/images/student/seen.svg";
+import pin from "public/images/student/pin.svg";
+import threedot from "public/images/session-oversight/threedot.svg";
+import seen from "public/images/student/seen.svg";
 import ChatInput from "./chatInput";
 
 const Chatbox = () => {

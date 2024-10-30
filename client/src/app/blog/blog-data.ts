@@ -1,10 +1,10 @@
 // blog card images
-import blog1 from "../public/images/blog/image20.svg";
-import blog2 from "../public/images/blog/image21.svg";
-import blog3 from "../public/images/blog/image22.svg";
-import blog4 from "../public/images/blog/image23.svg";
-import blog5 from "../public/images/blog/image24.svg";
-import blog6 from "../public/images/blog/image25.svg";
+import blog1 from "public/images/blog/image20.svg";
+import blog2 from "public/images/blog/image21.svg";
+import blog3 from "public/images/blog/image22.svg";
+import blog4 from "public/images/blog/image23.svg";
+import blog5 from "public/images/blog/image24.svg";
+import blog6 from "public/images/blog/image25.svg";
 
 export const blogCardData = [
   {

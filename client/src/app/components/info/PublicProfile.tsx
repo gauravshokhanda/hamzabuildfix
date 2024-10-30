@@ -1,8 +1,8 @@
 "use client";
 import { useState } from "react";
 import InputField from "../InputField";
-import uploadIcon from "../../public/images/auth/upload.png";
-import uploadIcon2 from "../../public/images/auth/upload2.png";
+import uploadIcon from "public/images/auth/upload.png";
+import uploadIcon2 from "public/images/auth/upload2.png";
 const PublicProfile = () => {
     const [headline, setHeadline] = useState("");
     const [bio, setBio] = useState("");

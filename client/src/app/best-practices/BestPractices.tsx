@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Heading from "../components/Heading";
-import lesson_planning from './../public/images/best-practice/lesson-planning.svg'
-import classroom from './../public/images/best-practice/classroom.svg'
-import communication from './../public/images/best-practice/communication.svg'
+import lesson_planning from 'public/images/best-practice/lesson-planning.svg'
+import classroom from 'public/images/best-practice/classroom.svg'
+import communication from 'public/images/best-practice/communication.svg'
 export default function BestPractices() {
     return (
         <section className="bg-background_blue text-black py-12 px-4 md:px-12">

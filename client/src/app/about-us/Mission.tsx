@@ -1,6 +1,6 @@
 import React from "react";
-import missionImage from "../public/images/about-us/mission.svg";
-import visionImage from "../public/images/about-us/vision.svg";
+import missionImage from "public/images/about-us/mission.svg";
+import visionImage from "public/images/about-us/vision.svg";
 import Image from "next/image";
 import Heading from "../components/Heading";
 

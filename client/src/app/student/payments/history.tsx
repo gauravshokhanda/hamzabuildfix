@@ -1,11 +1,11 @@
 import Image from "next/image";
 import React from "react";
-import book from "../../public/images/student/book.png";
-import P from "../../public/images/student/P.png";
-import one from "../../public/images/student/01.svg";
-import two from "../../public/images/student/02.svg";
-import three from "../../public/images/student/03.svg";
-import four from "../../public/images/student/04.svg";
+import book from "public/images/student/book.png";
+import P from "public/images/student/P.png";
+import one from "public/images/student/01.svg";
+import two from "public/images/student/02.svg";
+import three from "public/images/student/03.svg";
+import four from "public/images/student/04.svg";
 
 const History = () => {
   return (

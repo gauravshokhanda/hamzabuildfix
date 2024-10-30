@@ -8,7 +8,7 @@ import {
   TableRow,
 } from "./table";
 import clsx from "clsx";
-import Arrow from "../../../public/images/arrow.png";
+import Arrow from "public/images/arrow.png";
 import Image from "next/image";
 
 interface FormatData {

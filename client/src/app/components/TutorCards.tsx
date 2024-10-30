@@ -1,10 +1,10 @@
 'use client'
 import Image, { StaticImageData } from "next/image";
 import React from "react";
-import person1 from '../public/images/best-practice/person1.png'
-import person2 from '../public/images/best-practice/person2.png'
-import person3 from '../public/images/best-practice/person3.png'
-import person4 from '../public/images/best-practice/person4.png'
+import person1 from 'public/images/best-practice/person1.png'
+import person2 from 'public/images/best-practice/person2.png'
+import person3 from 'public/images/best-practice/person3.png'
+import person4 from 'public/images/best-practice/person4.png'
 import Button from "./Button";
 import Link from "next/link";
 interface TutorCardProps {

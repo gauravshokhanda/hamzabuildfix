@@ -3,8 +3,8 @@
 import React from "react";
 import { Book, Clock, MessageSquare, TrendingUp, Video } from "lucide-react";
 import Image from "next/image";
-import logo from "../../../public/images/logo.png";
-import DashboardPNG from "../../../public/images/main-dashboard/dashboard.jpeg";
+import logo from "public/images/logo.png";
+import DashboardPNG from "public/images/main-dashboard/dashboard.jpeg";
 
 const MainDashboard: React.FC = () => {
   return (

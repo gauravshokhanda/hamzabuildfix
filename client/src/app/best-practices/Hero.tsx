@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
-import girl_with_book from "./../public/images/best-practice/girl-with-book.png";
-import profiles from "./../public/images/best-practice/profiles.png";
+import girl_with_book from "public/images/best-practice/girl-with-book.png";
+import profiles from "public/images/best-practice/profiles.png";
 import Button from "../components/Button";
 
 export default function Hero() {

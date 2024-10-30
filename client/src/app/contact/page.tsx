@@ -1,5 +1,5 @@
 import Image from "next/image";
-import contactHero from "../public/images/contact/contact.png";
+import contactHero from "public/images/contact/contact.png";
 
 // icons
 import { TfiEmail } from "react-icons/tfi";

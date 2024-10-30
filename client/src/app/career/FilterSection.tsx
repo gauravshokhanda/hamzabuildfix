@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import searchIcon from "../public/images/landing-page/searchIcon.png";
-import bottomArrow from "../public/images/landing-page/bottomArrow.png";
+import searchIcon from "public/images/landing-page/searchIcon.png";
+import bottomArrow from "public/images/landing-page/bottomArrow.png";
 
 const FilterSection: React.FC = () => {
   return (
