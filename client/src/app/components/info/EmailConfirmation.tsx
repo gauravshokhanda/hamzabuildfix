@@ -5,7 +5,7 @@ const EmailConfirmation = () => {
     <div className="w-full max-w-4xl mx-auto p-6 space-y-6">
 
       {/* Card Container */}
-      <div className="bg-white shadow rounded-lg px-8 px-28 py-24">
+      <div className="bg-white shadow rounded-lg px-28 py-24">
         <p className="text-lg text-gray-800 mb-4">
           Welcome to Tafawwaq, Smiles Danial
         </p>
@@ -13,7 +13,7 @@ const EmailConfirmation = () => {
         {/* Confirmation Message */}
         <ul className="list-disc list-inside text-[#666666] space-y-6 mt-12" >
           <li>
-            We've sent a confirmation email to <span className="font-medium">danialjabbarbwp@gmail.com</span>. 
+            We&apos;ve sent a confirmation email to <span className="font-medium">danialjabbarbwp@gmail.com</span>.
             Please check your inbox and click on the confirmation link to proceed.
           </li>
           <li >

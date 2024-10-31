@@ -1,8 +1,7 @@
 "use client";
 import InputField from "../InputField"; // Import your InputField component
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCloudArrowUp } from "@fortawesome/free-solid-svg-icons";
-import Dropdown from "./Dropdown";
+
+import Dropdown from "./DropDown";
 import { useState } from "react";
 import uploadIcon2 from "public/images/auth/upload2.png";
 const Educationalbackground = () => {
@@ -10,8 +9,8 @@ const Educationalbackground = () => {
   const degreeOptions = [
     "High School Diploma",
     "Associate Degree",
-    "Bachelor’s Degree",
-    "Master’s Degree",
+    "Bachelor's Degree",
+    "Master's Degree",
     "Ph.D.",
   ];
   const majorOptions = [

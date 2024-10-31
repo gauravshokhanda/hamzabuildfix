@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import InputField from "../InputField";
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';  // Importing styles for react-phone-input-2
-import Dropdown from "./Dropdown";
+import Dropdown from "./DropDown";
 import uploadIcon2 from "public/images/auth/upload2.png";
 
 const GeneralInformationForm: React.FC = () => {
@@ -271,7 +271,7 @@ const GeneralInformationForm: React.FC = () => {
           </label>
         </div>
 
-        {formData.tutor == 'yes' &&
+        {formData.tutor === true &&
           <div className="pt-4 max-w-[500px]">
             <div
               className="flex flex-col items-center justify-center align-middle border-dashed border-2 border-light_gray rounded-md p-6 pt-9 pb-9 text-center cursor-pointer hover:bg-gray-100"
@@ -291,7 +291,7 @@ const GeneralInformationForm: React.FC = () => {
           </div>
         }
 
-        {formData.tutor === 'no' && (
+        {formData.tutor === false && (
           <div className="pt-4">
             <p className="text-text_secondary mb-2">
               Tutors who don’t have the license yet should be navigated to the link:

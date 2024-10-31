@@ -1,8 +1,8 @@
 "use client";
-import React from 'react';
+import React, { ReactNode } from 'react';
 
 interface InputFieldProps {
-  label: string;
+  label: string | ReactNode;
   type: 'text' | 'password' | 'email' | 'number' | 'tel' | 'url' | 'search' | 'date' | 'datetime-local' | 'month' | 'week' | 'time' | 'color';
   placeholder: string;
   id: string;

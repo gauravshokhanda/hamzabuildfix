@@ -4,13 +4,13 @@ import { useState } from 'react';
 
 // Define the structure of each section with a component
 interface Section {
-  heading: string;
-  Component: React.FC; // Accepts a React component
+    heading: string;
+    Component?: React.FC; // Accepts a React component
 }
 
 // Define the props for the Policies component
 interface PoliciesProps {
-  sections: Section[];
+    sections: Section[];
 }
 
 const Policies: React.FC<PoliciesProps> = ({ sections = [] }) => {

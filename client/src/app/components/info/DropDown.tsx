@@ -1,26 +1,26 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, ReactNode } from 'react';
 import { FaChevronDown, FaSearch } from 'react-icons/fa';
 
 interface DropdownProps {
     options: string[];
     selectedOptions: string[];
-    placeHolderLabel: string;
-    hideSearch: boolean;
-    hideCheckBox: boolean;
+    placeHolderLabel?: string | ReactNode;
+    hideSearch?: boolean;
+    hideCheckBox?: boolean;
     onSelectionChange: (selected: string[]) => void;
     isOpen: boolean; // Control from parent component
     onToggle: () => void; // Function to toggle dropdown
 }
 
-const Dropdown: React.FC<DropdownProps> = ({ 
-    options, 
-    selectedOptions, 
-    placeHolderLabel, 
-    onSelectionChange, 
-    hideSearch = false, 
-    hideCheckBox = false, 
-    isOpen, 
-    onToggle 
+const Dropdown: React.FC<DropdownProps> = ({
+    options,
+    selectedOptions,
+    placeHolderLabel,
+    onSelectionChange,
+    hideSearch = false,
+    hideCheckBox = false,
+    isOpen,
+    onToggle
 }) => {
     const [searchQuery, setSearchQuery] = useState("");
     const dropdownRef = useRef<HTMLDivElement>(null);

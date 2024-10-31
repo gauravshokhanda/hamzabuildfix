@@ -9,6 +9,8 @@ const PublicProfile = () => {
     const [about, setAbout] = useState("");
     const [profileImage, setProfileImage] = useState<File | null>(null);
     const [video, setVideo] = useState<File | null>(null);
+    console.log(video);
+
     return (
         <div className="container mx-auto p-8 ">
             <div className="max-w-4xl mx-auto">
@@ -51,8 +53,8 @@ const PublicProfile = () => {
                             )}
                         </div>
                         <button
-                            className="px-4 py-2 mt-2 border-light_gray mb-5 light_gray text-gray rounded-md" 
-                            style={{borderWidth:1}}
+                            className="px-4 py-2 mt-2 border-light_gray mb-5 light_gray text-gray rounded-md"
+                            style={{ borderWidth: 1 }}
                             onClick={() => document.getElementById("profileImageInput")?.click()}
                         >
                             Choose Image

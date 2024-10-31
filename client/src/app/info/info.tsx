@@ -34,18 +34,19 @@ interface StepContentWithDescription {
 
 type StepContent = StepContentWithSections | StepContentWithDescription;
 
-// Type guard to check if stepContent is StepContentWithSections
 function isStepContentWithSections(
   step: StepContent
 ): step is StepContentWithSections {
   return (step as StepContentWithSections).sections !== undefined;
 }
 
+
+
 const Info = () => {
   const [currentStep, setCurrentStep] = useState(1);
 
   const steps = [
-    "Tafawwaq’s\nPolicies",
+    "Tafawwaq's\nPolicies",
     "General\nInformation",
     "Subjects I\nTeach",
     "Educational\nBackground",
@@ -115,6 +116,8 @@ const Info = () => {
       description: "Confirm your email address for notifications.",
     },
   ];
+
+
 
   // Component rendering based on current step
   const renderComponent = () => {
@@ -205,7 +208,7 @@ const Info = () => {
         </h2>
 
         {/* Display Description if Available */}
-        {stepContent[currentStep - 1]?.description && (
+        {(stepContent[currentStep - 1] as StepContentWithDescription)?.description && (
           <p className="text-center text-gray-600 mb-4">
             {(stepContent[currentStep - 1] as StepContentWithDescription)
               .description}

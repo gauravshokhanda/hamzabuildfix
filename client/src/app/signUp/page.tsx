@@ -1,5 +1,5 @@
 import React from "react";
-import SignUp from "./signUp";
+import SignUp from "./SignUp";
 
 export default function SignUpPage() {
   return (

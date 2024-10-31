@@ -27,7 +27,7 @@ const PageNotFound = () => {
             </div>
 
             {/* Text above the 404 */}
-            <p className="absolute top-[12%] text-xl lg:text-4xl text-white">You musn't be here!</p>
+            <p className="absolute top-[12%] text-xl lg:text-4xl text-white">You mus`&apos;nt be here!</p>
 
             {/* Back to Home Button */}
             <div className="absolute bottom-[12%]">

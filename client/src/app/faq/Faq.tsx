@@ -1,8 +1,7 @@
 'use client';
 import React, { useState } from "react";
 import faq_bg from 'public/images/FAQ/faq_bg.png';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { FaSearch } from "react-icons/fa";
+
 
 // Sample FAQ Data (can be replaced with dynamic data)
 const faqData = [
@@ -30,9 +29,9 @@ const faqData = [
 
 const Faq = () => {
     // Initially, all FAQs are open (all indices in the array)
-    const [activeIndexes, setActiveIndexes] = useState([]);
+    const [activeIndexes, setActiveIndexes] = useState<number[]>([]);
 
-    const toggleFaq = (index) => {
+    const toggleFaq = (index: number) => {
         if (activeIndexes.includes(index)) {
             // If the index is in the activeIndexes array, remove it (close it)
             setActiveIndexes(activeIndexes.filter(i => i !== index));

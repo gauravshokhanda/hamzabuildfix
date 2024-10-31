@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import InputField from "../InputField";
-import uploadIcon from "public/images/auth/upload.png";
 
 const TutorContract = () => {
     const [firstName, setFirstName] = useState("");
@@ -16,23 +15,23 @@ const TutorContract = () => {
                     Agreement And Terms For Tutoring
                 </h2>
                 <p className="text-sm text-text_secondary">
-                    This Agreement (“Agreement”) is made effective as of [Date] by and between [Client Name] (“Client”) and [Designer Name] (“Designer”).
+                    This Agreement (Agreement) is made effective as of [Date] by and between [Client Name] (Client) and [Designer Name] (Designer).
                 </p>
             </div>
 
             {/* Contract Body */}
             <div className="bg-background_blue p-5 rounded-md mb-8">
                 <p className="text-sm text-text_secondary mb-4">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled...
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled...
                 </p>
                 <p className="text-sm text-text_secondary mb-4">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled...
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled...
                 </p>
                 <p className="text-sm text-text_secondary mb-4">
-                    Text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.
+                    Text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.
                 </p>
                 <p className="text-sm text-text_secondary mb-4">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.
                 </p>
                 <ul className="list-decimal pl-6 text-sm text-text_secondary mb-4 space-y-1">
                     <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>

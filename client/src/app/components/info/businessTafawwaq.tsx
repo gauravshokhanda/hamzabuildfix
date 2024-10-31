@@ -1,9 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
-import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';  // Importing styles for react-phone-input-2
-import Dropdown from "./Dropdown";
-import InputField from "../InputField";
+import Dropdown from "./DropDown";
 import { FaChevronDown } from "react-icons/fa6";
+
+// Define a type for the currency option
+interface CurrencyOption {
+  value: string;
+  label: string;
+  flag: string;
+}
 
 const ToggleSwitch = ({
   id,
@@ -37,20 +42,20 @@ const ToggleSwitch = ({
 };
 
 const BusinessTafawwaq = () => {
-  const currencyOptions = [
+  const currencyOptions: CurrencyOption[] = [
     { value: "USD", label: "USD", flag: "https://flagcdn.com/us.svg" },
     { value: "GBP", label: "GBP", flag: "https://flagcdn.com/gb.svg" },
     { value: "EUR", label: "EUR", flag: "https://flagcdn.com/eu.svg" },
     { value: "AUD", label: "AUD", flag: "https://flagcdn.com/au.svg" },
     { value: "CAD", label: "CAD", flag: "https://flagcdn.com/ca.svg" },
   ];
+  const [selectedCurrency, setSelectedCurrency] = useState(currencyOptions[0]);
   const [timeFrom, setTimeFrom] = useState(Array(7).fill("09:00 AM"));
   const [timeTo, setTimeTo] = useState(Array(7).fill("05:00 PM"));
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-  const [isOpenCurrent, setIsOpenCurrency] = useState(false)
-  const [hourlyRate, setHourlyRate] = useState('')
-  const dropdownRef = useRef(null);
-  const [selectedCurrency, setSelectedCurrency] = useState(currencyOptions[0]);
+  const [isOpenCurrent, setIsOpenCurrency] = useState(false);
+  const [hourlyRate, setHourlyRate] = useState("");
+  const dropdownRef = useRef<HTMLDivElement>(null);
   const availableTimes = [
     "12:00 AM", "12:30 AM", "1:00 AM", "1:30 AM", "2:00 AM", "2:30 AM",
     "3:00 AM", "3:30 AM", "4:00 AM", "4:30 AM", "5:00 AM", "5:30 AM",
@@ -62,7 +67,7 @@ const BusinessTafawwaq = () => {
     "9:00 PM", "9:30 PM", "10:00 PM", "10:30 PM", "11:00 PM", "11:30 PM"
   ];
 
-  const handleTimeChange = (index, value, type) => {
+  const handleTimeChange = (index: number, value: string, type: string) => {
     if (type === "from") {
       const newTimeFrom = [...timeFrom];
       newTimeFrom[index] = value;
@@ -79,9 +84,8 @@ const BusinessTafawwaq = () => {
     setOpenDropdown(openDropdown === dropdownId ? null : dropdownId);
   };
 
-  const handleClickOutside = (event) => {
-    // If the click is outside of the dropdown, close it
-    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+  const handleClickOutside = (event: MouseEvent) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
       setIsOpenCurrency(false);
     }
   };
@@ -94,10 +98,11 @@ const BusinessTafawwaq = () => {
     };
   }, []);
 
-  const handleSelect = (option) => {
+  const handleSelect = (option: CurrencyOption) => {
     setSelectedCurrency(option);
     setIsOpenCurrency(false);
   };
+
   return (
     <div className="w-full max-w-4xl mx-auto p-6 space-y-6">
       {/* Hourly Rate */}

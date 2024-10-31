@@ -5,7 +5,6 @@ import bg from "public/images/auth/bg.png";
 import facebook from "public/images/auth/facebook.png";
 import google from "public/images/auth/google.png";
 import InputField from "../components/InputField";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 const SignUp: React.FC = () => {
@@ -15,7 +14,6 @@ const SignUp: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rePassword, setRePassword] = useState("");
-  const router = useRouter()
   return (
     <div className="flex items-center justify-center h-screen bg-cover bg-center" style={{ backgroundImage: `url(${bg.src})` }}>
       <div className="bg-white shadow-lg rounded-lg p-8 max-w-lg w-full z-10 relative">

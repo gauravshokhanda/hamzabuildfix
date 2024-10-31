@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import Dropdown from "./Dropdown";
+import Dropdown from "./DropDown";
 
 const SubjectsTeach = () => {
   // State to manage open dropdowns
@@ -40,7 +40,7 @@ const SubjectsTeach = () => {
           selectedOptions={[]}
           isOpen={openDropdown === "curriculum"}
           onToggle={() => handleToggle("curriculum")}
-          onSelectionChange={(selected) => console.log(selected)}
+          onSelectionChange={(selected: string[]) => console.log(selected)}
         />
       </div>
 
@@ -58,7 +58,7 @@ const SubjectsTeach = () => {
           selectedOptions={[]}
           isOpen={openDropdown === "level"}
           onToggle={() => handleToggle("level")}
-          onSelectionChange={(selected) => console.log(selected)}
+          onSelectionChange={(selected: string[]) => console.log(selected)}
         />
       </div>
 
@@ -72,7 +72,7 @@ const SubjectsTeach = () => {
           selectedOptions={[]}
           isOpen={openDropdown === "subject"}
           onToggle={() => handleToggle("subject")}
-          onSelectionChange={(selected) => console.log(selected)}
+          onSelectionChange={(selected: string[]) => console.log(selected)}
         />
       </div>
     </form>
