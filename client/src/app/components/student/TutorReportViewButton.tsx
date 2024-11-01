@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button } from "../admin-panel/ui/button";
-import TutorReportViewModal from "./TutorReportViewModal.tsx";
+import TutorReportViewModal from "./TutorReportViewModal";
 
 function TutorReportViewButton() {
   const [isOpen, setIsOpen] = useState(false);

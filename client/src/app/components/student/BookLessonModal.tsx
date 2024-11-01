@@ -99,6 +99,8 @@ const BookLessonModal = ({ handleClose }: { handleClose: () => void }) => {
   );
 };
 
+export default BookLessonModal;
+
 const InputField: React.FC<{
   label: string;
   placeholder: string;
@@ -145,7 +147,6 @@ const CostSummaryItem: React.FC<{
   );
 };
 
-export default BookLessonModal;
 
 function AccountDropdownMenu({
   anchor,

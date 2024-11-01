@@ -10,7 +10,7 @@ import {
 import { useRef, useState } from "react";
 // @ts-expect-error - No type definitions available
 import RangeSlider from "react-range-slider-input";
-import TeacherCard from "./TeacherCard";
+import TeacherCard from "../../components/student/TeacherCard";
 
 export default function Home() {
   const [values, setValues] = useState(["0", "2000"]);

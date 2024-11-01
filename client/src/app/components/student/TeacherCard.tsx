@@ -1,6 +1,6 @@
 import React from "react";
-import { Button } from "../../components/admin-panel/ui/button";
-import TeacherProfileModal from "../../components/student/TeacherProfileModal";
+import { Button } from "../admin-panel/ui/button";
+import TeacherProfileModal from "./TeacherProfileModal";
 import Image from "next/image";
 
 interface Props {
