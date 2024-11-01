@@ -4,7 +4,7 @@ import InputField from "../InputField"; // Import your InputField component
 import Dropdown from "./DropDown";
 import { useState } from "react";
 import uploadIcon2 from "public/images/auth/upload2.png";
-const Educationalbackground = () => {
+const EducationalBackground = () => {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const degreeOptions = [
     "High School Diploma",
@@ -170,4 +170,4 @@ const Educationalbackground = () => {
   );
 };
 
-export default Educationalbackground;
+export default EducationalBackground;

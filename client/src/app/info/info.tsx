@@ -1,17 +1,17 @@
 "use client";
 import { useState } from "react";
-import Polices from "../components/info/polices";
-import Generalinformation from "../components/info/generalinformation";
-import SubjectsTeach from "../components/info/subjectsTeach";
-import Educationalbackground from "../components/info/educationalbackground";
-import BusinessTafawwaq from "../components/info/businessTafawwaq";
+import Polices from "../components/info/Tafawwaq's Policies/main";
+import Educationalbackground from "../components/info/EducationalBackground";
+import BusinessTafawwaq from "../components/info/BusinessTafawwaq";
 import PublicProfile from "../components/info/PublicProfile";
 import TutorContract from "../components/info/TutorContract";
 import EmailConfirmation from "../components/info/EmailConfirmation";
-import Relationship from "../components/info/Relationship";
-import NewStudents from "../components/info/NewStudents";
-import Payment from "../components/info/Payment";
-import ImportantRules from "../components/info/ImportantRules";
+import Relationship from "../components/info/Tafawwaq's Policies/Relationship";
+import NewStudents from "../components/info/Tafawwaq's Policies/NewStudents";
+import Payment from "../components/info/Tafawwaq's Policies/Payment";
+import ImportantRules from "../components/info/Tafawwaq's Policies/ImportantRules";
+import GeneralInformation from "../components/info/GeneralInformation";
+import SubjectsTeach from "../components/info/SubjectsTeach";
 
 // Define the types for step content
 interface Section {
@@ -126,7 +126,7 @@ const Info = () => {
     }
     switch (currentStep) {
       case 2:
-        return <Generalinformation />;
+        return <GeneralInformation />;
       case 3:
         return <SubjectsTeach />;
       case 4:

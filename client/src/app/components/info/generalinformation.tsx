@@ -6,7 +6,7 @@ import 'react-phone-input-2/lib/style.css';  // Importing styles for react-phone
 import Dropdown from "./DropDown";
 import uploadIcon2 from "public/images/auth/upload2.png";
 
-const GeneralInformationForm: React.FC = () => {
+const GeneralInformation: React.FC = () => {
   // State for form fields
   const [formData, setFormData] = useState({
     username: "",
@@ -316,4 +316,4 @@ const GeneralInformationForm: React.FC = () => {
   );
 };
 
-export default GeneralInformationForm;
+export default GeneralInformation;
