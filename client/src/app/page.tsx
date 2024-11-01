@@ -1,21 +1,21 @@
 import React from "react";
-import HERO from "./components/landing-page/heroComponent/main";
-import SECURE from "./components/landing-page/Secure/main";
-import TOOLS from "./components/landing-page/LearningTools/main";
-import WHYUS from "./components/landing-page/whyUS/main";
+import HeroComponent from "./components/landing-page/HeroComponent";
+import SecureLearningEnvironment from "./components/landing-page/SecureLearningEnvironment";
+import InteractiveLearningTools from "./components/landing-page/InteractiveLearningTools";
+import BecomeTeacher from "./components/landing-page/BecomeTeacher";
 import SUPPORT from "./components/landing-page/Support/main";
 import FAQ from "./components/FAQ";
-import TUTOR from "./components/landing-page/tutorSection/main";
-import ClientTestimonials from "./components/landing-page/ClientTestimonials/main";
+import FindTutor from "./components/landing-page/FindTutor";
+import ClientTestimonials from "./components/landing-page/ClientTestimonials";
 const page = () => {
   return (
     <div>
-      <HERO />
-      <TUTOR />
-      <SECURE />
-      <TOOLS />
+      <HeroComponent />
+      <FindTutor />
+      <SecureLearningEnvironment />
+      <InteractiveLearningTools />
       <ClientTestimonials />
-      <WHYUS />
+      <BecomeTeacher />
       <SUPPORT />
       <FAQ />
     </div>

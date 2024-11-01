@@ -1,9 +1,8 @@
-// InteractiveLearningTools.tsx
 import React from 'react';
 import Image from 'next/image';
 import bg1 from 'public/images/landing-page/bg1.png';
 import bg2 from 'public/images/landing-page/bg2.png';
-import Section from './Section';
+
 
 const InteractiveLearningTools: React.FC = () => {
   // Data for each section
@@ -58,3 +57,55 @@ const InteractiveLearningTools: React.FC = () => {
 };
 
 export default InteractiveLearningTools;
+
+
+interface SectionProps {
+  title: string;
+  cards: { title: string; description: string }[];
+}
+
+const Section: React.FC<SectionProps> = ({ title, cards }) => {
+  // Apply conditional styles based on the title
+  const marginTopStyles = title === 'Flexible Scheduling' ? 'mt-14 lg:mt-24' : 'lg:mt-0';
+
+  return (
+    <div className={`flex flex-col justify-start ${marginTopStyles} lg:px-12  space-y-8 w-full lg:w-1/2`}>
+      <h2 className="text-4xl font-bold text-white mb-8 text-center lg:text-left">{title}</h2>
+      <CardGrid cards={cards} />
+    </div>
+  );
+};
+
+
+
+
+interface CardGridProps {
+  cards: { title: string; description: string }[];
+}
+
+const CardGrid: React.FC<CardGridProps> = ({ cards }) => {
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      {cards.map((card, index) => (
+        <Card key={index} title={card.title} description={card.description} />
+      ))}
+    </div>
+  );
+};
+
+
+interface CardProps {
+  title: string;
+  description: string;
+}
+
+const Card: React.FC<CardProps> = ({ title, description }) => {
+  return (
+    <div className="bg-white rounded-lg shadow-lg p-6 flex flex-col justify-between h-full">
+      <h3 className="text-xl text-black font-semibold text-center mb-2">{title}</h3>
+      <p className="text-gray-600 text-center flex-grow">{description}</p>
+    </div>
+  );
+};
+
+
