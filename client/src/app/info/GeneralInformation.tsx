@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import InputField from "../InputField";
+import InputField from "../components/InputField";
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';  // Importing styles for react-phone-input-2
 import Dropdown from "./DropDown";

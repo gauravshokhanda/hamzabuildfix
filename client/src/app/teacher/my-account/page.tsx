@@ -1,6 +1,6 @@
 import React from "react";
 import ProfileInfo from "./profile-info";
-import { ChangePassword } from "../../components/teacher-panel/ChangePassword/ChangePassword";
+import { ChangePassword } from "../../components/teacher/ChangePassword";
 
 const page = () => {
   return (

@@ -1,5 +1,5 @@
 "use client";
-import StudentNavbar from "../../components/admin-panel/ui/student-navbar";
+import StudentNavbar from "./student-navbar";
 import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
 import {
   Dropdown,
@@ -10,7 +10,7 @@ import {
 import { useRef, useState } from "react";
 // @ts-expect-error - No type definitions available
 import RangeSlider from "react-range-slider-input";
-import TeacherCard from "../../components/admin-panel/Student/TeacherCard";
+import TeacherCard from "./TeacherCard";
 
 export default function Home() {
   const [values, setValues] = useState(["0", "2000"]);
@@ -74,7 +74,7 @@ const Menus = () => {
     <DropdownMenu>
       <DropdownItem href="/users/1">View</DropdownItem>
       <DropdownItem href="/users/1/edit">Edit</DropdownItem>
-      <DropdownItem onClick={() => {}}>Delete</DropdownItem>
+      <DropdownItem onClick={() => { }}>Delete</DropdownItem>
     </DropdownMenu>
   );
 };

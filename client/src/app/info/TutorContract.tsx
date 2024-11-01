@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import InputField from "../InputField";
+import InputField from "../components/InputField";
 
 const TutorContract = () => {
     const [firstName, setFirstName] = useState("");

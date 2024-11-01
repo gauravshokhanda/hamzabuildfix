@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button } from "../ui/button";
+import { Button } from "../admin-panel/ui/button";
 import BookLessonModal from "./BookLessonModal";
 
 function BookLessonButton() {

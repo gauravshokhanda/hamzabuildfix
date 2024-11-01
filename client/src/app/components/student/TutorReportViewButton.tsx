@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { Button } from "../ui/button";
-import TutorProfile from "./TutorProfile";
-import { motion } from "framer-motion";
+import { Button } from "../admin-panel/ui/button";
+import TutorReportViewModal from "./TutorReportViewModal.tsx";
 
-function TeacherProfileModal() {
+function TutorReportViewButton() {
   const [isOpen, setIsOpen] = useState(false);
 
   function closeModal() {
@@ -14,46 +13,33 @@ function TeacherProfileModal() {
     setIsOpen(true);
   }
 
-  const slideInAnimation = {
-    hidden: { x: "100%" },
-    visible: { x: 0 },
-    exit: { x: "100%" },
-  };
-
   return (
     <>
       <Button
         onClick={openModal}
         color="button_primary"
-        className="bg-primary cursor-pointer border-primary w-fit"
+        className="bg-primary text-white sm:py-2 !px-3 !rounded-md"
       >
-        View Full Profile
+        View
       </Button>
       {isOpen && (
-        <div className="fixed top-0 right-0 w-full h-screen bg-gray-900 bg-opacity-50 z-50 flex items-start justify-end">
-          <motion.div
-            className="max-w-[616px] w-full relative"
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-            transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            variants={slideInAnimation}
-          >
-            <TutorProfile />
+        <div className="fixed top-0 right-0 w-full h-screen bg-gray-900 bg-opacity-50 z-50 flex items-center justify-center">
+          <div className="bg-white w-full relative max-w-[792px] mx-auto md:mt-10 md:rounded-2xl">
+            <TutorReportViewModal />
             <button
               onClick={closeModal}
               className="text-black py-2 px-4 rounded-md mt-0 absolute right-2 top-2"
             >
               {CircleIcon}
             </button>
-          </motion.div>
+          </div>
         </div>
       )}
     </>
   );
 }
 
-export default TeacherProfileModal;
+export default TutorReportViewButton;
 
 const CircleIcon = (
   <svg

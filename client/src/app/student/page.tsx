@@ -1,11 +1,11 @@
 "use client";
 import { Button } from "../components/admin-panel/ui/button";
-import StudentNavbar from "../components/admin-panel/ui/student-navbar";
-import TutorReportViewButton from "../components/admin-panel/Student/TutorReportViewButton";
+import StudentNavbar from "./find-a-tutor/student-navbar";
+import TutorReportViewButton from "../components/student/TutorReportViewButton";
 import clsx from "clsx";
 import Image from "next/image";
-import RecordIcon from "../components/admin-panel/Student/RecordIcon";
-import MessageIcon from "../components/admin-panel/Student/MessageIcon";
+import RecordIcon from "../components/student/RecordIcon";
+import MessageIcon from "../components/student/MessageIcon";
 import Link from "next/link";
 
 export default function Home() {

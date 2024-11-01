@@ -1,5 +1,5 @@
 import React from "react";
-import { EmptyStarIcon, FilledStarIcon } from "./TeacherCard";
+import { EmptyStarIcon, FilledStarIcon } from "../../student/find-a-tutor/TeacherCard";
 
 interface RatingProps {
   rating: number;

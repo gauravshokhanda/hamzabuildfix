@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "../ui/button";
+import { Button } from "../admin-panel/ui/button";
 import {
   Dropdown,
   DropdownButton,
@@ -7,8 +7,8 @@ import {
   DropdownItem,
   DropdownLabel,
   DropdownMenu,
-} from "../ui/dropdown";
-import { NavbarItem } from "../ui/navbar";
+} from "../admin-panel/ui/dropdown";
+import { NavbarItem } from "../admin-panel/ui/navbar";
 
 const BookLessonModal = ({ handleClose }: { handleClose: () => void }) => {
   return (

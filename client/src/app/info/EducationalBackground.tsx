@@ -1,5 +1,5 @@
 "use client";
-import InputField from "../InputField"; // Import your InputField component
+import InputField from "../components/InputField"; // Import your InputField component
 
 import Dropdown from "./DropDown";
 import { useState } from "react";

@@ -38,7 +38,7 @@ const teamMembers = [
   },
 ];
 
-export default function FAQ() {
+export default function page() {
   return (
     <div className="bg-gray-50 min-h-screen flex flex-col items-center bg-stone-50 rounded-md">
       <div className="w-full px-4 mx-auto">

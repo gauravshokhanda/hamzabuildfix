@@ -5,7 +5,7 @@ import AdminTable from "../../components/admin-panel/ui/admin-table";
 import { Button } from "../../components/admin-panel/ui/button";
 import Searchbar from "../../components/admin-panel/ui/Searchbar";
 import { Badge, BadgeProps } from "../../components/admin-panel/ui/badge";
-import Paginations from "../../components/admin-panel/Student/Paginations";
+import Paginations from "../../components/student/Paginations";
 
 export default function Home() {
   return (
@@ -29,7 +29,7 @@ export default function Home() {
     </div>
   );
 }
-const ActionsButtons = ({}) => {
+const ActionsButtons = ({ }) => {
   return (
     <div className="flex items-center gap-3 w-full justify-center">
       <Button

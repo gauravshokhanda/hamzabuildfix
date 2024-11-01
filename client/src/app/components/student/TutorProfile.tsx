@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "../ui/button";
+import { Button } from "../admin-panel/ui/button";
 import TutorInfo from "./TutorInfo";
 import Tags from "./Tags";
 import IntroductionVideo from "./IntroductionVideo";
