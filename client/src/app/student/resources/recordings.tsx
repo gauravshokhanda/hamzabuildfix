@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import avatar from "../../public/images/session-oversight/avatar.svg";
+import avatar from "public/images/session-oversight/avatar.svg";
 
 type Recording = {
   videoUrl: string;

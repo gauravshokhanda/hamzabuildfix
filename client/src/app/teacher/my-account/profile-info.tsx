@@ -1,12 +1,12 @@
 import Image from "next/image";
 import React from "react";
-import avatar from "../../public/images/session-oversight/avatar.svg";
-import download from "../../public/images/my-account/upload.svg";
-import help from "../../public/images/my-account/help.svg";
-import dropDown from "../../public/images/my-account/arrow_drop_down.svg";
-import usd from "../../public/images/my-account/usd.svg";
-import days from "../../public/images/my-account/days.svg";
-import select from "../../public/images/my-account/select.svg";
+import avatar from "public/images/session-oversight/avatar.svg";
+import download from "public/images/my-account/upload.svg";
+import help from "public/images/my-account/help.svg";
+import dropDown from "public/images/my-account/arrow_drop_down.svg";
+import usd from "public/images/my-account/usd.svg";
+import days from "public/images/my-account/days.svg";
+import select from "public/images/my-account/select.svg";
 
 const ProfileInfo = () => {
   return (

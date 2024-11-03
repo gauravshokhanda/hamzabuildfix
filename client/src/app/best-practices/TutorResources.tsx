@@ -1,7 +1,7 @@
 'use client'
 import Image, { StaticImageData } from "next/image";
 import Heading from "../components/Heading";
-import file_icon from '../public/images/best-practice/file-icon.png'
+import file_icon from 'public/images/best-practice/file-icon.png'
 import Button from "../components/Button";
 export default function TutorResources() {
     return (

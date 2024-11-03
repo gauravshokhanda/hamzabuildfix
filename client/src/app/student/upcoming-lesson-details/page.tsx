@@ -2,9 +2,9 @@
 import { Text } from "../../components/admin-panel/ui/text";
 import { Button } from "../../components/admin-panel/ui/button";
 import Image from "next/image";
-import StudentNavbar from "../../components/admin-panel/ui/student-navbar";
-import RecordIcon from "../../components/admin-panel/Student/RecordIcon";
-import MessageIcon from "../../components/admin-panel/Student/MessageIcon";
+import StudentNavbar from "../find-a-tutor/student-navbar";
+import RecordIcon from "../../components/student/RecordIcon";
+import MessageIcon from "../../components/student/MessageIcon";
 
 export default function Home() {
   return (

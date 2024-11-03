@@ -1,8 +1,8 @@
 import Image from "next/image";
 import React from "react";
-import avatar from "../../public/images/session-oversight/avatar.svg";
-import download from "../../public/images/my-account/upload.svg";
-import dropDown from "../../public/images/my-account/arrow_drop_down.svg";
+import avatar from "public/images/session-oversight/avatar.svg";
+import download from "public/images/my-account/upload.svg";
+import dropDown from "public/images/my-account/arrow_drop_down.svg";
 
 const ProfileInfo = () => {
   return (

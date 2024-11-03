@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import logo from "../../../public/images/logo.png";
+import logo from "public/images/logo.png";
 import AddNotesModal from "./AddNotesModal";
 import CreateProgressReportModal from "./CreateProgressReportModal";
 

@@ -1,7 +1,7 @@
 'use client'
 import Image, { StaticImageData } from "next/image";
 import Button from "../components/Button";
-import people_working from './../public/images/best-practice/people-working.png'
+import people_working from 'public/images/best-practice/people-working.png'
 
 export default function Community() {
     return (

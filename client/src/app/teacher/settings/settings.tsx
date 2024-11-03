@@ -1,7 +1,7 @@
 import React from "react";
-import dropDown from "../../public/images/my-account/arrow_drop_down.svg";
-import primary from "../../public/images/my-account/primary.svg";
-import secondary from "../../public/images/my-account/secondary.svg";
+import dropDown from "public/images/my-account/arrow_drop_down.svg";
+import primary from "public/images/my-account/primary.svg";
+import secondary from "public/images/my-account/secondary.svg";
 
 const Settings = () => {
   return (

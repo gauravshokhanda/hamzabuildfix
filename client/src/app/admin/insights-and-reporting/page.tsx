@@ -1,6 +1,6 @@
 import BarChartInsight from "../../components/admin-panel/StatCard/BarChart";
 import StatCardSection from "../../components/admin-panel/StatCard/StatCardSection";
-import threedot from "../../public/images/session-oversight/threedot.svg";
+import threedot from "public/images/session-oversight/threedot.svg";
 import Image from "next/image";
 
 export default function InsightsReporting(): JSX.Element {

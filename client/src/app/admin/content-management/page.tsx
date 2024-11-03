@@ -7,7 +7,7 @@ import BlogCard from "../../components/admin-panel/blog/BlogCard";
 
 import { Fragment, useState } from "react";
 import CareerCard from "../../components/admin-panel/blog/CareerCard";
-import Paginations from "../../components/admin-panel/Student/Paginations";
+import Paginations from "../../components/student/Paginations";
 
 export default function Home() {
   const [tabIndex, setTabIndex] = useState(0);

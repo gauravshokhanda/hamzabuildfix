@@ -17,9 +17,9 @@ export default function RootLayout({
       <body>
         {/* Conditionally render the Navbar */}
         {!isDashboardOrResources && <Navbar />}
-        
+
         {children}
-        
+
         {/* Conditionally render the Footer */}
         {!isDashboardOrResources && <Footer />}
       </body>
