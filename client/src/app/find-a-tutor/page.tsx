@@ -1,5 +1,6 @@
+"use client"
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import searchIcon from "public/images/landing-page/searchIcon.png";
 import bottomArrow from "public/images/landing-page/bottomArrow.png";
 import TutorCard from "../components/TutorCard";
@@ -7,8 +8,26 @@ import { MdNavigateNext } from "react-icons/md";
 import { GrFormPrevious } from "react-icons/gr";
 import tutors from "../../lib/tutors_details.json";
 import Pagination from "../components/Pagination";
+import { format, addDays, startOfWeek, endOfWeek } from "date-fns";
 
 export default function FindATutor() {
+  const [selectedDate, setSelectedDate] = useState(new Date());
+  const startOfWeekDate = startOfWeek(selectedDate, { weekStartsOn: 6 }); // Week starts on Saturday
+  const endOfWeekDate = endOfWeek(selectedDate, { weekStartsOn: 6 });
+
+  // Generate an array of 7 dates for the week
+  const days = Array.from({ length: 7 }).map((_, index) =>
+    addDays(startOfWeekDate, index)
+  );
+
+  const handlePreviousWeek = () => {
+    setSelectedDate(addDays(selectedDate, -7));
+  };
+
+  const handleNextWeek = () => {
+    setSelectedDate(addDays(selectedDate, 7));
+  };
+
   return (
     <div className="p-6 md:p-12 flex flex-col lg:flex-row gap-8 lg:gap-16">
       <div className="w-full lg:w-1/5 flex flex-col gap-4">
@@ -37,21 +56,36 @@ export default function FindATutor() {
           </div>
         </div>
         <div className="pt-6 md:pt-12">
-          <h1 className="text-lg md:text-xl font-bold my-2">Select Date</h1>
-          <p className="flex justify-center">October 2024</p>
-          <div className="flex gap-2 my-3 flex-wrap justify-center items-center">
-            <GrFormPrevious />
-            {[...Array(7)].map((_, i) => (
-              <div
-                key={i}
-                className="bg-[#e1fcb3] w-7 text-xs flex justify-center items-center text-center rounded-md px-3 py-2"
-              >
-                Sat 13
-              </div>
-            ))}
-            <MdNavigateNext />
-          </div>
+      <h1 className="text-lg md:text-xl font-bold my-2">Select Date</h1>
+      <p className="flex justify-center text-gray-600">
+        {format(selectedDate, 'MMMM yyyy')}
+      </p>
+      <div className="flex items-center justify-center gap-1 my-3">
+        <button onClick={handlePreviousWeek} className="p-2">
+          <GrFormPrevious />
+        </button>
+        <div className="flex gap-1 overflow-x-auto">
+          {days.map((day, i) => (
+            <button
+              key={i}
+              onClick={() => setSelectedDate(day)}
+              className={`w-14 text-xs flex flex-col items-center text-center rounded-md py-2 ${
+                format(day, 'dd-MM-yyyy') === format(selectedDate, 'dd-MM-yyyy')
+                  ? 'bg-green-200 text-green-800'
+                  : 'bg-gray-100 text-gray-600'
+              }`}
+            >
+              <span>{format(day, 'EEE')}</span>
+              <span>{format(day, 'd')}</span>
+            </button>
+          ))}
         </div>
+        <button onClick={handleNextWeek} className="p-2">
+          <MdNavigateNext />
+        </button>
+      </div>
+
+    </div>
         <button className="w-full mt-2 bg-[#40A8CD] hover:bg-[#40A8CD] py-2 rounded-md text-white">
           Apply
         </button>
