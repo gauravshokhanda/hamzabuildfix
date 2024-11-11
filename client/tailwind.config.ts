@@ -41,6 +41,9 @@ const config: Config = {
         boxDark: "0px 6.75px 20.24px 0px rgba(30, 61, 96, 0.03)",
         peopleBox: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
       },
+      screens: {
+        md: '768px', 
+      },
     },
   },
   plugins: [

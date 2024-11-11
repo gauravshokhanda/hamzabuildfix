@@ -8,12 +8,11 @@ import { MdNavigateNext } from "react-icons/md";
 import { GrFormPrevious } from "react-icons/gr";
 import tutors from "../../lib/tutors_details.json";
 import Pagination from "../components/Pagination";
-import { format, addDays, startOfWeek, endOfWeek } from "date-fns";
+import { format, addDays, startOfWeek } from "date-fns";
 
 export default function FindATutor() {
   const [selectedDate, setSelectedDate] = useState(new Date());
-  const startOfWeekDate = startOfWeek(selectedDate, { weekStartsOn: 6 }); // Week starts on Saturday
-  const endOfWeekDate = endOfWeek(selectedDate, { weekStartsOn: 6 });
+  const startOfWeekDate = startOfWeek(selectedDate, { weekStartsOn: 6 }); 
 
   // Generate an array of 7 dates for the week
   const days = Array.from({ length: 7 }).map((_, index) =>
