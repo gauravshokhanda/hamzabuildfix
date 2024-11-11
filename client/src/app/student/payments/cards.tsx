@@ -1,27 +1,45 @@
+"use client"
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import tabs from "public/images/student/Tabs.svg";
 import master from "public/images/student/Mastercard.svg";
 
+const cardData = [
+  { id: 1, balance: 4560, lastFour: 4456, name: 'Lloyd Lyons', bank: 'My Bank', color: 'bg-green-400', logo: 'mastercard' },
+  { id: 2, balance: 6753, lastFour: 6753, name: 'Jane Doe', bank: 'My Bank', color: 'bg-purple-400', logo: 'mastercard' },
+  { id: 3, balance: 9875, lastFour: 9875, name: 'John Smith', bank: 'My Bank', color: 'bg-gray-600', logo: 'visa' },
+];
+
 const Cards = () => {
+  const [selectedCard, setSelectedCard] = useState(cardData);
   return (
     <div>
-      <div className="flex gap-[18px]">
-        <div className="bg-[#A3D154] p-[20px] md:p-[30px] rounded-[10px] w-[350px]">
-          <div className="flex items-center justify-between text-white">
-            <h1 className="font-bold text-[22px] md:text-[35px]">$ 4 560</h1>
-            <h1 className="font-bold md:text-[18px]">My Bank</h1>
+      <div className="flex flex-col items-center space-y-4">
+        {/* Enlarged Card View */}
+        {selectedCard && (
+          <div className={`p-6 rounded-lg ${selectedCard.color} w-80 text-white`}>
+            <h2 className="text-2xl font-bold">${selectedCard.balance}</h2>
+            <p className="text-sm mt-1">.... .... .... {selectedCard.lastFour}</p>
+            <p className="text-lg font-semibold mt-4">{selectedCard.bank}</p>
+            <p className="text-sm mt-2">{selectedCard.name}</p>
           </div>
-          <h1 className="text-white font-bold md:text-[25px] mt-[18px]">
-            .... .... .... 4456
-          </h1>
-          <div className="flex items-center justify-between mt-[18px]">
-            <h1 className="text-white font-bold">Lloyd Lyons</h1>
-            <Image src={master} alt="" />
-          </div>
+        )}
+
+        {/* Scrollable Card List */}
+        <div className="flex space-x-4 overflow-x-scroll py-4">
+          {cardData.map(card => (
+            <div
+              key={card.id}
+              className={`p-4 rounded-lg ${card.color} w-32 h-20 flex flex-col justify-between items-start text-white cursor-pointer`}
+              onClick={() => setSelectedCard(card)}
+            >
+              <p className="text-xs">.... {card.lastFour}</p>
+              <div className="text-sm font-bold">{card.logo === 'mastercard' ? 'Mastercard' : 'Visa'}</div>
+            </div>
+          ))}
         </div>
-        <Image src={tabs} alt="" />
       </div>
+      
       <h1 className="hidden md:block mt-[20px] md:mt-[40px] md:text-[22px] font-medium">
         Once adding a payment information, Tafawwaq will deduct a $1 free which{" "}
         <br />

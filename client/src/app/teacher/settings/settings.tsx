@@ -11,19 +11,21 @@ const Settings = () => {
         <h1 className="text-[14px]">Default Language</h1>
         <div className="mt-[5px] flex gap-[6px]">
           <select
-            className="w-full border mt-[10px] h-[35px] md:h-[42px] px-2 md:px-5 text-gray-500 appearance-none bg-no-repeat bg-right bg-[length:40px_30px] md:bg-[length:75px_45px]"
+            className="w-full mt-[10px] h-[35px] md:h-[42px] px-2 md:px-5 text-gray-500 appearance-none bg-no-repeat bg-right bg-[length:40px_30px] md:bg-[length:75px_45px]"
             style={{
               backgroundImage: `url(${primary.src})`,
               backgroundPosition: "right 15px center",
+              border: '1px solid #e7e9ec'
             }}
           >
             <option value="primary">English</option>
           </select>
           <select
-            className="w-full border mt-[10px] h-[35px] md:h-[42px] px-2 md:px-5 text-gray-500 appearance-none bg-no-repeat bg-right bg-[length:50px_30px] md:bg-[length:95px_45px]"
+            className="w-full mt-[10px] h-[35px] md:h-[42px] px-2 md:px-5 text-gray-500 appearance-none bg-no-repeat bg-right bg-[length:50px_30px] md:bg-[length:95px_45px]"
             style={{
               backgroundImage: `url(${secondary.src})`,
               backgroundPosition: "right 15px center",
+              border: '1px solid #e7e9ec'
             }}
           >
             <option value="primary">French</option>
@@ -40,7 +42,7 @@ const Settings = () => {
         <div className="mt-[5px] flex gap-[6px]">
           <select
             className="w-full border mt-[10px] h-[35px] md:h-[42px] px-2 md:px-5 text-gray-500 appearance-none bg-no-repeat bg-right bg-[length:40px_25px]"
-            style={{ backgroundImage: `url(${dropDown.src})` }}
+            style={{ backgroundImage: `url(${dropDown.src})`,border: '1px solid #e7e9ec' }}
           >
             <option value="primary">USD</option>
           </select>
@@ -51,7 +53,7 @@ const Settings = () => {
         <div className="mt-[5px] flex gap-[6px]">
           <select
             className="w-full border mt-[10px] h-[35px] md:h-[42px] px-2 md:px-5 text-gray-500 appearance-none bg-no-repeat bg-right bg-[length:40px_25px]"
-            style={{ backgroundImage: `url(${dropDown.src})` }}
+            style={{ backgroundImage: `url(${dropDown.src})`,border: '1px solid #e7e9ec' }}
           >
             <option value="primary">Select Method</option>
           </select>
@@ -59,6 +61,7 @@ const Settings = () => {
             type="number"
             className="w-full border mt-[10px] h-[35px] md:h-[42px] px-2 md:px-5 text-gray-500"
             placeholder="Enter Code to Verify"
+            style={{ border: '1px solid #e7e9ec' }}
           />
         </div>
         <div className="flex items-center justify-end">
@@ -72,7 +75,7 @@ const Settings = () => {
         <div className="mt-[5px] flex gap-[6px]">
           <select
             className="w-full border mt-[10px] h-[35px] md:h-[42px] px-2 md:px-5 text-gray-500 appearance-none bg-no-repeat bg-right bg-[length:40px_25px]"
-            style={{ backgroundImage: `url(${dropDown.src})` }}
+            style={{ backgroundImage: `url(${dropDown.src})`, border: '1px solid #e7e9ec' }}
           >
             <option value="primary">Select Sessions</option>
           </select>
