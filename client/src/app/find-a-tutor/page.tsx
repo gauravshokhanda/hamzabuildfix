@@ -28,6 +28,29 @@ export default function FindATutor() {
     setSelectedDate(addDays(selectedDate, 7));
   };
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const tutorsPerPage = 3;
+  const indexOfLastTutor = currentPage * tutorsPerPage;
+  const indexOfFirstTutor = indexOfLastTutor - tutorsPerPage;
+  const currentTutors = tutors.tutors.slice(indexOfFirstTutor, indexOfLastTutor);
+
+  const handlePreviousPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  const handleNextPage = () => {
+    if (currentPage < Math.ceil(tutors.tutors.length / tutorsPerPage)) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber); // Update current page when a page number is clicked
+  };
+
+
   return (
     <div className="p-6 md:p-12 flex flex-col lg:flex-row gap-8 lg:gap-16">
       <div className="w-full lg:w-1/5 flex flex-col gap-4">
@@ -132,13 +155,19 @@ export default function FindATutor() {
         </div>
 
         <div className="mt-4">
-          {tutors.tutors.map((tutor, index) => (
+        {currentTutors.map((tutor, index) => (
             <TutorCard key={index} tutor={tutor} />
           ))}
         </div>
 
         <div className="mt-6">
-          <Pagination />
+          <Pagination
+            currentPage={currentPage}
+            totalPages={Math.ceil(tutors.tutors.length / tutorsPerPage)}
+            onPrevious={handlePreviousPage}
+            onNext={handleNextPage}
+            onPageChange={handlePageChange}
+          />
         </div>
       </div>
     </div>
