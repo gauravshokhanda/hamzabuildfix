@@ -18,7 +18,7 @@ export default function RootLayout({
       <body>
         <div className="grid grid-cols-12">
           <div className="col-span-12 lg:col-span-2">
-            <Sidebar role="Student" isOpen={isOpen} toggleSidebar={toggleSidebar} />
+            {/* <Sidebar role="Student" isOpen={isOpen} toggleSidebar={toggleSidebar} /> */}
           </div>
           <div className="col-span-12 lg:col-span-10 p-6">
             <ResourceHeader />
