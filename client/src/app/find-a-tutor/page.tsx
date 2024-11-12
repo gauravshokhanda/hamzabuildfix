@@ -8,12 +8,11 @@ import { MdNavigateNext } from "react-icons/md";
 import { GrFormPrevious } from "react-icons/gr";
 import tutors from "../../lib/tutors_details.json";
 import Pagination from "../components/Pagination";
-import { format, addDays, startOfWeek, endOfWeek } from "date-fns";
+import { format, addDays, startOfWeek } from "date-fns";
 
 export default function FindATutor() {
   const [selectedDate, setSelectedDate] = useState(new Date());
-  const startOfWeekDate = startOfWeek(selectedDate, { weekStartsOn: 6 }); // Week starts on Saturday
-  const endOfWeekDate = endOfWeek(selectedDate, { weekStartsOn: 6 });
+  const startOfWeekDate = startOfWeek(selectedDate, { weekStartsOn: 6 }); 
 
   // Generate an array of 7 dates for the week
   const days = Array.from({ length: 7 }).map((_, index) =>
@@ -27,6 +26,29 @@ export default function FindATutor() {
   const handleNextWeek = () => {
     setSelectedDate(addDays(selectedDate, 7));
   };
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const tutorsPerPage = 3;
+  const indexOfLastTutor = currentPage * tutorsPerPage;
+  const indexOfFirstTutor = indexOfLastTutor - tutorsPerPage;
+  const currentTutors = tutors.tutors.slice(indexOfFirstTutor, indexOfLastTutor);
+
+  const handlePreviousPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  const handleNextPage = () => {
+    if (currentPage < Math.ceil(tutors.tutors.length / tutorsPerPage)) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber); // Update current page when a page number is clicked
+  };
+
 
   return (
     <div className="p-6 md:p-12 flex flex-col lg:flex-row gap-8 lg:gap-16">
@@ -132,13 +154,19 @@ export default function FindATutor() {
         </div>
 
         <div className="mt-4">
-          {tutors.tutors.map((tutor, index) => (
+        {currentTutors.map((tutor, index) => (
             <TutorCard key={index} tutor={tutor} />
           ))}
         </div>
 
         <div className="mt-6">
-          <Pagination />
+          <Pagination
+            currentPage={currentPage}
+            totalPages={Math.ceil(tutors.tutors.length / tutorsPerPage)}
+            onPrevious={handlePreviousPage}
+            onNext={handleNextPage}
+            onPageChange={handlePageChange}
+          />
         </div>
       </div>
     </div>

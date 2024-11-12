@@ -34,6 +34,7 @@ const ProfileInfo = () => {
               <input
                 type="text"
                 className="w-full border mt-[10px] h-[35px] md:h-[42px] px-2 md:px-5"
+                style={{ borderColor: '#D1D5DB' }}
                 placeholder="Alex"
               />
             </div>
@@ -42,6 +43,7 @@ const ProfileInfo = () => {
               <input
                 type="text"
                 className="w-full border mt-[10px] h-[35px] md:h-[42px] px-2 md:px-5"
+                style={{ borderColor: '#D1D5DB' }}
                 placeholder="Thompson"
               />
             </div>
@@ -52,6 +54,7 @@ const ProfileInfo = () => {
               <input
                 type="email"
                 className="w-full border mt-[10px] h-[35px] md:h-[42px] px-2 md:px-5"
+                style={{ borderColor: '#D1D5DB' }}
                 placeholder="Alex@gmail.com"
               />
             </div>
@@ -60,6 +63,7 @@ const ProfileInfo = () => {
               <input
                 type="text"
                 className="w-full border mt-[10px] h-[35px] md:h-[42px] px-2 md:px-5"
+                style={{ borderColor: '#D1D5DB' }}
                 placeholder="United Kingdom"
               />
             </div>
@@ -70,6 +74,7 @@ const ProfileInfo = () => {
               <input
                 type="text"
                 className="w-full border mt-[10px] h-[35px] md:h-[42px] px-2 md:px-5"
+                style={{ borderColor: '#D1D5DB' }}
                 placeholder="London"
               />
             </div>
@@ -78,6 +83,7 @@ const ProfileInfo = () => {
               <input
                 type="text"
                 className="w-full border mt-[10px] h-[35px] md:h-[42px] px-2 md:px-5"
+                style={{ borderColor: '#D1D5DB' }}
                 placeholder="Male"
               />
             </div>
@@ -88,6 +94,7 @@ const ProfileInfo = () => {
               <input
                 type="text"
                 className="w-full border mt-[10px] h-[35px] md:h-[42px] px-2 md:px-5"
+                style={{ borderColor: '#D1D5DB' }}
                 placeholder="Dec-22, 1999"
               />
             </div>
@@ -96,6 +103,7 @@ const ProfileInfo = () => {
               <input
                 type="number"
                 className="w-full border mt-[10px] h-[35px] md:h-[42px] px-2 md:px-5"
+                style={{ borderColor: '#D1D5DB' }}
                 placeholder="+92 312 4049137"
               />
             </div>
@@ -106,6 +114,7 @@ const ProfileInfo = () => {
               <input
                 type="text"
                 className="w-full border mt-[10px] h-[35px] md:h-[42px] px-2 md:px-5"
+                style={{ borderColor: '#D1D5DB' }}
                 placeholder="English"
               />
             </div>
@@ -114,6 +123,7 @@ const ProfileInfo = () => {
               <input
                 type="text"
                 className="w-full border mt-[10px] h-[35px] md:h-[42px] px-2 md:px-5"
+                style={{ borderColor: '#D1D5DB' }}
                 placeholder="Bachelor"
               />
             </div>
@@ -124,6 +134,7 @@ const ProfileInfo = () => {
               <input
                 type="number"
                 className="w-full border mt-[10px] h-[35px] md:h-[42px] px-2 md:px-5"
+                style={{ borderColor: '#D1D5DB' }}
                 placeholder="+92 312 4049137"
               />
             </div>
@@ -134,6 +145,7 @@ const ProfileInfo = () => {
               <input
                 type="text"
                 className="w-full border mt-[10px] h-[35px] md:h-[42px] px-2 md:px-5"
+                style={{ borderColor: '#D1D5DB' }}
                 placeholder="New Castle School"
               />
             </div>
@@ -144,7 +156,7 @@ const ProfileInfo = () => {
                 <h1 className="text-[14px]">Availability</h1>
                 <select
                   className="w-full border mt-[10px] h-[35px] md:h-[42px] px-2 md:px-5 text-gray-500 appearance-none bg-no-repeat bg-right bg-[length:40px_25px]"
-                  style={{ backgroundImage: `url(${dropDown.src})` }}
+                  style={{ backgroundImage: `url(${dropDown.src})`, borderColor: '#D1D5DB' }}
                 >
                   <option value="9 am">9 am</option>
                 </select>
@@ -155,7 +167,7 @@ const ProfileInfo = () => {
               <div className="w-full md:mt-[20px]">
                 <select
                   className="w-full border mt-[30px] md:mt-[10px] h-[35px] md:h-[42px] px-2 md:px-5 text-gray-500 appearance-none bg-no-repeat bg-right bg-[length:40px_25px]"
-                  style={{ backgroundImage: `url(${dropDown.src})` }}
+                  style={{ backgroundImage: `url(${dropDown.src})`, borderColor: '#D1D5DB' }}
                 >
                   <option value="7 pm">7 pm</option>
                 </select>
@@ -165,7 +177,7 @@ const ProfileInfo = () => {
               <div className="w-full">
                 <select
                   className="w-full border mt-[10px] h-[35px] md:h-[42px] px-2 md:px-5 text-gray-500 appearance-none bg-no-repeat bg-right bg-[length:40px_25px]"
-                  style={{ backgroundImage: `url(${dropDown.src})` }}
+                  style={{ backgroundImage: `url(${dropDown.src})`, borderColor: '#D1D5DB' }}
                 >
                   <option value="Choose Dayy">Choose Days</option>
                 </select>
@@ -173,7 +185,7 @@ const ProfileInfo = () => {
               <div className="w-full">
                 <select
                   className="w-full border mt-[10px] h-[35px] md:h-[42px] px-2 md:px-5 text-gray-500 appearance-none bg-no-repeat bg-right bg-[length:40px_25px]"
-                  style={{ backgroundImage: `url(${dropDown.src})` }}
+                  style={{ backgroundImage: `url(${dropDown.src})`, borderColor: '#D1D5DB' }}
                 >
                   <option value="Mon">Mon Tue Wed</option>
                 </select>
@@ -188,6 +200,7 @@ const ProfileInfo = () => {
                 style={{
                   backgroundImage: `url(${usd.src})`,
                   backgroundPosition: "right 15px center",
+                  borderColor: '#D1D5DB'
                 }}
               >
                 <option value="">15</option>
@@ -208,7 +221,9 @@ const ProfileInfo = () => {
                 style={{
                   backgroundImage: `url(${days.src})`,
                   backgroundPosition: "right 15px center",
+                  borderColor: '#D1D5DB'
                 }}
+
               >
                 <option value="">30</option>
               </select>
@@ -222,6 +237,8 @@ const ProfileInfo = () => {
                 style={{
                   backgroundImage: `url(${select.src})`,
                   backgroundPosition: "right 15px center",
+                  borderColor: '#D1D5DB'
+                  
                 }}
               >
                 <option value="">Arts = Music, Painting , Planting</option>

@@ -3,6 +3,7 @@ import logo from "public/images/logo.png";
 import avatar from "public/images/session-oversight/avatar.svg";
 import down from "public/images/dashnav/down.svg";
 import { Navbar, NavbarSection } from "../components/admin-panel/ui/navbar";
+import DashboardHeader from "../components/dashboard/DashboardHeader";
 import {
   Sidebar,
   SidebarBody,
@@ -13,11 +14,20 @@ import {
   SidebarSpacer,
 } from "../components/admin-panel/ui/sidebar";
 import { SidebarLayout } from "../components/admin-panel/ui/sidebar-layout";
-import { UserIcon, Squares2X2Icon } from "@heroicons/react/20/solid";
+import {
+  Squares2X2Icon,    // Dashboard icon
+  CalendarIcon,      // My Schedule icon
+  AcademicCapIcon,     // My Students icon
+  ChatBubbleBottomCenterTextIcon, // Message icon
+  VideoCameraIcon,   // Videos icon
+  ChartBarIcon,      // My Stats icon
+  StarIcon,          // Reviews icon
+  CreditCardIcon,    // Payments icon
+  UserIcon           // My Accounts icon
+} from "@heroicons/react/20/solid";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { VideoCameraIcon } from "@heroicons/react/16/solid";
 
 export function ApplicationLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -32,11 +42,19 @@ export function ApplicationLayout({ children }: { children: React.ReactNode }) {
               <p className="text-xl text-[#000000]">
                 {/* @ts-expect-error - pathnameNames does not contain all routes, fallback needed */}
                 {pathnameNames[pathname]}
-                <h1 className="text-[18px] md:text-[24px] md:mt-[45px]">
+                {/* <h1 className="text-[18px] md:text-[24px] md:mt-[45px]">
                   Good Morning, <span className="font-bold">Samantha</span> 😄
-                </h1>
+                </h1> */}
               </p>
             </div>
+            {/* Conditionally render DashboardHeader or greeting */}
+            {pathname === "/teacher" ? (
+              <DashboardHeader />
+            ) : (
+              <h1 className="text-[18px] md:text-[24px] md:mt-[45px]">
+                Good Morning, <span className="font-bold">Samantha</span> 😄
+              </h1>
+            )}
           </NavbarSection>
         </Navbar>
       }
@@ -68,6 +86,67 @@ export function ApplicationLayout({ children }: { children: React.ReactNode }) {
                 <Squares2X2Icon />
                 <SidebarLabel>Dashboard</SidebarLabel>
               </SidebarItem>
+
+              <SidebarItem
+                href="/teacher/my-schedule"
+                current={pathname.startsWith("/teacher/my-schedule")}
+              >
+                <CalendarIcon />
+                <SidebarLabel>My Schedule</SidebarLabel>
+              </SidebarItem>
+              <SidebarItem
+                href="/teacher/my-students"
+                current={pathname.startsWith("/teacher/my-students")}
+              >
+                <AcademicCapIcon />
+                <SidebarLabel>My Students</SidebarLabel>
+              </SidebarItem>
+
+              <SidebarItem
+                href="/teacher/message"
+                current={pathname.startsWith("/teacher/message")}
+              >
+                <ChatBubbleBottomCenterTextIcon />
+                <SidebarLabel>Message</SidebarLabel>
+              </SidebarItem>
+
+              <SidebarItem
+                href="/teacher/videos"
+                current={pathname.startsWith("/teacher/videos")}
+              >
+                <VideoCameraIcon />
+                <SidebarLabel>Videos</SidebarLabel>
+              </SidebarItem>
+
+              <SidebarItem
+                href="/teacher/my-stats"
+                current={pathname.startsWith("/teacher/my-stats")}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-chart-line">
+                  <path d="M3 3v16a2 2 0 0 0 2 2h16"></path>
+                  <path d="m19 9-5 5-4-4-3 3"></path>
+                </svg>
+                <SidebarLabel>My Stats</SidebarLabel>
+              </SidebarItem>
+
+              <SidebarItem
+                href="/teacher/reviews"
+                current={pathname.startsWith("/teacher/reviews")}
+              >
+                <StarIcon />
+                <SidebarLabel>Reviews</SidebarLabel>
+              </SidebarItem>
+
+
+              <SidebarItem
+                href="/teacher/payments"
+                current={pathname.startsWith("/teacher/payments")}
+              >
+                <CreditCardIcon />
+                <SidebarLabel>Payments</SidebarLabel>
+              </SidebarItem>
+
+
               <SidebarItem
                 href="/teacher/my-account"
                 current={pathname.startsWith("/teacher/my-account")}
@@ -75,7 +154,10 @@ export function ApplicationLayout({ children }: { children: React.ReactNode }) {
                 <UserIcon />
                 <SidebarLabel>My Account</SidebarLabel>
               </SidebarItem>
-              <SidebarItem
+              
+             
+
+              {/* <SidebarItem
                 href="/teacher/settings"
                 current={pathname.startsWith("/teacher/settings")}
               >
@@ -99,7 +181,7 @@ export function ApplicationLayout({ children }: { children: React.ReactNode }) {
               >
                 <VideoCameraIcon />
                 <SidebarLabel>Recordings</SidebarLabel>
-              </SidebarItem>
+              </SidebarItem> */}
             </SidebarSection>
 
             <SidebarSpacer />

@@ -69,15 +69,36 @@ const Recordings: React.FC = () => {
         {recordingsData.map((recording, index) => (
           <div
             key={index}
-            className="mt-[24px] shadow-lg rounded-[16px] px-[14px] pb-[16px] md:w-[350px] 2xl:w-[430px]"
+            className="relative mt-[24px] shadow-lg rounded-[16px] px-[14px] pb-[16px] md:w-[350px] 2xl:w-[430px]"
           >
-            <iframe
-              src={recording.videoUrl}
-              title={`YouTube video player ${index}`}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="mt-[24px] rounded-md w-full h-[280px]"
-            ></iframe>
+            <div className="relative w-full h-[280px] overflow-hidden rounded-md">
+            
+              <Image
+                src="https://images.pexels.com/photos/5212648/pexels-photo-5212648.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                alt="Video thumbnail"
+                layout="fill"
+                objectFit="cover"
+                className="rounded-md"
+              />
+              {/* Play Button Overlay */}
+              <div className="absolute inset-0 flex items-center justify-center bg-gray bg-opacity-30">
+                <button style={{ backgroundColor: 'rgba(171, 167, 169, 0.75)' }}
+                  className="w-[60px] h-[60px] bg-gray-200 rounded-full flex items-center justify-center shadow-md hover:scale-105 transition"
+                  onClick={() => window.open(recording.videoUrl, "_blank")}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    className="w-[24px] h-[24px] text-gray-500"
+                  >
+                    <path
+                      d="M8 5v14l11-7z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
             <div>
               <h1 className="text-[18px] mt-[32px]">
                 Subject name: {recording.subject}
@@ -86,7 +107,7 @@ const Recordings: React.FC = () => {
                 Description: {recording.description}
               </h1>
             </div>
-            <div className="flex mt-[24px] gap-[12px]">
+            <div className="flex mt-[24px] gap-[12px] items-center">
               <Image src={avatar} alt="avatar" className="rounded-full" />
               <div>
                 <h1 className="font-semibold text-[14px]">
