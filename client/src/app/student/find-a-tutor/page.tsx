@@ -1,5 +1,4 @@
 "use client";
-import StudentNavbar from "./student-navbar";
 import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
 import {
   Dropdown,
@@ -8,16 +7,15 @@ import {
   DropdownMenu,
 } from "../../components/admin-panel/ui/dropdown";
 import { useRef, useState } from "react";
-// @ts-expect-error - No type definitions available
-import RangeSlider from "react-range-slider-input";
 import TeacherCard from "../../components/student/TeacherCard";
 import { Range } from "react-range";
+import DashboardHeader from "src/app/components/dashboard/DashboardHeader";
 
 export default function Home() {
   const [values, setValues] = useState(["0", "2000"]);
   return (
     <div className=" flex flex-col gap-5 p-5">
-      <StudentNavbar />
+      <DashboardHeader/>
       {/* Filters */}
       <div className=" flex flex-col gap-5">
         <div className=" flex items-center gap-2">

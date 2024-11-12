@@ -10,12 +10,14 @@ const DashboardHeader = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const pathname = usePathname();
 
+
   // Exclude paths "/dashboard/my-students" and "/dashboard/my-stats"
-  const shouldShowScheduleButton =
-    !pathname.includes("/dashboard/my-students") &&
-    !pathname.includes("/dashboard/my-stats");
+  const shouldShowScheduleButton = pathname === "/student";
+
 
   console.log("Pathname:", pathname, "Show Schedule Button:", shouldShowScheduleButton);
+
+
 
   return (
     <>

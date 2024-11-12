@@ -60,7 +60,7 @@ const ScheduleALesson: React.FC<{ onClose: () => void }> = ({ onClose }) => {
               </label>
               <input
                 type="text"
-                className="w-full p-2 borderborder-slate  rounded-md"
+                className="w-full p-2 border border-slate  rounded-md"
                 placeholder="Select hours"
                 value={hours}
                 onChange={(e) => setHours(e.target.value)}

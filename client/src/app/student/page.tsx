@@ -7,6 +7,31 @@ import Image from "next/image";
 import RecordIcon from "../components/student/RecordIcon";
 import MessageIcon from "../components/student/MessageIcon";
 import Link from "next/link";
+import FullCalendar from '@fullcalendar/react';
+import dayGridPlugin from '@fullcalendar/daygrid';
+
+const events = [
+  { title: 'Event 1: IGCSE AS&A Level Biology', start: new Date(), time: '9 PM to 10 PM', backgroundColor: '#A3D154', borderColor: '#A3D154', textColor: '#000000' },
+  { title: 'Event 2: IGCSE', start: new Date(new Date().setDate(new Date().getDate() + 1)), time: '9 PM to 10 PM', backgroundColor: '#FFA07A', borderColor: '#FFA07A', textColor: '#000000' },
+  { title: 'Event 3: Webinar', start: new Date(new Date().setDate(new Date().getDate() + 2)), time: '8 AM', backgroundColor: '#87CEFA', borderColor: '#87CEFA', textColor: '#000000' },
+];
+
+const getDateForWeek = (dayOffset) => {
+  const today = new Date();
+  const date = new Date(today.setDate(today.getDate() + dayOffset));
+  return date.getDate();  // Return only the day of the month
+};
+
+const getFullDayName = (dayOffset) => {
+  const today = new Date();
+  const date = new Date(today.setDate(today.getDate() + dayOffset));
+  return date.toLocaleString('en-US', { weekday: 'long' });  // Return the full day name (e.g., Monday)
+};
+
+const getMonthName = () => {
+  const today = new Date();
+  return today.toLocaleString('en-US', { month: 'long' });
+};
 
 export default function Home() {
   return (
@@ -139,33 +164,91 @@ const BiologyLessonInfo = () => {
 
 const CalendarSection = () => {
   return (
-    <div className="bg-white rounded-lg lg:col-span-2">
-      <div className="flex justify-between items-center mb-4">
-        <h3 className="text-lg font-semibold">Calendar</h3>
+    <div className="bg-white rounded-lg lg:col-span-2 shadow-md overflow-hidden">
+    <div className="flex justify-between items-center mb-4">
+      <h3 className="text-lg font-semibold">Weekly Calendar</h3>
+    </div>
+
+    <div className="grid grid-cols-7 text-center text-sm text-gray-500 mb-2">
+      {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((day, idx) => {
+        const date = getDateForWeek(idx - new Date().getDay()); // Get the date for each day of the week
+        const fullDayName = getFullDayName(idx - new Date().getDay()); // Get the full day name (e.g., Monday)
+        return (
+          <div key={idx} className="py-2">
+            <p className="font-semibold text-sm">{date}</p>
+            <p>{fullDayName}</p> {/* Display full day name */}
+          </div>
+        );
+      })}
+    </div>
+
+    <div className="mt-4 grid grid-cols-7 gap-2">
+      {/* Sunday as a large square blur card */}
+      <div className="bg-opacity-50 bg-gray-300 p-4 rounded-lg shadow-md col-span-1 h-[300px]">
+        <div className="h-full flex flex-col justify-center items-center">
+          <p className="text-lg font-semibold">Sunday</p>
+          <div className="mt-2 text-xs "></div>
+        </div>
       </div>
-      <div className="grid grid-cols-7 text-center text-sm text-gray-500">
-        {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((date, idx) => (
-          <p key={idx}>{date}</p> // Added key prop
+
+        {/* Monday and Tuesday in the same block */}
+        <div className="bg-opacity-50 bg-gray-300 p-4 rounded-lg shadow-md col-span-2 h-[300px]">
+          <div className="h-full flex flex-col justify-center items-center">
+            
+            {/* Event for Monday */}
+            <div className="mt-2 text-xs bg-opacity-60 p-2 rounded-lg" style={{ backgroundColor: "#a2d154" }}>
+              <p className="font-semibold">Event: IGCSE Class (Monday)</p>
+              <p className="text-sm">9 PM to 10 PM</p>
+            </div>
+            {/* Event for Tuesday */}
+            <div className="mt-2 text-xs bg-opacity-60 p-2 rounded-lg" style={{ backgroundColor: "#a2d154" }}>
+              <p className="font-semibold">Event: Webinar (Tuesday)</p>
+              <p className="text-sm">9 AM to 10 AM</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Empty columns for Wednesday and Thursday */}
+        {["Wed", "Thu"].map((day, idx) => (
+          <div key={idx} className="bg-opacity-50 bg-gray-300 p-4 rounded-lg shadow-md col-span-1 h-[300px]">
+            <div className="h-full flex flex-col justify-center items-center">
+            
+            </div>
+          </div>
         ))}
-      </div>
-      <div className="mt-4 grid grid-cols-7 gap-2">
-        <div className="bg-gray-200 p-2 rounded-md col-span-3">
-          <p className="text-gray-500 text-xs">IGCSE AS&A Level Biology</p>
-          <p className="text-xs">9 PM to 10 PM</p>
+
+        {/* Friday with an event */}
+        <div className="bg-opacity-50 bg-gray-300 p-4 rounded-lg shadow-md col-span-1 h-[300px]">
+          <div className="h-full flex flex-col justify-center items-center">
+            {/* <p className="text-lg font-semibold">Friday</p> */}
+            {/* Event for Friday */}
+            <div className="mt-2 text-xs bg-opacity-60 p-2 rounded-lg" style={{ backgroundColor: "#a2gh154" }}>
+              <p className="font-semibold">Event: Team Meeting</p>
+              <p className="text-sm">2 PM to 3 PM</p>
+            </div>
+          </div>
         </div>
-        <div className="col-span-4"></div>
-        <div className="bg-[#A3D154] p-2 rounded-md col-span-2">
-          <p className="text-sm">IGCSE</p>
-          <p className="text-xs">9 PM to 10 PM</p>
-        </div>
-        <div className="bg-[#A3D154] p-2 rounded-md col-span-2">
-          <p className="text-sm">Webinar</p>
-          <p className="text-xs">8 AM</p>
+
+        {/* Empty column for Saturday */}
+        <div className="bg-opacity-50 bg-gray-300 p-4 rounded-lg shadow-md col-span-1 h-[300px]">
+          <div className="h-full flex flex-col justify-center items-center">
+            {/* <p className="text-lg font-semibold">Saturday</p> */}
+          </div>
         </div>
       </div>
     </div>
   );
 };
+
+// Custom render function to show the event time and title
+function renderEventContent(eventInfo) {
+  return (
+    <>
+      <b>{eventInfo.timeText}</b>
+      <i>{eventInfo.event.title}</i>
+    </>
+  );
+}
 
 const TutorReportsSection = () => {
   return (
