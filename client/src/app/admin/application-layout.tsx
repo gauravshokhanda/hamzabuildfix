@@ -138,11 +138,11 @@ export function ApplicationLayout({ children }: { children: React.ReactNode }) {
                 <SidebarLabel>Tutor Management</SidebarLabel>
               </SidebarItem>
               <SidebarItem
-                href="/admin/content-management"
-                current={pathname.startsWith("/admin/content-management")}
+                href="/admin/content-creation"
+                current={pathname.startsWith("/admin/content-creation")}
               >
                 <PencilIcon />
-                <SidebarLabel>Content Management</SidebarLabel>
+                <SidebarLabel>Content Creation</SidebarLabel>
               </SidebarItem>
               <SidebarItem
                 href="/admin/session-oversight"

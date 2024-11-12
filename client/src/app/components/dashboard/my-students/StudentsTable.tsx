@@ -39,7 +39,7 @@ const StudentsTable = () => {
         <table className="w-[97%] mx-auto table-auto my-5">
           {/* Table Header */}
           <thead>
-            <tr className="uppercase text-sm leading-normal" style={{backgroundColor:"#F7F7F7",color:"#A6A6A8"}}>
+            <tr className="uppercase text-sm leading-normal" style={{ backgroundColor: "#F7F7F7", color: "#A6A6A8" }}>
               <th className="py-3 px-6 text-left font-medium rounded-l-2xl">Student</th>
               <th className="py-3 px-6 text-left font-medium">Actions</th>
               <th className="py-3 px-6 text-left font-medium">Date</th>
@@ -49,13 +49,13 @@ const StudentsTable = () => {
               <th className="py-3 px-6 text-left font-medium rounded-r-2xl">Notes</th>
             </tr>
           </thead>
-          
+
           {/* Table Body */}
           <tbody className="text-gray-700 text-sm font-light">
             {students.map((student, index) => (
               <tr
                 key={index}
-                // className="border-b border-gray-200 hover:bg-gray-50"
+              // className="border-b border-gray-200 hover:bg-gray-50"
               >
                 {/* Student Info */}
                 <td className="py-3 px-6 flex items-center">
@@ -76,15 +76,13 @@ const StudentsTable = () => {
                   <div className="inline-flex space-x-2">
                     <button
                       onClick={() => setIsNotesModalOpen(true)}
-                      className="border-2 px-3 text-[#55ABD1] py-1 rounded-md text-xs hover:bg-blue-50 transition whitespace-nowrap"
-                      style={{ borderColor: "#55ABD1"}}
+                      className="border-2 border-sky_text text-sky_text  font-normal  px-3 py-1 rounded-md text-xs hover:bg-blue-50 transition whitespace-nowrap"
                     >
                       Add Notes
                     </button>
                     <button
                       onClick={() => setIsProgressModalOpen(true)}
-                      className="border-2 px-3 py-1 rounded-md text-xs hover:bg-blue-50 transition whitespace-nowrap"
-                      style={{ borderColor: "#55ABD1", color: '#55ABD1' }}
+                      className="border-2 border-sky_text  text-sky_text  font-normal  font-weight: 400 px-3 py-1 rounded-md text-xs hover:bg-blue-50 transition whitespace-nowrap"
                     >
                       Reports
                     </button>
