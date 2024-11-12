@@ -129,7 +129,7 @@ export const SidebarItem = forwardRef(function SidebarItem(
   {
     current,
     className,
-    bgColor = "bg-primary",
+    bgColor = "bg-[#A3D154]",
     children,
     ...props
   }: {

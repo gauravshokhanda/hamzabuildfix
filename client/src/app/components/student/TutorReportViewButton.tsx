@@ -18,13 +18,20 @@ function TutorReportViewButton() {
       <Button
         onClick={openModal}
         color="button_primary"
-        className="bg-primary text-white sm:py-2 !px-3 !rounded-md"
+        className="bg-primary text-white sm:py-3 !px-3 !rounded-md"
       >
         View
       </Button>
+
       {isOpen && (
-        <div className="fixed top-0 right-0 w-full h-screen bg-gray-900 bg-opacity-50 z-50 flex items-center justify-center">
-          <div className="bg-white w-full relative max-w-[792px] mx-auto md:mt-10 md:rounded-2xl">
+        <div
+          onClick={closeModal}
+          className="fixed top-0 left-0 w-full h-screen bg-gray-900 bg-opacity-50 z-50 flex items-center justify-center backdrop-blur-sm"
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}  // Prevents clicks inside the modal from closing it
+            className="bg-white w-full relative max-w-[792px] mx-auto md:mt-10 md:rounded-2xl"
+          >
             <TutorReportViewModal />
             <button
               onClick={closeModal}

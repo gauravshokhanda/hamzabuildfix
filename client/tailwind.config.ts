@@ -12,20 +12,21 @@ const config: Config = {
         primary: "#42ABD1",
         secondary: "#A3D154",
         black: "#000000",
-        slate: "#1d263a",
+        slate: "#d4d4d8",
         white: "#ffffff",
         background_blue: "#F6F8FA",
-
         background_dark: "#1e353e",
+        light_blue: "#f0f9ff",
 
         header: "#1d263a",
         gray: "#525252",
-
+        sky_text :"#42abd1",
         icon_color: "#A3AFB0",
         text_primary: "#3A5377",
         text_secondary: "#66797C",
         button_primary: "#00adef",
         admin_button: "#1294F2"
+        
 
       },
       backgroundImage: {

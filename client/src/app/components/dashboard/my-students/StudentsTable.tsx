@@ -31,89 +31,91 @@ const StudentsTable = () => {
         />
       )}
 
-      <h2 className="text-2xl mt-16 mb-5">All Students</h2>
+      <h2 className="text-2xl font-semibold mt-10 mb-5 text-gray-800">
+        All Students
+      </h2>
 
-      <div className="overflow-x-auto shadow-xl p-2 xl:p-6">
-        <table className="w-full table-auto xl:table-fixed">
-          <thead className="hidden xl:table-header-group">
-            <tr className="bg-[#F7F7F7]">
-              <th className="py-2 px-4 text-left font-medium text-[#3F3F4480] rounded-l-full">
-                Student
-              </th>
-              <th className="py-2 px-4 text-left font-medium text-[#3F3F4480]">
-                Actions
-              </th>
-              <th className="py-2 px-4 text-left font-medium text-[#3F3F4480]">
-                Date
-              </th>
-              <th className="py-2 px-4 text-left font-medium text-[#3F3F4480]">
-                Time
-              </th>
-              <th className="py-2 px-4 text-left font-medium text-[#3F3F4480]">
-                Duration
-              </th>
-              <th className="py-2 px-4 text-left font-medium text-[#3F3F4480]">
-                Subject
-              </th>
-              <th className="py-2 px-4 text-left font-medium text-[#3F3F4480] rounded-r-full">
-                Notes
-              </th>
+      <div className="overflow-x-auto shadow-lg rounded-lg mb-3 ">
+        <table className="w-[97%] mx-auto table-auto my-5">
+          {/* Table Header */}
+          <thead>
+            <tr className="uppercase text-sm leading-normal" style={{backgroundColor:"#F7F7F7",color:"#A6A6A8"}}>
+              <th className="py-3 px-6 text-left font-medium rounded-l-2xl">Student</th>
+              <th className="py-3 px-6 text-left font-medium">Actions</th>
+              <th className="py-3 px-6 text-left font-medium">Date</th>
+              <th className="py-3 px-6 text-left font-medium">Time</th>
+              <th className="py-3 px-6 text-left font-medium">Duration</th>
+              <th className="py-3 px-6 text-left font-medium">Subject</th>
+              <th className="py-3 px-6 text-left font-medium rounded-r-2xl">Notes</th>
             </tr>
           </thead>
-          <tbody>
+          
+          {/* Table Body */}
+          <tbody className="text-gray-700 text-sm font-light">
             {students.map((student, index) => (
               <tr
                 key={index}
-                className="border-b border-gray-200 xl:table-row flex flex-col mb-4 xl:mb-0"
+                // className="border-b border-gray-200 hover:bg-gray-50"
               >
-                <td className="py-2 px-4 flex items-center xl:table-cell">
-                  <div className="flex items-center">
-                    <Image
-                      src={logo}
-                      width={32}
-                      height={32}
-                      className="w-8 h-8 mr-3 rounded-full"
-                      alt={student.name}
-                    />
-                    <span className="truncate">{student.name}</span>
+                {/* Student Info */}
+                <td className="py-3 px-6 flex items-center">
+                  <Image
+                    src={logo}
+                    width={32}
+                    height={32}
+                    className="w-8 h-8 rounded-full mr-3"
+                    alt={student.name}
+                  />
+                  <span className="font-medium text-gray-800">
+                    {student.name}
+                  </span>
+                </td>
+
+                {/* Action Buttons */}
+                <td className="py-3 px-6">
+                  <div className="inline-flex space-x-2">
+                    <button
+                      onClick={() => setIsNotesModalOpen(true)}
+                      className="border-2 border-sky_text text-sky_text  font-normal  px-3 py-1 rounded-md text-xs hover:bg-blue-50 transition whitespace-nowrap"
+                    >
+                      Add Notes
+                    </button>
+                    <button
+                      onClick={() => setIsProgressModalOpen(true)}
+                      className="border-2 border-sky_text  text-sky_text  font-normal  font-weight: 400 px-3 py-1 rounded-md text-xs hover:bg-blue-50 transition whitespace-nowrap"
+                    >
+                      Reports
+                    </button>
                   </div>
                 </td>
-                <td className="py-2 px-4 xl:table-cell">
-                  <button
-                    onClick={() => setIsNotesModalOpen(true)}
-                    className="border border-[#42ABD1] text-[#42ABD1] px-3 py-1 rounded-md text-sm mr-2 mb-1"
-                  >
-                    Add Notes
-                  </button>
-                  <button
-                    onClick={() => setIsProgressModalOpen(true)}
-                    className="border border-[#42ABD1] text-[#42ABD1] px-3 py-1 rounded-md text-sm"
-                  >
-                    Reports
-                  </button>
+
+
+                {/* Date */}
+                <td className="py-3 px-6 whitespace-nowrap">
+                  <span>12-03-24</span>
                 </td>
-                <td className="py-2 px-4 xl:table-cell">
-                  <span className="xl:hidden font-medium mr-2">Date:</span>
-                  12-03-24
+
+                {/* Time */}
+                <td className="py-3 px-6 whitespace-nowrap">
+                  <span>12:23 pm</span>
                 </td>
-                <td className="py-2 px-4 xl:table-cell">
-                  <span className="xl:hidden font-medium mr-2">Time:</span>
-                  12:23 pm
+
+                {/* Duration */}
+                <td className="py-3 px-6 whitespace-nowrap">
+                  <span>3 hrs 12 min</span>
                 </td>
-                <td className="py-2 px-4 xl:table-cell">
-                  <span className="xl:hidden font-medium mr-2">Duration:</span>3
-                  hrs 12 min
+
+                {/* Subject */}
+                <td className="py-3 px-6">
+                  <span className="text-gray-800">{student.subject}</span>
                 </td>
-                <td className="py-2 px-4 xl:table-cell">
-                  <span className="xl:hidden font-medium mr-2">Subject:</span>
-                  {student.subject}
-                </td>
-                <td className="py-2 px-4 text-gray-500 xl:table-cell">
-                  <span className="xl:hidden font-medium mr-2">Notes:</span>
-                  <div className="break-words">
+
+                {/* Notes */}
+                <td className="py-3 px-6">
+                  <span className="text-gray-500">
                     Lorem ipsum dolor sit amet is a dummy text used in printing
                     industry...
-                  </div>
+                  </span>
                 </td>
               </tr>
             ))}

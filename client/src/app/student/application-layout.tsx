@@ -17,7 +17,7 @@ import { Squares2X2Icon } from "@heroicons/react/20/solid";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { UserIcon, VideoCameraIcon } from "@heroicons/react/16/solid";
+import { UserIcon, VideoCameraIcon, CalendarIcon, AcademicCapIcon } from "@heroicons/react/16/solid";
 import { MdPayments } from "react-icons/md";
 import { GrResources } from "react-icons/gr";
 
@@ -68,13 +68,24 @@ export function ApplicationLayout({ children }: { children: React.ReactNode }) {
                 <Squares2X2Icon />
                 <SidebarLabel>Dashboard</SidebarLabel>
               </SidebarItem>
+
               <SidebarItem
-                href="/student/my-account"
-                current={pathname.startsWith("/student/my-account")}
+                href="/student/recordings"
+                current={pathname.startsWith("/student/recordings")}
               >
-                <UserIcon />
-                <SidebarLabel>My Account</SidebarLabel>
+                <CalendarIcon />
+                <SidebarLabel>Recordings</SidebarLabel>
               </SidebarItem>
+
+
+              <SidebarItem
+                href="/student/find-a-tutor"
+                current={pathname.startsWith("/student/find-a-tutor")}
+              >
+                <AcademicCapIcon />
+                <SidebarLabel>Find a Tutor</SidebarLabel>
+              </SidebarItem>
+
               <SidebarItem
                 href="/student/messages"
                 current={pathname.startsWith("/student/messages")}
@@ -94,6 +105,15 @@ export function ApplicationLayout({ children }: { children: React.ReactNode }) {
 
                 <SidebarLabel>Message</SidebarLabel>
               </SidebarItem>
+
+              {/* <SidebarItem
+                href="/student/my-account"
+                current={pathname.startsWith("/student/my-account")}
+              >
+                <UserIcon />
+                <SidebarLabel>My Account</SidebarLabel>
+              </SidebarItem> */}
+              
               <SidebarItem
                 href="/student/payments"
                 current={pathname.startsWith("/student/payments")}
@@ -101,19 +121,13 @@ export function ApplicationLayout({ children }: { children: React.ReactNode }) {
                 <MdPayments />
                 <SidebarLabel>Payments</SidebarLabel>
               </SidebarItem>
-              <SidebarItem
-                href="/student/recordings"
-                current={pathname.startsWith("/student/recordings")}
-              >
-                <VideoCameraIcon />
-                <SidebarLabel>Recordings</SidebarLabel>
-              </SidebarItem>
+             
               <SidebarItem
                 href="/student/resources"
                 current={pathname.startsWith("/student/resources")}
               >
                 <GrResources />
-                <SidebarLabel>Resources</SidebarLabel>
+                <SidebarLabel>Resources Center</SidebarLabel>
               </SidebarItem>
             </SidebarSection>
 
