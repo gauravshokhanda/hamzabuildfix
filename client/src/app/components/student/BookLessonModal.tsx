@@ -29,8 +29,9 @@ const BookLessonModal = ({ handleClose }: { handleClose: () => void }) => {
           <div className="flex gap-2">
             <Dropdown>
               <DropdownButton
-                className="flex border rounded-xl w-full"
+                className="flex rounded-xl w-full"
                 as={NavbarItem}
+                style={{ border:'1px solid #d7dbdd'}}
               >
                 <span className=" flex w-full justify-center gap-2 cursor-pointer">
                   {CalenderIcon}
@@ -40,8 +41,9 @@ const BookLessonModal = ({ handleClose }: { handleClose: () => void }) => {
             </Dropdown>
             <Dropdown>
               <DropdownButton
-                className="flex border rounded-xl w-full"
+                className="flex rounded-xl w-full"
                 as={NavbarItem}
+                style={{ border: '1px solid #d7dbdd' }}
               >
                 <span className=" flex w-full justify-center gap-2 cursor-pointer">
                   {ClockIcon}
@@ -60,20 +62,22 @@ const BookLessonModal = ({ handleClose }: { handleClose: () => void }) => {
           />
 
           {/* Description */}
-          <TextAreaField label="Description" placeholder="I need help for..." />
+          <TextAreaField label="Description" placeholder="I need help for..."
+         
+             />
         </div>
 
         {/* Summary Section */}
         <div className="md:*:pl-3">
-          <div className="text-sm">
-            <CostSummaryItem label="Selected hours" value="10" />
+          <div className="text-sm text-black">
+            <CostSummaryItem  label="Selected hours" value="10" />
             <CostSummaryItem label="Total hours cost" value="$320" />
             <CostSummaryItem label="Service fee" value="$20" />
 
-            <hr className="mb-4" />
-            <div className="flex justify-between">
-              <p className="font-semibold text-lg">Total Cost</p>
-              <p className="text-xl">$340</p>
+            {/* <hr className="mb-4" /> */}
+            <div className="flex justify-between mt-4">
+              <p className="font-semibold text-lg text-black">Total Cost</p>
+              <p className="text-xl text-black">$340</p>
             </div>
           </div>
         </div>
@@ -84,7 +88,8 @@ const BookLessonModal = ({ handleClose }: { handleClose: () => void }) => {
         <Button
           onClick={handleClose}
           outline
-          className="bg-transparent !text-[#111111af] border-gray-500 sm:py-2 px-4 w-full rounded-md"
+          className="bg-transparent !text-[#111111af]  sm:py-2 px-4 w-full rounded-md"
+          style={{ border: '1px solid #d7dbdd' }}
         >
           Cancel
         </Button>
@@ -105,6 +110,7 @@ const InputField: React.FC<{
   label: string;
   placeholder: string;
   type?: string;
+  style?: React.CSSProperties;
 }> = ({ label, placeholder, type = "text" }) => {
   return (
     <div className="mt-4">
@@ -112,7 +118,8 @@ const InputField: React.FC<{
       <input
         type={type}
         placeholder={placeholder}
-        className="w-full px-3 py-2 border rounded-md border-gray-300 text-sm"
+        className="w-full px-3 py-2  rounded-md  text-sm"
+        style={{ border: '1px solid #d7dbdd' }}
       />
     </div>
   );
@@ -122,14 +129,15 @@ const TextAreaField: React.FC<{
   label: string;
   placeholder: string;
   rows?: number;
-}> = ({ label, placeholder, rows = 3 }) => {
+}> = ({ label, placeholder, rows = 6 }) => {
   return (
     <div className="mt-4">
       <label className="block text-sm font-medium mb-2">{label}</label>
       <textarea
         rows={rows}
         placeholder={placeholder}
-        className="w-full px-3 py-2 border rounded-md border-gray-300 text-sm"
+        className="w-full px-3 py-2  rounded-md  text-sm"
+        style={{ border: '1px solid #d7dbdd' }}
       ></textarea>
     </div>
   );
@@ -140,7 +148,7 @@ const CostSummaryItem: React.FC<{
   value: string;
 }> = ({ label, value }) => {
   return (
-    <div className="flex justify-between">
+    <div className="flex justify-between text-black" style={{ fontSize: "17px",color:'black' }}>
       <p className="font-medium mb-2">{label}</p>
       <p className="mb-4">{value}</p>
     </div>
@@ -162,7 +170,7 @@ function AccountDropdownMenu({
           <DropdownItem>
             <DropdownLabel>{time}</DropdownLabel>
           </DropdownItem>
-          <DropdownDivider />
+          {/* <DropdownDivider /> */}
         </React.Fragment>
       ))}
     </DropdownMenu>

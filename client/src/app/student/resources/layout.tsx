@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import Sidebar from "../components/dashboard/main-dashboard/Sidebar";
+import Sidebar from "../../components/dashboard/main-dashboard/Sidebar";
 
 
 export default function RootLayout({

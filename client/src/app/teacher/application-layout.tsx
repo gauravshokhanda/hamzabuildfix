@@ -31,7 +31,8 @@ import Image from "next/image";
 
 export function ApplicationLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-
+  const dividerPaths = ["/teacher/resources", "/teacher/my-account", "/teacher/recordings"];
+  const showDivider = dividerPaths.includes(pathname);
   return (
     <SidebarLayout
       navbar={
@@ -82,7 +83,9 @@ export function ApplicationLayout({ children }: { children: React.ReactNode }) {
 
           <SidebarBody>
             <SidebarSection>
-              <SidebarItem href="/teacher" current={pathname === "/teacher"}>
+              <SidebarItem href="/teacher"
+                current={pathname === "/teacher" || pathname === "/teacher/resources"}
+               >
                 <Squares2X2Icon />
                 <SidebarLabel>Dashboard</SidebarLabel>
               </SidebarItem>
@@ -128,6 +131,12 @@ export function ApplicationLayout({ children }: { children: React.ReactNode }) {
                 </svg>
                 <SidebarLabel>My Stats</SidebarLabel>
               </SidebarItem>
+
+              {showDivider && (
+                <div className="flex items-center">
+                  <div className="flex-grow border-t" style={{ borderColor: "#E4E4E4" }}></div>
+                </div>
+              )}
 
               <SidebarItem
                 href="/teacher/reviews"

@@ -30,7 +30,10 @@ function TeacherProfileModal() {
         View Full Profile
       </Button>
       {isOpen && (
-        <div className="fixed top-0 right-0 w-full h-screen bg-gray-900 bg-opacity-50 z-50 flex items-start justify-end">
+        <div className="fixed top-0 right-0 w-full h-screen bg-gray-900 bg-opacity-70 z-50 flex items-start justify-end">
+          {/* Background overlay with blur */}
+          <div className="absolute inset-0 bg-black opacity-50 backdrop-blur-md"></div>
+
           <motion.div
             className="max-w-[616px] w-full relative"
             initial="hidden"

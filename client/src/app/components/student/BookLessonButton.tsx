@@ -24,7 +24,9 @@ function BookLessonButton() {
       </Button>
       {isOpen && (
         <div className="fixed top-0 right-0 w-full h-screen bg-gray-900 bg-opacity-50 z-50 flex items-center justify-center">
+          <div className="absolute inset-0 bg-black opacity-60 backdrop-blur-md"></div>
           <div className="bg-white w-full relative max-w-[792px] mx-auto shadow-xl rounded-lg p-6">
+
             <BookLessonModal handleClose={closeModal} />
             <button
               onClick={closeModal}

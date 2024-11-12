@@ -8,13 +8,14 @@ const cardData = [
   { id: 1, balance: 4560, lastFour: 4456, name: 'Lloyd Lyons', bank: 'My Bank', color: 'bg-green-400', logo: 'mastercard' },
   { id: 2, balance: 6753, lastFour: 6753, name: 'Jane Doe', bank: 'My Bank', color: 'bg-purple-400', logo: 'mastercard' },
   { id: 3, balance: 9875, lastFour: 9875, name: 'John Smith', bank: 'My Bank', color: 'bg-gray-600', logo: 'visa' },
+  { id: 4, balance: 7875, lastFour: 7875, name: 'ahan Smith', bank: 'My Bank', color: 'bg-black-600', logo: 'mastercard' },
 ];
 
 const Cards = () => {
   const [selectedCard, setSelectedCard] = useState(cardData);
   return (
     <div>
-      <div className="flex flex-col items-center space-y-4">
+      <div className="flex items-start space-x-4">
         {/* Enlarged Card View */}
         {selectedCard && (
           <div className={`p-6 rounded-lg ${selectedCard.color} w-80 text-white`}>
@@ -26,7 +27,7 @@ const Cards = () => {
         )}
 
         {/* Scrollable Card List */}
-        <div className="flex space-x-4 overflow-x-scroll py-4">
+        <div className="flex flex-col space-y-4 overflow-y-scroll py-4 h-80">
           {cardData.map(card => (
             <div
               key={card.id}
@@ -39,7 +40,8 @@ const Cards = () => {
           ))}
         </div>
       </div>
-      
+
+
       <h1 className="hidden md:block mt-[20px] md:mt-[40px] md:text-[22px] font-medium">
         Once adding a payment information, Tafawwaq will deduct a $1 free which{" "}
         <br />
