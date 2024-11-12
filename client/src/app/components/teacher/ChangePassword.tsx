@@ -60,7 +60,7 @@ export const ChangePassword = () => {
         <div className="relative flex items-center">
           <input
             type="password"
-            className="border border-slate  h-[35px] mt-[6px] md:h-[42px] px-2 md:px-5 pr-10 w-full"
+            className="border border-slate h-[35px] mt-[6px] md:h-[42px] px-2 md:px-5 pr-10 w-full"
             placeholder="Confirm New Password"
           />
           <Image
