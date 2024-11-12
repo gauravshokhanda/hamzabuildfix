@@ -11,6 +11,7 @@ import { useRef, useState } from "react";
 // @ts-expect-error - No type definitions available
 import RangeSlider from "react-range-slider-input";
 import TeacherCard from "../../components/student/TeacherCard";
+import { Range } from "react-range";
 
 export default function Home() {
   const [values, setValues] = useState(["0", "2000"]);
@@ -108,8 +109,9 @@ const RangeSelector = ({
     );
 
     setValues(val as string[]);
+   
   };
-
+  const [priceRange, setPriceRange] = useState([0, 2000]);
   return (
     <div className="flex flex-col min-w-[150px] gap-2">
       <p className=" flex justify-between">
@@ -118,13 +120,48 @@ const RangeSelector = ({
           ${values[0]} - ${values[1]}
         </span>
       </p>
-      <RangeSlider
-        min={1}
-        max={2000}
-        value={values}
-        ref={rangeRef}
-        onInput={(e: number[]) => handleRange(e)}
-      />
+      <Range
+  values={priceRange}
+  step={10}
+  min={0}
+  max={2000}
+  onChange={(values: React.SetStateAction<number[]>) => setPriceRange(values)}
+  renderTrack={({ props, children }) => {
+    // Calculate the percentage positions of the left and right thumbs
+    const [min, max] = priceRange;
+    const left = ((min - 0) / (2000 - 0)) * 100;
+    const right = ((max - 0) / (2000 - 0)) * 100;
+
+    return (
+      <div
+        {...props}
+        style={{
+          ...props.style,
+          height: "6px",
+          width: "100%",
+          background: `linear-gradient(to right, #ddd ${left}%, #00ADEF ${left}%, #00ADEF ${right}%, #ddd ${right}%)`,
+        }}
+      >
+        {children}
+      </div>
+    );
+  }}
+  renderThumb={({ props, index }) => (
+    <div
+      {...props}
+      style={{
+        ...props.style,
+        height: "20px",
+        width: "20px",
+        borderRadius: "50%",
+        backgroundColor: "#00ADEF",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    ></div>
+  )}
+/>
     </div>
   );
 };
@@ -171,5 +208,37 @@ const teachersInfo = [
     rating: 4,
     avgRiview: "4.5",
     totalRating: "2000",
+  },
+  {
+    name: "Sophia Turner",
+    subject: "Mathematics Tutor",
+    image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleGFtcGxlfGV8fHx8fHw%3D",
+    description: "Passionate about helping students excel in mathematics, from algebra to calculus.",
+    testimonial: {
+      title: "Incredible depth of knowledge",
+      description: "Sophia is highly knowledgeable and patient with every question. My understanding has improved vastly. -John",
+    },
+    rate: "120/hr",
+    totalHours: "1500",
+    responseTime: "30 minutes",
+    rating: 5,
+    avgRiview: "4.8",
+    totalRating: "1800",
+  },
+  {
+    name: "Olivia Martinez",
+    subject: "Spanish Tutor",
+    image: "https://plus.unsplash.com/premium_photo-1668485966810-cbd0f685f58f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJldHR5JTIwZ2lybHxlbnwwfHwwfHx8MA%3D%3D",
+    description: "Native Spanish speaker with experience teaching conversational and academic Spanish.",
+    testimonial: {
+      title: "Very interactive lessons",
+      description: "Olivia makes learning Spanish fun and interactive. I’ve learned so much in a short time! -Sarah",
+    },
+    rate: "115/hr",
+    totalHours: "1400",
+    responseTime: "35 minutes",
+    rating: 4,
+    avgRiview: "4.6",
+    totalRating: "1700",
   },
 ];

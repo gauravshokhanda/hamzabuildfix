@@ -90,7 +90,7 @@ export function SidebarLayout({
         </header>
         <div
           className={`min-w-0 lg:flex ${
-            teacherRoute || studentRoute ? "hidden" : "border-b"
+            teacherRoute || studentRoute ? "hidden" : "border-b  border-slate "
           }`}
         >
           {navbar}

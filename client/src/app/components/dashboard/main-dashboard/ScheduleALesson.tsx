@@ -47,7 +47,7 @@ const ScheduleALesson: React.FC<{ onClose: () => void }> = ({ onClose }) => {
             </label>
             <input
               type="text"
-              className="w-full p-2 border rounded-md"
+              className="w-full p-2 border border-slate rounded-md"
               placeholder="Enter your username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
@@ -60,7 +60,7 @@ const ScheduleALesson: React.FC<{ onClose: () => void }> = ({ onClose }) => {
               </label>
               <input
                 type="text"
-                className="w-full p-2 border rounded-md"
+                className="w-full p-2 borderborder-slate  rounded-md"
                 placeholder="Select hours"
                 value={hours}
                 onChange={(e) => setHours(e.target.value)}
@@ -72,7 +72,7 @@ const ScheduleALesson: React.FC<{ onClose: () => void }> = ({ onClose }) => {
               </label>
               <input
                 type="text"
-                className="w-full p-2 border rounded-md"
+                className="w-full p-2 border border-slate  rounded-md"
                 placeholder="Add price"
                 value={price}
                 onChange={(e) => setPrice(e.target.value)}
@@ -86,7 +86,7 @@ const ScheduleALesson: React.FC<{ onClose: () => void }> = ({ onClose }) => {
               </label>
               <input
                 type="date"
-                className="w-full p-2 border rounded-md"
+                className="w-full p-2 border border-slate rounded-md"
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
               />
@@ -97,7 +97,7 @@ const ScheduleALesson: React.FC<{ onClose: () => void }> = ({ onClose }) => {
               </label>
               <input
                 type="time"
-                className="w-full p-2 border rounded-md"
+                className="w-full p-2 border border-slate  rounded-md"
                 value={time}
                 onChange={(e) => setTime(e.target.value)}
               />
@@ -108,7 +108,7 @@ const ScheduleALesson: React.FC<{ onClose: () => void }> = ({ onClose }) => {
               Description
             </label>
             <textarea
-              className="w-full p-2 border rounded-md"
+              className="w-full p-2 border border-slate rounded-md"
               rows={4}
               placeholder="I can help with..."
               value={description}
@@ -119,7 +119,7 @@ const ScheduleALesson: React.FC<{ onClose: () => void }> = ({ onClose }) => {
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-2 border rounded-lg text-gray-600 w-1/2"
+              className="px-4 py-2 border border-slate  rounded-lg text-gray-600 w-1/2"
             >
               Cancel
             </button>

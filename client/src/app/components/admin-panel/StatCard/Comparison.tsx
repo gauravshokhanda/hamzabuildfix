@@ -8,7 +8,7 @@ import Example from "./ComparisonChart";
 
 export const Comparison = (): JSX.Element => {
   return (
-    <div className="mt-[20px] border-2 rounded-[12px] p-[12px] md:p-[24px]">
+    <div className="mt-[20px] border-2 border-slate rounded-[12px] p-[12px] md:p-[24px]">
       <div className="flex items-center justify-between">
         <h1 className="text-[#101828] font-inter font-semibold text-[14px] md:text-[16px]">
           Comparison with Previous Periods

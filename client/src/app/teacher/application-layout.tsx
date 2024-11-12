@@ -28,6 +28,7 @@ import {
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
+import { GrResources } from "react-icons/gr";
 
 export function ApplicationLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -104,6 +105,15 @@ export function ApplicationLayout({ children }: { children: React.ReactNode }) {
                 <AcademicCapIcon />
                 <SidebarLabel>My Students</SidebarLabel>
               </SidebarItem>
+
+              <SidebarItem
+                href="/teacher/resources"
+                current={pathname.startsWith("/teacher/resources")}
+              >
+                <GrResources /> 
+                <SidebarLabel>Resources</SidebarLabel>
+              </SidebarItem>
+
 
               <SidebarItem
                 href="/teacher/message"

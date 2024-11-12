@@ -9,7 +9,7 @@ export default function InsightsReporting(): JSX.Element {
       <div className="px-4 md:px-1">
         <div className="mt-[20px] md:mt-[0px]">
           <StatCardSection />
-          <div className="border rounded-[12px] mt-[20px] md:mt-[24px]">
+          <div className="border  border-slate rounded-[12px] mt-[20px] md:mt-[24px]">
             <div className="flex flex-col">
               <div className="flex items-center justify-between  pr-[24px]">
                 <h1 className="text-[#101828] font-inter font-semibold text-[18px] p-[30px]">
@@ -17,13 +17,13 @@ export default function InsightsReporting(): JSX.Element {
                 </h1>
                 <Image src={threedot} alt="threedot" />
               </div>
-              <hr className="my-1 border-gray-300" />
+              <hr className="my-1 border-slate" />
             </div>
             <div className="mt-[20px]">
               <BarChartInsight />
             </div>
           </div>
-          <div className="border rounded-[12px] mt-[20px] md:mt-[24px]">
+          <div className="border border-slate rounded-[12px] mt-[20px] md:mt-[24px]">
             <div className="flex flex-col">
               <div className="flex items-center justify-between  pr-[24px]">
                 <h1 className="text-[#101828] font-inter font-semibold text-[18px] p-[30px]">
@@ -31,7 +31,7 @@ export default function InsightsReporting(): JSX.Element {
                 </h1>
                 <Image src={threedot} alt="threedot" />
               </div>
-              <hr className="my-1 border-gray-300" />
+              <hr className="my-1 border-slate" />
             </div>
             <div className="mt-[20px]">
               <BarChartInsight />

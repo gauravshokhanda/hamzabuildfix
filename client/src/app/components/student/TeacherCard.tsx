@@ -32,9 +32,9 @@ const TeacherCard: React.FC<Props> = ({
   testimonial,
 }) => {
   return (
-    <div className="flex flex-col border p-7 rounded-2xl bg-[#fafafa] shadow-md gap-5">
+    <div className="flex flex-col border  border-slate p-7 rounded-2xl bg-[#fafafa] shadow-md gap-5">
       <div className="flex flex-col md:flex-row">
-        <div className="flex md:flex-row flex-col divide-x-0 md:divide-x-2 w-full">
+        <div className="flex md:flex-row flex-col divide-x-0 md:divide-x-2  divide-slate w-full">
           <div className="flex md:flex-row flex-col w-full gap-3">
             <div className="flex items-center flex-col">
               <Image
@@ -70,19 +70,19 @@ const TeacherCard: React.FC<Props> = ({
               </Button>
             </div>
           </div>
-          <div className="my-3 md:pl-3 gap-3 flex flex-col shrink-0 text-[#1D263A] text-[17px]">
+          <div className="my-2 md:pl-3 gap-3 flex flex-col shrink-0 text-[#1D263A] text-[17px]">
             <p>
-              <span className="font-semibold">$ {rate}</span> per hour
+              <span className="font-semibold mt-2">$ {rate}</span> per hour
             </p>
-            <p className="flex items-center gap-2">
+            <p className="flex items-center mt-2 gap-4">
               <TimeIcon />
               <span>{totalHours} hours tutoring</span>
             </p>
-            <p className="flex items-center gap-2">
+            <p className="flex items-center mt-2 gap-4">
               <MessageIcon />
               Response time: <span>{responseTime}</span>
             </p>
-            <TeacherProfileModal />
+            <TeacherProfileModal/>
           </div>
         </div>
       </div>

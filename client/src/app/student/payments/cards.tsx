@@ -1,15 +1,45 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
-import tabs from "public/images/student/Tabs.svg";
-import master from "public/images/student/Mastercard.svg";
-import mastercardLogo from "public/images/student/masterCardLogo.png";
+import mastercardLogo from "public/images/student/Mastercard.svg";
 
 const cardData = [
-  { id: 1, balance: 4560, lastFour: 4456, name: 'Lloyd Lyons', bank: 'My Bank', color: 'bg-secondary', logo: 'mastercard' },
-  { id: 2, balance: 6753, lastFour: 6753, name: 'Jane Doe', bank: 'My Bank', color: 'bg-cardiary', logo: 'mastercard' },
-  { id: 1, balance: 4560, lastFour: 4456, name: 'Lloyd Lyons', bank: 'My Bank', color: 'bg-yellowish', logo: 'mastercard' },
-  { id: 2, balance: 6753, lastFour: 6753, name: 'Jane Doe', bank: 'My Bank', color: 'bg-shade', logo: 'mastercard' },
+  {
+    id: 1,
+    balance: 4560,
+    lastFour: 4456,
+    name: "Lloyd Lyons",
+    bank: "My Bank",
+    color: "bg-secondary",
+    logo: "mastercard",
+  },
+  {
+    id: 2,
+    balance: 6753,
+    lastFour: 6753,
+    name: "Jane Doe",
+    bank: "My Bank",
+    color: "bg-cardiary",
+    logo: "mastercard",
+  },
+  {
+    id: 1,
+    balance: 4560,
+    lastFour: 4456,
+    name: "Lloyd Lyons",
+    bank: "My Bank",
+    color: "bg-yellowish",
+    logo: "mastercard",
+  },
+  {
+    id: 2,
+    balance: 6753,
+    lastFour: 6753,
+    name: "Jane Doe",
+    bank: "My Bank",
+    color: "bg-shade",
+    logo: "mastercard",
+  },
 ];
 
 const Cards = () => {
@@ -20,11 +50,14 @@ const Cards = () => {
       <div className="flex items-center space-y-4">
         {/* Enlarged Card View */}
         {selectedCard && (
-          <div className={`p-8 rounded-lg ${selectedCard.color} w-80 text-white shadow-[5px_41px_32px_0px_#f7eddc] relative flex justify-between`}>
-
+          <div
+            className={`p-8 rounded-lg ${selectedCard.color} w-80 text-white shadow-[20px_41px_32px_20px_#fbe5e3] relative flex justify-between`}
+          >
             <div className="left">
               {/* Card Balance */}
-              <h2 className="text-3xl font-bold mb-4">${selectedCard.balance}</h2>
+              <h2 className="text-3xl font-bold mb-4">
+                ${selectedCard.balance}
+              </h2>
 
               {/* Card Number with masked last four digits */}
               <p className="text-sm mt-2 font-bold text-gray-300">
@@ -44,7 +77,7 @@ const Cards = () => {
             </div>
 
             {/* Mastercard Logo */}
-            <img
+            <Image
               src={mastercardLogo}
               alt=" Logo"
               className="absolute bottom-4 right-4 w-10 h-10"
@@ -52,28 +85,50 @@ const Cards = () => {
           </div>
         )}
 
-        {/* Scrollable Card List */}
-        <div className="flex flex-col space-y-4 overflow-y-auto h-[200px] mx-5">
+        <div
+          className="flex flex-col space-y-4 overflow-y-auto h-[200px] mx-5 scrollbar-thin"
+        >
           {cardData.map((card) => (
             <div
               key={card.id}
               className={`p-4 rounded-md ${card.color} w-16 h-10 flex flex-col justify-between items-start 
-              text-white cursor-pointer relative`}
+      text-white cursor-pointer relative`}
               onClick={() => setSelectedCard(card)}
             >
               <p className="text-xs">{card.lastFour}</p>
 
               {/* Mastercard Logo */}
-              <img
+              <Image
                 src={mastercardLogo}
                 alt="Mastercard Logo"
-                className="absolute bottom-1 right-1 w-4 h-4"
+                className="absolute bottom-1 right-1 w-4 h-4 mix-blend-lighten "
               />
             </div>
           ))}
         </div>
-      </div>
 
+        {/* Adding custom scrollbar styling using inline styles for Webkit browsers */}
+        <style jsx>{`
+          .scrollbar-thin::-webkit-scrollbar {
+            width: 6px; /* Thin scrollbar */
+            height: 100px
+          }
+
+          .scrollbar-thin::-webkit-scrollbar-thumb {
+            background-color: #ff6633;
+            border-radius: 10px;
+            height: 2px; /* Smaller thumb length */
+          }
+
+          .scrollbar-thin::-webkit-scrollbar-track {
+            background: transparent;
+
+          /* Removing scrollbar arrows */
+          .scrollbar-thin::-webkit-scrollbar-button {
+            display: none;
+          }
+        `}</style>
+      </div>
 
       {/* Additional Text and Form */}
       <h1 className="hidden md:block mt-[20px] md:mt-[40px] md:text-[22px] font-medium">

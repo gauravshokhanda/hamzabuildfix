@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Image from "next/image";
 import React, { useState } from "react";
 import searchIcon from "public/images/landing-page/searchIcon.png";
@@ -9,10 +9,12 @@ import { GrFormPrevious } from "react-icons/gr";
 import tutors from "../../lib/tutors_details.json";
 import Pagination from "../components/Pagination";
 import { format, addDays, startOfWeek } from "date-fns";
+import { Range } from "react-range";
 
 export default function FindATutor() {
   const [selectedDate, setSelectedDate] = useState(new Date());
-  const startOfWeekDate = startOfWeek(selectedDate, { weekStartsOn: 6 }); 
+  const startOfWeekDate = startOfWeek(selectedDate, { weekStartsOn: 6 });
+  const [priceRange, setPriceRange] = useState([0, 2000]);
 
   // Generate an array of 7 dates for the week
   const days = Array.from({ length: 7 }).map((_, index) =>
@@ -31,7 +33,10 @@ export default function FindATutor() {
   const tutorsPerPage = 3;
   const indexOfLastTutor = currentPage * tutorsPerPage;
   const indexOfFirstTutor = indexOfLastTutor - tutorsPerPage;
-  const currentTutors = tutors.tutors.slice(indexOfFirstTutor, indexOfLastTutor);
+  const currentTutors = tutors.tutors.slice(
+    indexOfFirstTutor,
+    indexOfLastTutor
+  );
 
   const handlePreviousPage = () => {
     if (currentPage > 1) {
@@ -49,21 +54,60 @@ export default function FindATutor() {
     setCurrentPage(pageNumber); // Update current page when a page number is clicked
   };
 
-
   return (
     <div className="p-6 md:p-12 flex flex-col lg:flex-row gap-8 lg:gap-16">
       <div className="w-full lg:w-1/5 flex flex-col gap-4">
         <div className="px-4">
           <h1 className="text-lg md:text-xl font-bold my-2">Filter By Price</h1>
-          <p>Price $0 - $2000</p>
-          <input
-            type="range"
-            min="1"
-            max="100"
-            value="100"
-            accept="images/*"
-            className="w-full accent-[#00ADEF] bg-blue-500"
-          />
+          <p>
+            Price ${priceRange[0]} - ${priceRange[1]}
+          </p>
+          <div>
+            <Range
+              values={priceRange}
+              step={10}
+              min={0}
+              max={2000}
+              onChange={(values: React.SetStateAction<number[]>) =>
+                setPriceRange(values)
+              }
+              renderTrack={({ props, children }) => {
+                // Calculate the percentage positions of the left and right thumbs
+                const [min, max] = priceRange;
+                const left = ((min - 0) / (2000 - 0)) * 100;
+                const right = ((max - 0) / (2000 - 0)) * 100;
+
+                return (
+                  <div
+                    {...props}
+                    style={{
+                      ...props.style,
+                      height: "6px",
+                      width: "100%",
+                      background: `linear-gradient(to right, #ddd ${left}%, #00ADEF ${left}%, #00ADEF ${right}%, #ddd ${right}%)`,
+                    }}
+                  >
+                    {children}
+                  </div>
+                );
+              }}
+              renderThumb={({ props, index }) => (
+                <div
+                  {...props}
+                  style={{
+                    ...props.style,
+                    height: "20px",
+                    width: "20px",
+                    borderRadius: "50%",
+                    backgroundColor: "#00ADEF",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                ></div>
+              )}
+            />
+          </div>
         </div>
         <hr className="h-px mt-2 mb-1 bg-stone-200 border-0" />
         <div className="px-4">
@@ -78,36 +122,36 @@ export default function FindATutor() {
           </div>
         </div>
         <div className="pt-6 md:pt-12">
-      <h1 className="text-lg md:text-xl font-bold my-2">Select Date</h1>
-      <p className="flex justify-center text-gray-600">
-        {format(selectedDate, 'MMMM yyyy')}
-      </p>
-      <div className="flex items-center justify-center gap-1 my-3">
-        <button onClick={handlePreviousWeek} className="p-2">
-          <GrFormPrevious />
-        </button>
-        <div className="flex gap-1 overflow-x-auto">
-          {days.map((day, i) => (
-            <button
-              key={i}
-              onClick={() => setSelectedDate(day)}
-              className={`w-14 text-xs flex flex-col items-center text-center rounded-md py-2 ${
-                format(day, 'dd-MM-yyyy') === format(selectedDate, 'dd-MM-yyyy')
-                  ? 'bg-green-200 text-green-800'
-                  : 'bg-gray-100 text-gray-600'
-              }`}
-            >
-              <span>{format(day, 'EEE')}</span>
-              <span>{format(day, 'd')}</span>
+          <h1 className="text-lg md:text-xl font-bold my-2">Select Date</h1>
+          <p className="flex justify-center text-gray-600">
+            {format(selectedDate, "MMMM yyyy")}
+          </p>
+          <div className="flex items-center justify-center gap-1 my-3">
+            <button onClick={handlePreviousWeek} className="p-2">
+              <GrFormPrevious />
             </button>
-          ))}
+            <div className="flex gap-1 overflow-x-auto">
+              {days.map((day, i) => (
+                <button
+                  key={i}
+                  onClick={() => setSelectedDate(day)}
+                  className={`w-14 text-xs flex flex-col items-center text-center rounded-md py-2 ${
+                    format(day, "dd-MM-yyyy") ===
+                    format(selectedDate, "dd-MM-yyyy")
+                      ? "bg-green-200 text-green-800"
+                      : "bg-gray-100 text-gray-600"
+                  }`}
+                >
+                  <span>{format(day, "EEE")}</span>
+                  <span>{format(day, "d")}</span>
+                </button>
+              ))}
+            </div>
+            <button onClick={handleNextWeek} className="p-2">
+              <MdNavigateNext />
+            </button>
+          </div>
         </div>
-        <button onClick={handleNextWeek} className="p-2">
-          <MdNavigateNext />
-        </button>
-      </div>
-
-    </div>
         <button className="w-full mt-2 bg-[#40A8CD] hover:bg-[#40A8CD] py-2 rounded-md text-white">
           Apply
         </button>
@@ -154,7 +198,7 @@ export default function FindATutor() {
         </div>
 
         <div className="mt-4">
-        {currentTutors.map((tutor, index) => (
+          {currentTutors.map((tutor, index) => (
             <TutorCard key={index} tutor={tutor} />
           ))}
         </div>

@@ -15,7 +15,7 @@ type Props = {
 
 function CareerCard({ ...career }: Props) {
   return (
-    <div className=" border p-6 rounded-2xl relative">
+    <div className=" border border-slate p-6 rounded-2xl relative">
       <button className=" absolute right-3 top-3 text-primary text-sm font-semibold flex gap-2 items-center">
         Edit <ArrowRight />
       </button>

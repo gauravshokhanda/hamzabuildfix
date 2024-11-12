@@ -1,5 +1,4 @@
 "use client";
-import { useState } from "react";
 import { Button } from "../components/admin-panel/ui/button";
 import StudentNavbar from "./find-a-tutor/student-navbar";
 import TutorReportViewButton from "../components/student/TutorReportViewButton";
@@ -10,15 +9,11 @@ import MessageIcon from "../components/student/MessageIcon";
 import Link from "next/link";
 
 export default function Home() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
   return (
     <div className="flex flex-col gap-5 p-5">
       <StudentNavbar
         showExtraButton={
           <Button
-            onClick={openModal}
             color="button_primary"
             className="bg-secondary md:py-2 text-white"
           >
@@ -26,83 +21,6 @@ export default function Home() {
           </Button>
         }
       />
-      {/* Modal */}
-      {isModalOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white p-6 rounded-lg max-w-3xl w-full">
-            {/* Header */}
-            <div className="flex justify-between items-center mb-4">
-              <h2 className="text-xl font-semibold">Book a Lesson</h2>
-              <button onClick={closeModal}>&times;</button>
-            </div>
-            <p className="mb-4" style={{ color: "#8C94A0" }}>
-              Please update the following field to book a lesson.
-            </p>
-
-            {/* Form fields and Total cost summary */}
-            <div className="flex gap-5">
-              {/* Left Form Section */}
-              <div className="w-1/2">
-                <div className="mb-4">
-                  <label className="block text-sm" style={{ color: "#5A6474" }}>Select preferred date & time</label>
-                  <div className="flex gap-2 items-center">
-                    <input type="date" className="py-2 px-3 rounded-md mt-2 " style={{ border: "1px solid #DCDEF5" }} />
-                    <input type="time" className="py-2 px-3 rounded-md mt-2 " style={{ border: "1px solid #DCDEF5" }} />
-                  </div>
-                </div>
-                <div className="mb-4">
-                  <label className="block text-sm" style={{ color: "#5A6474" }}>Total hours</label>
-                  <input type="number" className="py-2 ps-2 rounded w-full mt-2" placeholder="Add hours" style={{ border: "1px solid #DCDEF5" }} />
-                </div>
-                <div className="mb-4">
-                  <label className="block text-sm" style={{ color: "#5A6474" }}>Description</label>
-                  <textarea className="p-2 rounded w-full mt-2" placeholder="I need help for..." rows={4} style={{ border: "1px solid #DCDEF5" }} />
-                </div>
-              </div>
-
-              {/* Right Summary Section */}
-              <div className="w-1/2 pl-4 border-l border-gray-200">
-                <div className="text-sm flex justify-between mb-2 font-500">
-                  <span>Selected hours</span>
-                  <span style={{ color:"#5A6474"}}>10</span>
-                </div>
-                <div className="text-sm flex justify-between mb-2">
-                  <span>Total hours cost</span>
-                  <span style={{ color: "#5A6474" }}>$320</span>
-                </div>
-                <div className="text-sm flex justify-between mb-2">
-                  <span>Service fee</span>
-                  <span style={{ color: "#5A6474" }}>$20</span>
-                </div>
-                <div className="text-lg  flex justify-between mt-4">
-                  <span>Total Cost</span>
-                  <span style={{ color: "#5A6474" }}>$340</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Action buttons - Centered */}
-            <div className="flex justify-center mt-6 space-x-4">
-              <button
-                onClick={closeModal}
-                className="px-6 py-2 w-full rounded-lg"
-                style={{ backgroundColor: "#E0E5EB", color: "#5A6474" }}
-              >
-                Cancel
-              </button>
-              <button
-                className="px-6 py-2 w-full rounded-lg"
-                style={{ backgroundColor: "#58AEEF", color: "#FFFFFF" }}
-              >
-                Book Now
-              </button>
-            </div>
-          </div>
-        </div>
-
-
-
-      )}
       <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
           <div className="lg:col-span-2">
@@ -271,10 +189,10 @@ const TutorReportCard = ({
 }) => {
   return (
     <div
-      className="flex items-center justify-between pb-4 px-4"
-      style={{
-        borderBottom: TutorReports.length - 1 !== idx ? "1px solid #d1d5db" : "none",
-      }}
+      className={clsx(
+        "flex items-center justify-between pb-4 px-4 rounded-lg",
+        TutorReports.length - 1 !== idx ? "border-b border-slate" : ""
+      )}
     >
       <div className="flex items-center">
         <Image

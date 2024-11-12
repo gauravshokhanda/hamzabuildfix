@@ -25,7 +25,7 @@ function TeacherProfileModal() {
       <Button
         onClick={openModal}
         color="button_primary"
-        className="bg-primary cursor-pointer border-primary w-fit"
+        className="bg-primary cursor-pointer border-primary w-fit mt-6 "
       >
         View Full Profile
       </Button>
