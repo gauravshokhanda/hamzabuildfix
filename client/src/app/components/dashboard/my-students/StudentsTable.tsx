@@ -76,13 +76,13 @@ const StudentsTable = () => {
                   <div className="inline-flex space-x-2">
                     <button
                       onClick={() => setIsNotesModalOpen(true)}
-                      className="border border-blue-500 text-blue-500 px-3 py-1 rounded-md text-xs hover:bg-blue-50 transition whitespace-nowrap"
+                      className="border-2 border-sky_text text-sky_text  font-normal  px-3 py-1 rounded-md text-xs hover:bg-blue-50 transition whitespace-nowrap"
                     >
                       Add Notes
                     </button>
                     <button
                       onClick={() => setIsProgressModalOpen(true)}
-                      className="border border-blue-500 text-blue-500 px-3 py-1 rounded-md text-xs hover:bg-blue-50 transition whitespace-nowrap"
+                      className="border-2 border-sky_text  text-sky_text  font-normal  font-weight: 400 px-3 py-1 rounded-md text-xs hover:bg-blue-50 transition whitespace-nowrap"
                     >
                       Reports
                     </button>

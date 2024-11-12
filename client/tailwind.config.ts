@@ -20,7 +20,7 @@ const config: Config = {
 
         header: "#1d263a",
         gray: "#525252",
-
+        sky_text :"#42abd1",
         icon_color: "#A3AFB0",
         text_primary: "#3A5377",
         text_secondary: "#66797C",

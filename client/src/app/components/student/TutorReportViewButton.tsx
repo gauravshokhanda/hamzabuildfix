@@ -18,7 +18,7 @@ function TutorReportViewButton() {
       <Button
         onClick={openModal}
         color="button_primary"
-        className="bg-primary text-white sm:py-2 !px-3 !rounded-md"
+        className="bg-primary text-white sm:py-3 !px-3 !rounded-md"
       >
         View
       </Button>
