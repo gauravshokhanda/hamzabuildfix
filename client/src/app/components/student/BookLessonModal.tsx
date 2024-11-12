@@ -21,7 +21,7 @@ const BookLessonModal = ({ handleClose }: { handleClose: () => void }) => {
       </div>
 
       {/* Form Section */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:divide-x-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:divide-x-2 divide-slate">
         <div>
           <label className="block text-sm font-medium mb-2">
             Select preferred date & time
@@ -29,9 +29,9 @@ const BookLessonModal = ({ handleClose }: { handleClose: () => void }) => {
           <div className="flex gap-2">
             <Dropdown>
               <DropdownButton
-                className="flex rounded-xl w-full"
+                className="flex rounded-xl w-full border border-slate"
                 as={NavbarItem}
-                style={{ border:'1px solid #d7dbdd'}}
+                
               >
                 <span className=" flex w-full justify-center gap-2 cursor-pointer">
                   {CalenderIcon}
@@ -41,9 +41,9 @@ const BookLessonModal = ({ handleClose }: { handleClose: () => void }) => {
             </Dropdown>
             <Dropdown>
               <DropdownButton
-                className="flex rounded-xl w-full"
+                className="flex rounded-xl w-full border border-slate"
                 as={NavbarItem}
-                style={{ border: '1px solid #d7dbdd' }}
+                
               >
                 <span className=" flex w-full justify-center gap-2 cursor-pointer">
                   {ClockIcon}
@@ -63,14 +63,14 @@ const BookLessonModal = ({ handleClose }: { handleClose: () => void }) => {
 
           {/* Description */}
           <TextAreaField label="Description" placeholder="I need help for..."
-         
-             />
+
+          />
         </div>
 
         {/* Summary Section */}
         <div className="md:*:pl-3">
           <div className="text-sm text-black">
-            <CostSummaryItem  label="Selected hours" value="10" />
+            <CostSummaryItem label="Selected hours" value="10" />
             <CostSummaryItem label="Total hours cost" value="$320" />
             <CostSummaryItem label="Service fee" value="$20" />
 
@@ -88,8 +88,8 @@ const BookLessonModal = ({ handleClose }: { handleClose: () => void }) => {
         <Button
           onClick={handleClose}
           outline
-          className="bg-transparent !text-[#111111af]  sm:py-2 px-4 w-full rounded-md"
-          style={{ border: '1px solid #d7dbdd' }}
+          className="bg-transparent border border-slate !text-[#111111af]  sm:py-2 px-4 w-full rounded-md"
+          
         >
           Cancel
         </Button>
@@ -118,8 +118,8 @@ const InputField: React.FC<{
       <input
         type={type}
         placeholder={placeholder}
-        className="w-full px-3 py-2  rounded-md  text-sm"
-        style={{ border: '1px solid #d7dbdd' }}
+        className="w-full px-3 py-2  rounded-md  text-sm border border-slate"
+        
       />
     </div>
   );
@@ -136,8 +136,8 @@ const TextAreaField: React.FC<{
       <textarea
         rows={rows}
         placeholder={placeholder}
-        className="w-full px-3 py-2  rounded-md  text-sm"
-        style={{ border: '1px solid #d7dbdd' }}
+        className="w-full px-3 py-2  rounded-md border border-slate text-sm"
+        
       ></textarea>
     </div>
   );
@@ -148,7 +148,7 @@ const CostSummaryItem: React.FC<{
   value: string;
 }> = ({ label, value }) => {
   return (
-    <div className="flex justify-between text-black" style={{ fontSize: "17px",color:'black' }}>
+    <div className="flex justify-between text-black text-17" >
       <p className="font-medium mb-2">{label}</p>
       <p className="mb-4">{value}</p>
     </div>
@@ -170,7 +170,7 @@ function AccountDropdownMenu({
           <DropdownItem>
             <DropdownLabel>{time}</DropdownLabel>
           </DropdownItem>
-          {/* <DropdownDivider /> */}
+          <DropdownDivider />
         </React.Fragment>
       ))}
     </DropdownMenu>

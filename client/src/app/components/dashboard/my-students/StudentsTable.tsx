@@ -39,8 +39,8 @@ const StudentsTable = () => {
         <table className="w-[97%] mx-auto table-auto my-5">
           {/* Table Header */}
           <thead>
-            <tr className="uppercase text-sm leading-normal" style={{ backgroundColor: "#F7F7F7", color: "#A6A6A8" }}>
-              <th className="py-3 px-6 text-left font-medium rounded-l-2xl">Student</th>
+            <tr className="uppercase text-sm leading-normal text-gray bg-lightGray" >
+              <th className="py-3 px-6 text-left font-medium rounded-l-2xl ">Student</th>
               <th className="py-3 px-6 text-left font-medium">Actions</th>
               <th className="py-3 px-6 text-left font-medium">Date</th>
               <th className="py-3 px-6 text-left font-medium">Time</th>
