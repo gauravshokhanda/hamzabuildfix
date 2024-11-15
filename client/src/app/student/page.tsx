@@ -7,14 +7,7 @@ import Image from "next/image";
 import RecordIcon from "../components/student/RecordIcon";
 import MessageIcon from "../components/student/MessageIcon";
 import Link from "next/link";
-import FullCalendar from '@fullcalendar/react';
-import dayGridPlugin from '@fullcalendar/daygrid';
 
-const events = [
-  { title: 'Event 1: IGCSE AS&A Level Biology', start: new Date(), time: '9 PM to 10 PM', backgroundColor: '#A3D154', borderColor: '#A3D154', textColor: '#000000' },
-  { title: 'Event 2: IGCSE', start: new Date(new Date().setDate(new Date().getDate() + 1)), time: '9 PM to 10 PM', backgroundColor: '#FFA07A', borderColor: '#FFA07A', textColor: '#000000' },
-  { title: 'Event 3: Webinar', start: new Date(new Date().setDate(new Date().getDate() + 2)), time: '8 AM', backgroundColor: '#87CEFA', borderColor: '#87CEFA', textColor: '#000000' },
-];
 
 const getDateForWeek = (dayOffset) => {
   const today = new Date();

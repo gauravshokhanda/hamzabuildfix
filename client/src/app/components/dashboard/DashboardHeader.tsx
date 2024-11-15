@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import ScheduleALesson from "./main-dashboard/ScheduleALesson";
+import ScheduleALesson from "./main-dashboard/ScheduleALesson"; 
+import LessonRequests from "./main-dashboard/LessonRrequest"; // Import LessonRequests
 import { Bell } from "lucide-react";
 import { usePathname } from "next/navigation";
 
@@ -10,39 +11,58 @@ const DashboardHeader = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const pathname = usePathname();
 
+  let buttonText = "";
+  let buttonColor = "";
+  let ModalContent = null;
 
-  // Exclude paths "/dashboard/my-students" and "/dashboard/my-stats"
-  const shouldShowScheduleButton = pathname === "/student";
+  if (pathname === "/teacher") {
+    buttonText = "Schedule a Lesson";
+    buttonColor = "bg-[#42ABD1] text-white";
+    ModalContent = ScheduleALesson;
+  } else if (pathname === "/student") {
+    buttonText = "Lesson Requests";
+    buttonColor = "bg-[#A3D154] text-white";
+    ModalContent = LessonRequests;
+  }
 
-
-  console.log("Pathname:", pathname, "Show Schedule Button:", shouldShowScheduleButton);
-
-
+  const handleBackgroundClick = (e) => {
+    // Close modal if background is clicked
+    if (e.target.id === "modal-overlay") {
+      setIsModalOpen(false);
+    }
+    
+  };
 
   return (
     <>
-      {isModalOpen && <ScheduleALesson onClose={() => setIsModalOpen(false)} />}
-
+      {/* Dialog Modal */}
+      {isModalOpen && ModalContent && (
+        <div
+          id="modal-overlay"
+          className="fixed inset-0 z-50 flex justify-center items-center bg-black bg-opacity-50 backdrop-blur-sm"
+          onClick={handleBackgroundClick} // Close modal when background is clicked
+        >
+          <ModalContent onClose={() => setIsModalOpen(false)} />
+       
+        </div>
+      )}
 
       <div className="flex justify-between items-center mt-3 w-full">
         <div className="text-xl lg:text-2xl ">
           Good Morning, <span className="font-bold">Samantha</span> 😃
         </div>
         <div className="flex items-center gap-4 ">
-          {shouldShowScheduleButton && (
+          {buttonText && (
             <button
               onClick={() => setIsModalOpen(true)}
-              className="bg-[#42ABD1] text-white px-6 py-3 rounded-md"
+              className={`${buttonColor} px-6 py-3 rounded-md`}
             >
-              Schedule a Lesson
+              {buttonText}
             </button>
           )}
           <Bell className="text-gray-600" />
         </div>
       </div>
-
-
-
     </>
   );
 };

@@ -85,7 +85,7 @@ export function ApplicationLayout({ children }: { children: React.ReactNode }) {
           <SidebarBody>
             <SidebarSection>
               <SidebarItem href="/teacher"
-                current={pathname === "/teacher" || pathname === "/teacher/resources"}
+                current={pathname === "/teacher"}
                >
                 <Squares2X2Icon />
                 <SidebarLabel>Dashboard</SidebarLabel>

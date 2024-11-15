@@ -2,6 +2,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import mastercardLogo from "public/images/student/Mastercard.svg";
+import { FaPlus } from "react-icons/fa6";
 
 const cardData = [
   {
@@ -43,7 +44,25 @@ const cardData = [
 ];
 
 const Cards = () => {
-  const [selectedCard, setSelectedCard] = useState(cardData[0]); // Initialize with the first card
+  const [selectedCard, setSelectedCard] = useState(cardData[0]); 
+  const [isModalOpen, setIsModalOpen] = useState(false); 
+  const [cardDetails, setCardDetails] = useState({
+    name: "",
+    number: "",
+    expiry: "",
+    cvv: ""
+  });
+
+  // Update form inputs
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setCardDetails((prev) => ({ ...prev, [name]: value }));
+  };
+
+  // Function to toggle the modal
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
 
   return (
     <div>
@@ -88,6 +107,13 @@ const Cards = () => {
         <div
           className="flex flex-col space-y-4 overflow-y-auto h-[200px] mx-5 scrollbar-thin"
         >
+           <div
+            className="p-4 rounded-md bg-gray-300 w-16 h-10 flex justify-center items-center 
+            text-white cursor-pointer relative"
+            onClick={toggleModal}
+          >
+            <FaPlus className="text-xl text-black" /> {/* Plus icon */}
+          </div>
           {cardData.map((card) => (
             <div
               key={card.id}
@@ -106,6 +132,107 @@ const Cards = () => {
             </div>
           ))}
         </div>
+
+        {isModalOpen && (
+      <div
+        className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
+        onClick={toggleModal}
+      >
+        <div
+          className="bg-white rounded-lg p-8 shadow-lg w-[400px] relative"
+          onClick={(e) => e.stopPropagation()}
+        >
+          {/* Close Button */}
+          <button
+            className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
+            onClick={toggleModal}
+          >
+            ✕
+          </button>
+
+          {/* Credit Card Preview */}
+          <div className="bg-gradient-to-r from-purple-400 via-pink-500 to-orange-400 rounded-lg p-6 shadow-md mb-6">
+            <div className="flex justify-between items-center text-white mb-4">
+              <span className="text-lg font-medium">{cardDetails.name || "Cardholder Name"}</span>
+              <span>{cardDetails.expiry || "MM/YY"}</span>
+            </div>
+            <div className="text-2xl text-white font-bold tracking-widest mb-4">
+              {cardDetails.number ? cardDetails.number.replace(/\d{4}(?=.)/g, "$& ") : "XXXX XXXX XXXX XXXX"}
+            </div>
+            <div className="flex justify-end text-white">
+              <span>{cardDetails.cvv ? "***" : "CVV"}</span>
+            </div>
+          </div>
+
+          {/* Payment Details Form */}
+          <h2 className="text-2xl mb-4">Payment Details</h2>
+          <p className="text-gray-600 mb-6">Update your card details.</p>
+
+          <div className="grid grid-cols-2 gap-4">
+            <div className="col-span-2">
+              <label className="block text-sm font-medium">Name on card</label>
+              <input
+                type="text"
+                name="name"
+                value={cardDetails.name}
+                onChange={handleChange}
+                className="w-full bg-gray-100 mt-2 p-2 rounded-md"
+                placeholder="Olivia Rhye"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium">Expiry</label>
+              <input
+                type="text"
+                name="expiry"
+                value={cardDetails.expiry}
+                onChange={handleChange}
+                className="w-full bg-gray-100 mt-2 p-2 rounded-md"
+                placeholder="MM/YY"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium">CVV</label>
+              <input
+                type="text"
+                name="cvv"
+                value={cardDetails.cvv}
+                onChange={handleChange}
+                className="w-full bg-gray-100 mt-2 p-2 rounded-md"
+                placeholder="***"
+              />
+            </div>
+            <div className="col-span-2">
+              <label className="block text-sm font-medium">Card number</label>
+              <input
+                type="text"
+                name="number"
+                value={cardDetails.number}
+                onChange={handleChange}
+                className="w-full bg-gray-100 mt-2 p-2 rounded-md"
+                placeholder="1234 5678 9012 3456"
+              />
+            </div>
+          </div>
+
+          {/* Action Buttons */}
+          <div className="flex justify-between items-center mt-6">
+            <button
+              className="bg-gray-400 text-white py-2 px-4 rounded-lg"
+              onClick={toggleModal}
+            >
+              Cancel
+            </button>
+            <button
+              className="bg-blue-500 text-white py-2 px-4 rounded-lg"
+              onClick={toggleModal}
+            >
+              Pay now
+            </button>
+          </div>
+        </div>
+      </div>
+    )};
 
         {/* Adding custom scrollbar styling using inline styles for Webkit browsers */}
         <style jsx>{`
