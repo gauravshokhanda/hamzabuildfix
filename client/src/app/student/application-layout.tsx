@@ -141,7 +141,7 @@ export function ApplicationLayout({ children }: { children: React.ReactNode }) {
   );
 }
 
-const pathnameNames = {
+const pathnameNames = { 
   "/teacher/my-account": "",
   "/teacher/settings": "",
 };

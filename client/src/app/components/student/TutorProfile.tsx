@@ -9,7 +9,8 @@ import ReviewSection from "./ReviewSection";
 import BookLessonButton from "./BookLessonButton";
 import Image from "next/image";
 
-const TutorProfile: React.FC = () => {
+const 
+TutorProfile: React.FC = () => {
   return (
     <div className="max-w-screen-md mx-auto bg-white shadow-lg p-4 pt-14 overflow-y-scroll h-screen">
       <TutorInfo />

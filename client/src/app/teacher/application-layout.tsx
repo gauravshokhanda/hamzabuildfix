@@ -37,28 +37,24 @@ export function ApplicationLayout({ children }: { children: React.ReactNode }) {
   return (
     <SidebarLayout
       navbar={
-        <Navbar className="">
+        <Navbar>
+          
           {/* <NavbarSpacer /> */}
           <NavbarSection>
-            <div className="px-5">
+            
+            <div className="">
               <p className="text-xl text-[#000000]">
                 {/* @ts-expect-error - pathnameNames does not contain all routes, fallback needed */}
                 {pathnameNames[pathname]}
-                {/* <h1 className="text-[18px] md:text-[24px] md:mt-[45px]">
-                  Good Morning, <span className="font-bold">Samantha</span> 😄
-                </h1> */}
               </p>
+              
             </div>
-            {/* Conditionally render DashboardHeader or greeting */}
-            {pathname === "/teacher" ? (
-              <DashboardHeader />
-            ) : (
-              <h1 className="text-[18px] md:text-[24px] md:mt-[45px]">
-                Good Morning, <span className="font-bold">Samantha</span> 😄
-              </h1>
-            )}
+            <div className="w-full px-8 py-2 mx-auto">
+            <DashboardHeader />
+            </div>
+             
           </NavbarSection>
-        </Navbar>
+        </Navbar> 
       }
       sidebar={
         <Sidebar className="relative">

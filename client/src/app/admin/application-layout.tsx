@@ -206,6 +206,11 @@ const pathnameNames = {
   "/admin/content-creation": "Content Creation",
   "/admin/feedback-and-complaints": "Feedback & Complaints",
   "/admin/user-interation": "User Interaction",
+  "/admin/session-oversight": "Session Overdight",
+  "/admin/user-interaction":"User Interaction",
+  "/admin/insights-and-reporting" :"Insignts & Reporting",
+  "/admin/Analytic Dashboard" :" Analytic & Reporting ",
+  "/admin/data-export-and-import":"Data Export and Import"
 };
 
 const LanguageChanger = () => {
