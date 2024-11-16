@@ -1,11 +1,11 @@
-import { useState } from "react";
+import Image from "next/image";
 
 const LessonRequestCard = ({ lesson }: { lesson: any }) => {
   return (
     <div className="bg-white p-4 rounded-lg shadow-md flex items-center justify-between space-x-6">
       {/* Profile Section */}
       <div className="flex items-center space-x-4">
-        <img
+        <Image
           src={lesson.profileImage || "/default-profile.png"}
           alt="Lecturer"
           className="w-16 h-16 rounded-full object-cover"
