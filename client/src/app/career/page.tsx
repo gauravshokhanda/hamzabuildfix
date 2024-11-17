@@ -25,7 +25,7 @@ export default function CareerPage() {
           <Jobs />
         </div>
       </div>
-      <Pagination />
+      <Pagination currentPage={undefined} totalPages={undefined} onPrevious={undefined} onNext={undefined} onPageChange={undefined} />
     </div>
   );
 }
