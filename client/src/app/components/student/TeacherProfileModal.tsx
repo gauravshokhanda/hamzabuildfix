@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 function TeacherProfileModal() {
   const [isOpen, setIsOpen] = useState(false);
-  const modalRef = useRef(null);
+  const modalRef = useRef<HTMLDivElement | null>(null);
 
   function closeModal() {
     setIsOpen(false);
@@ -24,8 +24,8 @@ function TeacherProfileModal() {
 
   // Close modal if clicked outside of it
   useEffect(() => {
-    function handleClickOutside(event) {
-      if (modalRef.current && !modalRef.current.contains(event.target)) {
+    function handleClickOutside(event: MouseEvent) {
+      if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
         closeModal();
       }
     }

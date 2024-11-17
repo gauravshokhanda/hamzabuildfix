@@ -9,16 +9,16 @@ import MessageIcon from "../components/student/MessageIcon";
 import Link from "next/link";
 
 
-const getDateForWeek = (dayOffset) => {
+const getDateForWeek = (dayOffset: number): number => {
   const today = new Date();
   const date = new Date(today.setDate(today.getDate() + dayOffset));
-  return date.getDate();  // Return only the day of the month
+  return date.getDate(); // Return only the day of the month
 };
 
-const getFullDayName = (dayOffset) => {
+const getFullDayName = (dayOffset: number): string => {
   const today = new Date();
   const date = new Date(today.setDate(today.getDate() + dayOffset));
-  return date.toLocaleString('en-US', { weekday: 'long' });  // Return the full day name (e.g., Monday)
+  return date.toLocaleString('en-US', { weekday: 'long' }); // Return the full day name (e.g., Monday)
 };
 
 
@@ -27,14 +27,7 @@ export default function Home() {
   return (
     <div className="flex flex-col gap-5 p-5">
       <StudentNavbar
-        showExtraButton={
-          <Button
-            color="button_primary"
-            className="bg-secondary md:py-2 text-white"
-          >
-            Lesson Requests
-          </Button>
-        }
+       
       />
       <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">

@@ -8,6 +8,8 @@ const LessonRequestCard = ({ lesson }: { lesson: any }) => {
       <div className="flex items-center space-x-4">
         <Image
           src={lesson.profileImage || "/default-profile.png"}
+          width={100}
+          height={100}
           alt="Lecturer"
           className="w-16 h-16 rounded-full object-cover"
         />
@@ -74,7 +76,7 @@ const LessonRequests = ({ onClose }: { onClose: () => void }) => {
       hours: "5 Hours",
       price: "500",
       profileImage:
-        "https://images.unsplash.com/photo-1633607880355-4967b76c6d15?q=80&w=2070&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1697665682392-d064b7c82304?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       name: "John Doe",
@@ -84,7 +86,7 @@ const LessonRequests = ({ onClose }: { onClose: () => void }) => {
       hours: "3 Hours",
       price: "300",
       profileImage:
-        "https://images.unsplash.com/photo-1567777626373-fb734749506d?q=80&w=2070&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1697665682392-d064b7c82304?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
         name: "Demi Wilkinson",
@@ -94,7 +96,7 @@ const LessonRequests = ({ onClose }: { onClose: () => void }) => {
         hours: "5 Hours",
         price: "500",
         profileImage:
-          "https://images.unsplash.com/photo-1633607880355-4967b76c6d15?q=80&w=2070&auto=format&fit=crop",
+          "https://images.unsplash.com/photo-1697665682392-d064b7c82304?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       },
       {
         name: "John Doe",
@@ -104,7 +106,7 @@ const LessonRequests = ({ onClose }: { onClose: () => void }) => {
         hours: "3 Hours",
         price: "300",
         profileImage:
-          "https://images.unsplash.com/photo-1567777626373-fb734749506d?q=80&w=2070&auto=format&fit=crop",
+          "https://images.unsplash.com/photo-1697665682392-d064b7c82304?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       },
   ];
 

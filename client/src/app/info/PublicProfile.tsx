@@ -47,10 +47,14 @@ const PublicProfile = () => {
                                 <Image
                                     src={URL.createObjectURL(profileImage)}
                                     alt="Profile"
-                                    className="rounded-full object-cover w-full h-full"
+                                    width={100}
+                                    height={100}
+                                    className="rounded-full object-cover"
+                                    
                                 />
                             ) : (
-                                <Image src={uploadIcon.src} alt={""} />
+                                <Image src={uploadIcon.src} alt={""}  width={100}
+                                height={100} />
                             )}
                         </div>
                         <button

@@ -27,8 +27,8 @@ const ScheduleALesson: React.FC<{ onClose: () => void }> = ({ onClose }) => {
       id="modal-overlay"
       className="fixed inset-0 z-10 backdrop-blur bg-[#344054B2] bg-opacity-50 flex items-center justify-center"
       onClick={(e) => {
-        // Close modal when background (overlay) is clicked
-        if (e.target.id === "modal-overlay") {
+        // Cast target as HTMLElement to access `id`
+        if ((e.target as HTMLElement).id === "modal-overlay") {
           onClose();
         }
       }}

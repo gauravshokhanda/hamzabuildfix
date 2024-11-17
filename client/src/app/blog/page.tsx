@@ -53,7 +53,7 @@ const blogCardData = [
   },
   {
     img: blog6,
-    title: "“They made it  very easy”",
+    title: "“They made it easy”",
     subtitle:
       "Nunc scelerisque tincidunt elit. Vestibulum non mi ipsum. Craspretium suscipit tellus sit amet aliquet. Vestibulum maximus.",
     name: "Davis Ekstrom Bothman",
@@ -116,7 +116,13 @@ function People() {
           ))}
         </div>
 
-        <Pagination currentPage={undefined} totalPages={undefined} onPrevious={undefined} onNext={undefined} onPageChange={undefined} />
+        <Pagination currentPage={0} totalPages={0} onPrevious={function (): void {
+          throw new Error("Function not implemented.");
+        } } onNext={function (): void {
+          throw new Error("Function not implemented.");
+        } } onPageChange={function (): void {
+          throw new Error("Function not implemented.");
+        } } />
       </div>
     </div>
   );

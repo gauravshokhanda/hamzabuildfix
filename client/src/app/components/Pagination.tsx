@@ -2,13 +2,21 @@ import React from "react";
 import { MdNavigateNext } from "react-icons/md";
 import { GrFormPrevious } from "react-icons/gr";
 
-export default function Pagination({
+interface PaginationProps {
+  currentPage: number; // The current page number
+  totalPages: number; // The total number of pages
+  onPrevious: () => void; // Function to handle the "Previous" button click
+  onNext: () => void; // Function to handle the "Next" button click
+  onPageChange: (pageNumber: number) => void; // Function to handle individual page number clicks
+}
+
+const Pagination: React.FC<PaginationProps> = ({
   currentPage,
   totalPages,
   onPrevious,
   onNext,
-  onPageChange, // Add onPageChange prop to handle individual page number clicks
-}) {
+  onPageChange,
+}) => {
   const btn_style =
     "p-1 w-10 flex items-center justify-center border-[2px] border-[#eae9f2] rounded-md";
 
@@ -31,7 +39,11 @@ export default function Pagination({
       {pageNumbers.map((pageNumber) => (
         <span
           key={pageNumber}
-          className={`${btn_style} ${currentPage === pageNumber ? 'bg-green-200 text-green-800' : 'bg-gray-100 text-gray-600'}`}
+          className={`${btn_style} ${
+            currentPage === pageNumber
+              ? "bg-green-200 text-green-800"
+              : "bg-gray-100 text-gray-600"
+          }`}
           onClick={() => onPageChange(pageNumber)} // Use onPageChange to handle page number click
         >
           {pageNumber}
@@ -47,4 +59,6 @@ export default function Pagination({
       </button>
     </div>
   );
-}
+};
+
+export default Pagination;

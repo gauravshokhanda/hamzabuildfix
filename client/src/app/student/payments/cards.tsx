@@ -54,7 +54,7 @@ const Cards = () => {
   });
 
   // Update form inputs
-  const handleChange = (e) => {
+  const handleChange = (e: { target: { name: string; value: unknown; }; }) => {
     const { name, value } = e.target;
     setCardDetails((prev) => ({ ...prev, [name]: value }));
   };

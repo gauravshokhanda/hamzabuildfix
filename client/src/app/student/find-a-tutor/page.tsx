@@ -13,7 +13,7 @@ import DashboardHeader from "src/app/components/dashboard/DashboardHeader";
 import Pagination from "src/app/components/Pagination";
 
 export default function Home() {
-  const [values, setValues] = useState(["0", "2000"]);
+  const [values, setValues] = useState<number[]>([0, 2000]);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
 
@@ -72,10 +72,10 @@ export default function Home() {
               case "range":
                 return (
                   <RangeSelector
-                    values={values}
-                    setValues={(values) => setValues(values)}
-                    key={filter.label}
-                  />
+                  values={values.map((v) => Number(v))} // Ensure number[] is passed
+                  setValues={(values) => setValues(values)} // Ensure numbers are maintained
+                  key={filter.label}
+                />
                 );
               default:
                 return null;
@@ -131,7 +131,6 @@ interface RangeSelectorProps {
   setValues: (values: number[]) => void;
 }
 
-
 const RangeSelector: React.FC<RangeSelectorProps> = ({ values, setValues }) => {
   return (
     <div className="flex flex-col min-w-[150px] gap-2">
@@ -146,7 +145,7 @@ const RangeSelector: React.FC<RangeSelectorProps> = ({ values, setValues }) => {
         step={10}
         min={0}
         max={2000}
-        onChange={(newValues) => setValues(newValues)}
+        onChange={(newValues) => setValues(newValues)} // Works with numbers
         renderTrack={({ props, children }) => {
           const [min, max] = values;
           const left = ((min - 0) / (2000 - 0)) * 100;
@@ -185,6 +184,7 @@ const RangeSelector: React.FC<RangeSelectorProps> = ({ values, setValues }) => {
     </div>
   );
 };
+
 
 const filters = [
   {

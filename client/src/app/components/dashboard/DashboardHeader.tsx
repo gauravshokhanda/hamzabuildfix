@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import ScheduleALesson from "./main-dashboard/ScheduleALesson"; 
+import ScheduleALesson from "./main-dashboard/ScheduleALesson";
 import LessonRequests from "./main-dashboard/LessonRrequest"; // Import LessonRequests
 import { Bell } from "lucide-react";
 import { usePathname } from "next/navigation";
@@ -25,12 +25,14 @@ const DashboardHeader = () => {
     ModalContent = LessonRequests;
   }
 
-  const handleBackgroundClick = (e) => {
+  const handleBackgroundClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    // Cast the target to an HTMLDivElement
+    const target = e.target as HTMLDivElement;
+
     // Close modal if background is clicked
-    if (e.target.id === "modal-overlay") {
+    if (target.id === "modal-overlay") {
       setIsModalOpen(false);
     }
-    
   };
 
   return (
@@ -43,7 +45,6 @@ const DashboardHeader = () => {
           onClick={handleBackgroundClick} // Close modal when background is clicked
         >
           <ModalContent onClose={() => setIsModalOpen(false)} />
-       
         </div>
       )}
 
