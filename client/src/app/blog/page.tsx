@@ -53,7 +53,7 @@ const blogCardData = [
   },
   {
     img: blog6,
-    title: "“They made it easy”",
+    title: "“They made it  very easy”",
     subtitle:
       "Nunc scelerisque tincidunt elit. Vestibulum non mi ipsum. Craspretium suscipit tellus sit amet aliquet. Vestibulum maximus.",
     name: "Davis Ekstrom Bothman",
