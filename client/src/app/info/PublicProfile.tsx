@@ -89,7 +89,7 @@ const PublicProfile = () => {
                     <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-4">
                         {/* Profile Image */}
                         <div>
-                            <img
+                            <Image
                                 src="https://images.pexels.com/photos/1040880/pexels-photo-1040880.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                                 alt="Profile Preview"
                                 className="w-36 h-36 rounded-lg object-cover"

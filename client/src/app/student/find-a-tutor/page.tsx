@@ -6,7 +6,7 @@ import {
   DropdownItem,
   DropdownMenu,
 } from "../../components/admin-panel/ui/dropdown";
-import { useRef, useState } from "react";
+import {  SetStateAction, useState } from "react";
 import TeacherCard from "../../components/student/TeacherCard";
 import { Range } from "react-range";
 import DashboardHeader from "src/app/components/dashboard/DashboardHeader";
@@ -26,6 +26,7 @@ export default function Home() {
     currentPage * itemsPerPage
   );
 
+
     // Handlers for pagination
     const handlePrevious = () => {
       if (currentPage > 1) setCurrentPage((prevPage) => prevPage - 1);
@@ -35,7 +36,7 @@ export default function Home() {
       if (currentPage < totalPages) setCurrentPage((prevPage) => prevPage + 1);
     };
   
-    const handlePageChange = (pageNumber) => {
+    const handlePageChange = (pageNumber: SetStateAction<number>) => {
       setCurrentPage(pageNumber);
     };
   return (
@@ -125,65 +126,62 @@ const DownArrowIcon = () => {
   );
 };
 
-const RangeSelector = ({
- 
-}: {
-  values: string[];
-  setValues: (values: string[]) => void;
-}) => {
+interface RangeSelectorProps {
+  values: number[];
+  setValues: (values: number[]) => void;
+}
 
-  };
-  const [priceRange, setPriceRange] = useState([0, 2000]);
+
+const RangeSelector: React.FC<RangeSelectorProps> = ({ values, setValues }) => {
   return (
     <div className="flex flex-col min-w-[150px] gap-2">
-      <p className=" flex justify-between">
+      <p className="flex justify-between">
         <span className="text-xs">Price:</span>
         <span className="text-xs font-bold">
           ${values[0]} - ${values[1]}
         </span>
       </p>
       <Range
-  values={priceRange}
-  step={10}
-  min={0}
-  max={2000}
-  onChange={(values: React.SetStateAction<number[]>) => setPriceRange(values)}
-  renderTrack={({ props, children }) => {
-    // Calculate the percentage positions of the left and right thumbs
-    const [min, max] = priceRange;
-    const left = ((min - 0) / (2000 - 0)) * 100;
-    const right = ((max - 0) / (2000 - 0)) * 100;
+        values={values}
+        step={10}
+        min={0}
+        max={2000}
+        onChange={(newValues) => setValues(newValues)}
+        renderTrack={({ props, children }) => {
+          const [min, max] = values;
+          const left = ((min - 0) / (2000 - 0)) * 100;
+          const right = ((max - 0) / (2000 - 0)) * 100;
 
-    return (
-      <div
-        {...props}
-        style={{
-          ...props.style,
-          height: "6px",
-          width: "100%",
-          background: `linear-gradient(to right, #ddd ${left}%, #00ADEF ${left}%, #00ADEF ${right}%, #ddd ${right}%)`,
+          return (
+            <div
+              {...props}
+              style={{
+                ...props.style,
+                height: "6px",
+                width: "100%",
+                background: `linear-gradient(to right, #ddd ${left}%, #00ADEF ${left}%, #00ADEF ${right}%, #ddd ${right}%)`,
+              }}
+            >
+              {children}
+            </div>
+          );
         }}
-      >
-        {children}
-      </div>
-    );
-  }}
-  renderThumb={({ props }) => (
-    <div
-      {...props}
-      style={{
-        ...props.style,
-        height: "20px",
-        width: "20px",
-        borderRadius: "50%",
-        backgroundColor: "#00ADEF",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    ></div>
-  )}
-/>
+        renderThumb={({ props }) => (
+          <div
+            {...props}
+            style={{
+              ...props.style,
+              height: "20px",
+              width: "20px",
+              borderRadius: "50%",
+              backgroundColor: "#00ADEF",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          />
+        )}
+      />
     </div>
   );
 };
