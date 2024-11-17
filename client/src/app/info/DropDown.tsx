@@ -25,6 +25,7 @@ const Dropdown: React.FC<DropdownProps> = ({
     const [searchQuery, setSearchQuery] = useState("");
     const dropdownRef = useRef<HTMLDivElement>(null);
     // Function to close dropdown if clicked outside
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const handleClickOutside = (event: MouseEvent) => {
         if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
             if (isOpen) {
@@ -39,7 +40,7 @@ const Dropdown: React.FC<DropdownProps> = ({
         return () => {
             document.removeEventListener("mousedown", handleClickOutside);
         };
-    }, [isOpen]);
+    }, [handleClickOutside, isOpen]);
 
     const handleOptionToggle = (option: string) => {
         const isSelected = selectedOptions.includes(option);

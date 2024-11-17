@@ -50,7 +50,7 @@ export default function FindATutor() {
     }
   };
 
-  const handlePageChange = (pageNumber) => {
+  const handlePageChange = (pageNumber: React.SetStateAction<number>) => {
     setCurrentPage(pageNumber); // Update current page when a page number is clicked
   };
 
@@ -91,7 +91,7 @@ export default function FindATutor() {
                   </div>
                 );
               }}
-              renderThumb={({ props, index }) => (
+              renderThumb={({ props }) => (
                 <div
                   {...props}
                   style={{

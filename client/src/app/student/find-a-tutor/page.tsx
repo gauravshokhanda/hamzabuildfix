@@ -126,21 +126,12 @@ const DownArrowIcon = () => {
 };
 
 const RangeSelector = ({
-  values,
-  setValues,
+ 
 }: {
   values: string[];
   setValues: (values: string[]) => void;
 }) => {
-  const rangeRef = useRef(null);
 
-  const handleRange = (values: number[]) => {
-    const val = values?.map((item) =>
-      typeof item === "number" ? String(item) : item
-    );
-
-    setValues(val as string[]);
-   
   };
   const [priceRange, setPriceRange] = useState([0, 2000]);
   return (
@@ -177,7 +168,7 @@ const RangeSelector = ({
       </div>
     );
   }}
-  renderThumb={({ props, index }) => (
+  renderThumb={({ props }) => (
     <div
       {...props}
       style={{

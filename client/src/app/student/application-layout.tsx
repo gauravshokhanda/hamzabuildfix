@@ -17,7 +17,7 @@ import { Squares2X2Icon } from "@heroicons/react/20/solid";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { UserIcon, VideoCameraIcon, CalendarIcon, AcademicCapIcon } from "@heroicons/react/16/solid";
+import { CalendarIcon, AcademicCapIcon } from "@heroicons/react/16/solid";
 import { MdPayments } from "react-icons/md";
 import { GrResources } from "react-icons/gr";
 

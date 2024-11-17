@@ -6,6 +6,7 @@ import facebook from "public/images/auth/facebook.png";
 import google from "public/images/auth/google.png";
 import InputField from "../components/InputField";
 import Link from "next/link";
+import Image from "next/image";
 
 const SignUp: React.FC = () => {
   const [isRoleSelected, setIsRoleSelected] = useState(false);
@@ -55,11 +56,11 @@ const SignUp: React.FC = () => {
               <div className="flex space-x-4">
                 {/* Google Icon */}
                 <button className="bg-white p-2 rounded-full shadow-md">
-                  <img src={google.src} alt="Google" className="w-5 h-5" />
+                  <Image src={google.src} alt="Google" className="w-5 h-5" />
                 </button>
                 {/* Facebook Icon */}
                 <button className="bg-white p-2 rounded-full shadow-md">
-                  <img src={facebook.src} alt="Facebook" className="w-5 h-5" />
+                  <Image src={facebook.src} alt="Facebook" className="w-5 h-5" />
                 </button>
               </div>
             </div>

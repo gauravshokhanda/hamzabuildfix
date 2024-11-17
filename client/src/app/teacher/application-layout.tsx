@@ -19,8 +19,7 @@ import {
   CalendarIcon,      // My Schedule icon
   AcademicCapIcon,     // My Students icon
   ChatBubbleBottomCenterTextIcon, // Message icon
-  VideoCameraIcon,   // Videos icon
-  ChartBarIcon,      // My Stats icon
+  VideoCameraIcon,   // Videos icon    // My Stats icon
   StarIcon,          // Reviews icon
   CreditCardIcon,    // Payments icon
   UserIcon           // My Accounts icon

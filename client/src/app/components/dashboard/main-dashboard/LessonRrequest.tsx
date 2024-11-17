@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const LessonRequestCard = ({ lesson }: { lesson: any }) => {
   return (
     <div className="bg-white p-4 rounded-lg shadow-md flex items-center justify-between space-x-6">

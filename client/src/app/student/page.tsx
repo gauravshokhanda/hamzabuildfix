@@ -21,10 +21,7 @@ const getFullDayName = (dayOffset) => {
   return date.toLocaleString('en-US', { weekday: 'long' });  // Return the full day name (e.g., Monday)
 };
 
-const getMonthName = () => {
-  const today = new Date();
-  return today.toLocaleString('en-US', { month: 'long' });
-};
+
 
 export default function Home() {
   return (
@@ -233,15 +230,7 @@ const CalendarSection = () => {
   );
 };
 
-// Custom render function to show the event time and title
-function renderEventContent(eventInfo) {
-  return (
-    <>
-      <b>{eventInfo.timeText}</b>
-      <i>{eventInfo.event.title}</i>
-    </>
-  );
-}
+
 
 const TutorReportsSection = () => {
   return (

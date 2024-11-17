@@ -1,6 +1,7 @@
 'use client';
 import React, { useState } from "react";
 import faq_bg from 'public/images/FAQ/faq_bg.png';
+import Image from "next/image";
 
 
 // Sample FAQ Data (can be replaced with dynamic data)
@@ -45,7 +46,7 @@ const Faq = () => {
         <div className="w-full flex flex-col items-center mb-20">
             {/* Background Image Section */}
             <div className="relative w-full h-[60vh] md:h-[500px] lg:h-[700px] overflow-hidden">
-                <img
+                <Image
                     src={faq_bg.src}
                     alt="FAQ Banner"
                     className="w-full h-full object-cover"
