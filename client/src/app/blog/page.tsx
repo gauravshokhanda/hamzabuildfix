@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import blogHeroImage from "public/images/blog/blog-video.svg";
 import Image from "next/image";

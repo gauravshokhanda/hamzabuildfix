@@ -1,3 +1,4 @@
+'use client';
 import React, { useState } from "react";
 import { Button } from "../admin-panel/ui/button";
 import TutorReportViewModal from "./TutorReportViewModal";

@@ -1,3 +1,4 @@
+'use client';
 import React, { useState, useEffect, useRef, ReactNode } from 'react';
 import { FaChevronDown, FaSearch } from 'react-icons/fa';
 

@@ -1,3 +1,4 @@
+'use client';
 import React, { useEffect, useRef, useState } from "react";
 import 'react-phone-input-2/lib/style.css';  // Importing styles for react-phone-input-2
 import Dropdown from "./DropDown";

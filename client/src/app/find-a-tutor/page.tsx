@@ -1,4 +1,5 @@
 "use client";
+
 import Image from "next/image";
 import React, { useState } from "react";
 import searchIcon from "public/images/landing-page/searchIcon.png";
