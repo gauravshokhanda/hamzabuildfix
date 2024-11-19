@@ -20,8 +20,12 @@ const connectDB = async (): Promise<void> => {
     await mongoose.connect(MONGO_URL);
 
     logger.info('Successfully connected to MongoDB');
-  } catch (error: any) {
-    logger.error(`Error connecting to MongoDB: ${error.message}`);
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      logger.error(`Error connecting to MongoDB: ${error.message}`);
+    } else {
+      logger.error('Unknown error occurred while connecting to MongoDB');
+    }
     process.exit(1);
   }
 
