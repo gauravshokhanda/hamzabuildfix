@@ -49,6 +49,7 @@ const BookLessonModal = ({ handleClose }: { handleClose: () => void }) => {
               <DropdownButton
                 className="flex rounded-xl w-full border border-slate"
                 as={NavbarItem}
+                onClick={(e: { stopPropagation: () => unknown }) => e.stopPropagation()}
               >
                 <span className="flex w-full justify-center gap-2 cursor-pointer">
                   {ClockIcon}
