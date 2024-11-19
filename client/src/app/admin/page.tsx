@@ -1,4 +1,5 @@
 "use client";
+
 import AdminContainer from "../components/admin-panel/ui/admin-container";
 import { Text } from "../components/admin-panel/ui/text";
 import AdminTable from "../components/admin-panel/ui/admin-table";

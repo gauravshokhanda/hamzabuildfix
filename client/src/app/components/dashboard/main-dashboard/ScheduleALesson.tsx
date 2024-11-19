@@ -1,5 +1,4 @@
-"use client";
-
+'use client';
 import React, { useState } from "react";
 import { X } from "lucide-react";
 
@@ -13,7 +12,6 @@ const ScheduleALesson: React.FC<{ onClose: () => void }> = ({ onClose }) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic here
     console.log("Lesson scheduled:", {
       username,
       hours,
@@ -22,23 +20,33 @@ const ScheduleALesson: React.FC<{ onClose: () => void }> = ({ onClose }) => {
       time,
       description,
     });
-    onClose();
+    onClose(); // Close modal after submit
   };
 
   return (
-    <div className="fixed inset-0 z-10 backdrop-blur bg-[#344054B2] bg-opacity-50 flex items-center justify-center">
-      <div className="bg-white rounded-lg p-6 w-96">
+    <div
+      id="modal-overlay"
+      className="fixed inset-0 z-10 backdrop-blur bg-[#344054B2] bg-opacity-50 flex items-center justify-center"
+      onClick={(e) => {
+        // Cast target as HTMLElement to access `id`
+        if ((e.target as HTMLElement).id === "modal-overlay") {
+          onClose();
+        }
+      }}
+    >
+      {/* Modal Content */}
+      <div
+        className="bg-white rounded-lg p-6 w-96"
+        onClick={(e) => e.stopPropagation()} // Prevent click propagation inside modal
+      >
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-xl font-medium">Schedule a Lesson</h2>
-          <button
-            onClick={onClose}
-            className="text-gray-500 hover:text-gray-700"
-          >
+          <button onClick={onClose} className="text-gray-500 hover:text-gray-700">
             <X size={20} />
           </button>
         </div>
         <p className="text-sm text-gray-600 mb-4">
-          Please update the following field to schedule a lesson.
+          Please update the following fields to schedule a lesson.
         </p>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
@@ -47,7 +55,7 @@ const ScheduleALesson: React.FC<{ onClose: () => void }> = ({ onClose }) => {
             </label>
             <input
               type="text"
-              className="w-full p-2 border rounded-md"
+              className="w-full p-2 border border-slate rounded-md"
               placeholder="Enter your username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
@@ -60,7 +68,7 @@ const ScheduleALesson: React.FC<{ onClose: () => void }> = ({ onClose }) => {
               </label>
               <input
                 type="text"
-                className="w-full p-2 border rounded-md"
+                className="w-full p-2 border border-slate rounded-md"
                 placeholder="Select hours"
                 value={hours}
                 onChange={(e) => setHours(e.target.value)}
@@ -72,7 +80,7 @@ const ScheduleALesson: React.FC<{ onClose: () => void }> = ({ onClose }) => {
               </label>
               <input
                 type="text"
-                className="w-full p-2 border rounded-md"
+                className="w-full p-2 border border-slate rounded-md"
                 placeholder="Add price"
                 value={price}
                 onChange={(e) => setPrice(e.target.value)}
@@ -86,7 +94,7 @@ const ScheduleALesson: React.FC<{ onClose: () => void }> = ({ onClose }) => {
               </label>
               <input
                 type="date"
-                className="w-full p-2 border rounded-md"
+                className="w-full p-2 border border-slate rounded-md"
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
               />
@@ -97,7 +105,7 @@ const ScheduleALesson: React.FC<{ onClose: () => void }> = ({ onClose }) => {
               </label>
               <input
                 type="time"
-                className="w-full p-2 border rounded-md"
+                className="w-full p-2 border border-slate rounded-md"
                 value={time}
                 onChange={(e) => setTime(e.target.value)}
               />
@@ -108,7 +116,7 @@ const ScheduleALesson: React.FC<{ onClose: () => void }> = ({ onClose }) => {
               Description
             </label>
             <textarea
-              className="w-full p-2 border rounded-md"
+              className="w-full p-2 border border-slate rounded-md"
               rows={4}
               placeholder="I can help with..."
               value={description}
@@ -119,7 +127,7 @@ const ScheduleALesson: React.FC<{ onClose: () => void }> = ({ onClose }) => {
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-2 border rounded-lg text-gray-600 w-1/2"
+              className="px-4 py-2 border border-slate rounded-lg text-gray-600 w-1/2"
             >
               Cancel
             </button>

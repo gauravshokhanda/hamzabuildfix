@@ -12,7 +12,7 @@ function Paginations() {
   return (
     <Pagination>
       <PaginationPrevious
-        className=" border w-fit text-black pt-3 pb-2 rounded-xl"
+        className=" border border-slate w-fit text-black pt-3 pb-2 rounded-xl"
         href="?page=2"
       />
       <PaginationList>
@@ -27,7 +27,7 @@ function Paginations() {
         <PaginationPage href="?page=9">10</PaginationPage>
       </PaginationList>
       <PaginationNext
-        className=" border w-fit text-black rounded-xl"
+        className=" border border-slate w-fit text-black rounded-xl"
         href="?page=4"
       />
     </Pagination>

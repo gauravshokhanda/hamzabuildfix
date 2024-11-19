@@ -5,6 +5,7 @@ import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';  // Importing styles for react-phone-input-2
 import Dropdown from "./DropDown";
 import uploadIcon2 from "public/images/auth/upload2.png";
+import Image from "next/image";
 
 const GeneralInformation: React.FC = () => {
   // State for form fields
@@ -277,7 +278,7 @@ const GeneralInformation: React.FC = () => {
               className="flex flex-col items-center justify-center align-middle border-dashed border-2 border-light_gray rounded-md p-6 pt-9 pb-9 text-center cursor-pointer hover:bg-gray-100"
               onClick={() => document.getElementById("videoUploadInput")?.click()}
             >
-              <img src={uploadIcon2.src} />
+              <Image src={uploadIcon2.src} alt={""} />
               <p className="text-text_secondary mt-4">Click or drag file to this area to upload</p>
               <input
                 type="file"

@@ -1,5 +1,4 @@
 "use client";
-import { useState } from "react";
 import { Button } from "../components/admin-panel/ui/button";
 import StudentNavbar from "./find-a-tutor/student-navbar";
 import TutorReportViewButton from "../components/student/TutorReportViewButton";
@@ -9,100 +8,27 @@ import RecordIcon from "../components/student/RecordIcon";
 import MessageIcon from "../components/student/MessageIcon";
 import Link from "next/link";
 
+
+const getDateForWeek = (dayOffset: number): number => {
+  const today = new Date();
+  const date = new Date(today.setDate(today.getDate() + dayOffset));
+  return date.getDate(); // Return only the day of the month
+};
+
+const getFullDayName = (dayOffset: number): string => {
+  const today = new Date();
+  const date = new Date(today.setDate(today.getDate() + dayOffset));
+  return date.toLocaleString('en-US', { weekday: 'long' }); // Return the full day name (e.g., Monday)
+};
+
+
+
 export default function Home() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
   return (
     <div className="flex flex-col gap-5 p-5">
       <StudentNavbar
-        showExtraButton={
-          <Button
-            onClick={openModal}
-            color="button_primary"
-            className="bg-secondary md:py-2 text-white"
-          >
-            Lesson Requests
-          </Button>
-        }
+       
       />
-      {/* Modal */}
-      {isModalOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white p-6 rounded-lg max-w-3xl w-full">
-            {/* Header */}
-            <div className="flex justify-between items-center mb-4">
-              <h2 className="text-xl font-semibold">Book a Lesson</h2>
-              <button onClick={closeModal}>&times;</button>
-            </div>
-            <p className="mb-4" style={{ color: "#8C94A0" }}>
-              Please update the following field to book a lesson.
-            </p>
-
-            {/* Form fields and Total cost summary */}
-            <div className="flex gap-5">
-              {/* Left Form Section */}
-              <div className="w-1/2">
-                <div className="mb-4">
-                  <label className="block text-sm" style={{ color: "#5A6474" }}>Select preferred date & time</label>
-                  <div className="flex gap-2 items-center">
-                    <input type="date" className="py-2 px-3 rounded-md mt-2 " style={{ border: "1px solid #DCDEF5" }} />
-                    <input type="time" className="py-2 px-3 rounded-md mt-2 " style={{ border: "1px solid #DCDEF5" }} />
-                  </div>
-                </div>
-                <div className="mb-4">
-                  <label className="block text-sm" style={{ color: "#5A6474" }}>Total hours</label>
-                  <input type="number" className="py-2 ps-2 rounded w-full mt-2" placeholder="Add hours" style={{ border: "1px solid #DCDEF5" }} />
-                </div>
-                <div className="mb-4">
-                  <label className="block text-sm" style={{ color: "#5A6474" }}>Description</label>
-                  <textarea className="p-2 rounded w-full mt-2" placeholder="I need help for..." rows={4} style={{ border: "1px solid #DCDEF5" }} />
-                </div>
-              </div>
-
-              {/* Right Summary Section */}
-              <div className="w-1/2 pl-4 border-l border-gray-200">
-                <div className="text-sm flex justify-between mb-2 font-500">
-                  <span>Selected hours</span>
-                  <span style={{ color:"#5A6474"}}>10</span>
-                </div>
-                <div className="text-sm flex justify-between mb-2">
-                  <span>Total hours cost</span>
-                  <span style={{ color: "#5A6474" }}>$320</span>
-                </div>
-                <div className="text-sm flex justify-between mb-2">
-                  <span>Service fee</span>
-                  <span style={{ color: "#5A6474" }}>$20</span>
-                </div>
-                <div className="text-lg  flex justify-between mt-4">
-                  <span>Total Cost</span>
-                  <span style={{ color: "#5A6474" }}>$340</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Action buttons - Centered */}
-            <div className="flex justify-center mt-6 space-x-4">
-              <button
-                onClick={closeModal}
-                className="px-6 py-2 w-full rounded-lg"
-                style={{ backgroundColor: "#E0E5EB", color: "#5A6474" }}
-              >
-                Cancel
-              </button>
-              <button
-                className="px-6 py-2 w-full rounded-lg"
-                style={{ backgroundColor: "#58AEEF", color: "#FFFFFF" }}
-              >
-                Book Now
-              </button>
-            </div>
-          </div>
-        </div>
-
-
-
-      )}
       <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
           <div className="lg:col-span-2">
@@ -221,33 +147,83 @@ const BiologyLessonInfo = () => {
 
 const CalendarSection = () => {
   return (
-    <div className="bg-white rounded-lg lg:col-span-2">
-      <div className="flex justify-between items-center mb-4">
-        <h3 className="text-lg font-semibold">Calendar</h3>
+    <div className="bg-white rounded-lg lg:col-span-2 shadow-md overflow-hidden">
+    <div className="flex justify-between items-center mb-4">
+      <h3 className="text-lg font-semibold">Weekly Calendar</h3>
+    </div>
+
+    <div className="grid grid-cols-7 text-center text-sm text-gray-500 mb-2">
+      {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((day, idx) => {
+        const date = getDateForWeek(idx - new Date().getDay()); // Get the date for each day of the week
+        const fullDayName = getFullDayName(idx - new Date().getDay()); // Get the full day name (e.g., Monday)
+        return (
+          <div key={idx} className="py-2">
+            <p className="font-semibold text-sm">{date}</p>
+            <p>{fullDayName}</p> {/* Display full day name */}
+          </div>
+        );
+      })}
+    </div>
+
+    <div className="mt-4 grid grid-cols-7 gap-2">
+      {/* Sunday as a large square blur card */}
+      <div className="bg-opacity-50 bg-gray-300 p-4 rounded-lg shadow-md col-span-1 h-[300px]">
+        <div className="h-full flex flex-col justify-center items-center">
+          <p className="text-lg font-semibold">Sunday</p>
+          <div className="mt-2 text-xs "></div>
+        </div>
       </div>
-      <div className="grid grid-cols-7 text-center text-sm text-gray-500">
-        {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((date, idx) => (
-          <p key={idx}>{date}</p> // Added key prop
+
+        {/* Monday and Tuesday in the same block */}
+        <div className="bg-opacity-50 bg-gray-300 p-4 rounded-lg shadow-md col-span-2 h-[300px]">
+          <div className="h-full flex flex-col justify-center items-center">
+            
+            {/* Event for Monday */}
+            <div className="mt-2 text-xs bg-opacity-60 p-2 rounded-lg" style={{ backgroundColor: "#a2d154" }}>
+              <p className="font-semibold">Event: IGCSE Class (Monday)</p>
+              <p className="text-sm">9 PM to 10 PM</p>
+            </div>
+            {/* Event for Tuesday */}
+            <div className="mt-2 text-xs bg-opacity-60 p-2 rounded-lg" style={{ backgroundColor: "#a2d154" }}>
+              <p className="font-semibold">Event: Webinar (Tuesday)</p>
+              <p className="text-sm">9 AM to 10 AM</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Empty columns for Wednesday and Thursday */}
+        {["Wed", "Thu"].map((day, idx) => (
+          <div key={idx} className="bg-opacity-50 bg-gray-300 p-4 rounded-lg shadow-md col-span-1 h-[300px]">
+            <div className="h-full flex flex-col justify-center items-center">
+            
+            </div>
+          </div>
         ))}
-      </div>
-      <div className="mt-4 grid grid-cols-7 gap-2">
-        <div className="bg-gray-200 p-2 rounded-md col-span-3">
-          <p className="text-gray-500 text-xs">IGCSE AS&A Level Biology</p>
-          <p className="text-xs">9 PM to 10 PM</p>
+
+        {/* Friday with an event */}
+        <div className="bg-opacity-50 bg-gray-300 p-4 rounded-lg shadow-md col-span-1 h-[300px]">
+          <div className="h-full flex flex-col justify-center items-center">
+            {/* <p className="text-lg font-semibold">Friday</p> */}
+            {/* Event for Friday */}
+            <div className="mt-2 text-xs bg-opacity-60 p-2 rounded-lg" style={{ backgroundColor: "#a2gh154" }}>
+              <p className="font-semibold">Event: Team Meeting</p>
+              <p className="text-sm">2 PM to 3 PM</p>
+            </div>
+          </div>
         </div>
-        <div className="col-span-4"></div>
-        <div className="bg-[#A3D154] p-2 rounded-md col-span-2">
-          <p className="text-sm">IGCSE</p>
-          <p className="text-xs">9 PM to 10 PM</p>
-        </div>
-        <div className="bg-[#A3D154] p-2 rounded-md col-span-2">
-          <p className="text-sm">Webinar</p>
-          <p className="text-xs">8 AM</p>
+
+        {/* Empty column for Saturday */}
+        <div className="bg-opacity-50 bg-gray-300 p-4 rounded-lg shadow-md col-span-1 h-[300px]">
+          <div className="h-full flex flex-col justify-center items-center">
+            {/* <p className="text-lg font-semibold">Saturday</p> */}
+          </div>
         </div>
       </div>
     </div>
   );
 };
+
+
 
 const TutorReportsSection = () => {
   return (
@@ -271,10 +247,10 @@ const TutorReportCard = ({
 }) => {
   return (
     <div
-      className="flex items-center justify-between pb-4 px-4"
-      style={{
-        borderBottom: TutorReports.length - 1 !== idx ? "1px solid #d1d5db" : "none",
-      }}
+      className={clsx(
+        "flex items-center justify-between pb-4 px-4 rounded-lg",
+        TutorReports.length - 1 !== idx ? "border-b border-slate" : ""
+      )}
     >
       <div className="flex items-center">
         <Image

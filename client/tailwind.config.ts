@@ -11,6 +11,9 @@ const config: Config = {
       colors: {
         primary: "#42ABD1",
         secondary: "#A3D154",
+        cardiary:"#8669F7",
+        yellowish:'#F4CB52',
+        shade:'#5D5C5E',
         black: "#000000",
         slate: "#d4d4d8",
         white: "#ffffff",
@@ -20,14 +23,15 @@ const config: Config = {
 
         header: "#1d263a",
         gray: "#525252",
-        sky_text :"#42abd1",
+        sky_text: "#42abd1",
         icon_color: "#A3AFB0",
         text_primary: "#3A5377",
         text_secondary: "#66797C",
         button_primary: "#00adef",
-        admin_button: "#1294F2"
-        
-
+        admin_button: "#1294F2",
+      },
+      backgroundColor: {
+        lightGray: "#F7F7F7",
       },
       backgroundImage: {
         reviewLeft: "url('/images/landing-page/left-review.png')",
@@ -41,14 +45,16 @@ const config: Config = {
         box: "0px 54px 100px 0px rgba(10, 4, 60, 0.1)",
         boxDark: "0px 6.75px 20.24px 0px rgba(30, 61, 96, 0.03)",
         peopleBox: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
+        customRed: "0px 4px 6px rgba(232, 32, 32, 0.5)",
       },
       screens: {
-        md: '768px', 
+        md: "768px",
+      },
+      fontSize: {
+        "17px": "17px",
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/line-clamp'),
-  ],
+  // plugins: [require("@tailwindcss/line-clamp")],
 };
 export default config;

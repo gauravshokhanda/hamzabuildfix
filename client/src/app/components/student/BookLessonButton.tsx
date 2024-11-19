@@ -1,17 +1,29 @@
-import React, { useState } from "react";
+'use client';
+import React, { useEffect, useState, useRef } from "react";
 import { Button } from "../admin-panel/ui/button";
 import BookLessonModal from "./BookLessonModal";
 
 function BookLessonButton() {
   const [isOpen, setIsOpen] = useState(false);
+  const modalRef = useRef<HTMLDivElement | null>(null);
 
-  function closeModal() {
-    setIsOpen(false);
-  }
+  const closeModal = () => setIsOpen(false);
+  const openModal = () => setIsOpen(true);
 
-  function openModal() {
-    setIsOpen(true);
-  }
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
+        closeModal();
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen]);
 
   return (
     <>
@@ -22,9 +34,18 @@ function BookLessonButton() {
       >
         Book a Lesson
       </Button>
+
       {isOpen && (
         <div className="fixed top-0 right-0 w-full h-screen bg-gray-900 bg-opacity-50 z-50 flex items-center justify-center">
-          <div className="bg-white w-full relative max-w-[792px] mx-auto shadow-xl rounded-lg p-6">
+          <div
+            className="absolute inset-0 bg-black opacity-60 backdrop-blur-md"
+            onClick={closeModal}
+          ></div>
+          <div
+            ref={modalRef}
+            className="bg-white w-full relative max-w-[792px] mx-auto shadow-xl rounded-lg p-6"
+            onClick={(e) => e.stopPropagation()}
+          >
             <BookLessonModal handleClose={closeModal} />
             <button
               onClick={closeModal}
@@ -40,6 +61,7 @@ function BookLessonButton() {
 }
 
 export default BookLessonButton;
+
 
 const CircleIcon = (
   <svg

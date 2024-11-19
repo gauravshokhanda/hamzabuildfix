@@ -11,17 +11,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const pathname = usePathname();
-  const isDashboardOrResources = pathname.includes("/dashboard") || pathname.includes("/resources");
+  const hideNavbarAndFooterRoutes = ["/admin", "/teacher", "/student"];
+  const shouldHideNavbarAndFooter = hideNavbarAndFooterRoutes.some((route) =>
+    pathname.startsWith(route)
+  );
+
   return (
     <html lang="en">
       <body>
         {/* Conditionally render the Navbar */}
-        {!isDashboardOrResources && <Navbar />}
+        {!shouldHideNavbarAndFooter && <Navbar />}
 
         {children}
 
         {/* Conditionally render the Footer */}
-        {!isDashboardOrResources && <Footer />}
+        {!shouldHideNavbarAndFooter && <Footer />}
       </body>
     </html>
   );

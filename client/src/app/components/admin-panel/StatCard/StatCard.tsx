@@ -18,7 +18,7 @@ const StatCard = ({
   color?: string;
   ChartComponent: React.ComponentType;
 }) => (
-  <div className="p-3 md:p-6 border rounded-lg w-full">
+  <div className="p-3 md:p-6 border border-slate rounded-lg w-full">
     <div className="flex items-center justify-between">
       <h1 className="text-gray-800 font-medium">{title}</h1>
       <Image src={threedot} alt="options" />

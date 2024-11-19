@@ -19,8 +19,7 @@ import {
   CalendarIcon,      // My Schedule icon
   AcademicCapIcon,     // My Students icon
   ChatBubbleBottomCenterTextIcon, // Message icon
-  VideoCameraIcon,   // Videos icon
-  ChartBarIcon,      // My Stats icon
+  VideoCameraIcon,   // Videos icon    // My Stats icon
   StarIcon,          // Reviews icon
   CreditCardIcon,    // Payments icon
   UserIcon           // My Accounts icon
@@ -28,35 +27,33 @@ import {
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
+import { GrResources } from "react-icons/gr";
 
 export function ApplicationLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-
+  const dividerPaths = ["/teacher/resources", "/teacher/my-account", "/teacher/recordings"];
+  const showDivider = dividerPaths.includes(pathname);
   return (
     <SidebarLayout
       navbar={
-        <Navbar className="">
+        <Navbar>
+          
           {/* <NavbarSpacer /> */}
           <NavbarSection>
-            <div className="px-5">
+            
+            <div className="">
               <p className="text-xl text-[#000000]">
                 {/* @ts-expect-error - pathnameNames does not contain all routes, fallback needed */}
                 {pathnameNames[pathname]}
-                {/* <h1 className="text-[18px] md:text-[24px] md:mt-[45px]">
-                  Good Morning, <span className="font-bold">Samantha</span> 😄
-                </h1> */}
               </p>
+              
             </div>
-            {/* Conditionally render DashboardHeader or greeting */}
-            {pathname === "/teacher" ? (
-              <DashboardHeader />
-            ) : (
-              <h1 className="text-[18px] md:text-[24px] md:mt-[45px]">
-                Good Morning, <span className="font-bold">Samantha</span> 😄
-              </h1>
-            )}
+            <div className="w-full px-8 py-2 mx-auto">
+            <DashboardHeader />
+            </div>
+             
           </NavbarSection>
-        </Navbar>
+        </Navbar> 
       }
       sidebar={
         <Sidebar className="relative">
@@ -82,7 +79,9 @@ export function ApplicationLayout({ children }: { children: React.ReactNode }) {
 
           <SidebarBody>
             <SidebarSection>
-              <SidebarItem href="/teacher" current={pathname === "/teacher"}>
+              <SidebarItem href="/teacher"
+                current={pathname === "/teacher"}
+               >
                 <Squares2X2Icon />
                 <SidebarLabel>Dashboard</SidebarLabel>
               </SidebarItem>
@@ -101,6 +100,15 @@ export function ApplicationLayout({ children }: { children: React.ReactNode }) {
                 <AcademicCapIcon />
                 <SidebarLabel>My Students</SidebarLabel>
               </SidebarItem>
+
+              <SidebarItem
+                href="/teacher/resources"
+                current={pathname.startsWith("/teacher/resources")}
+              >
+                <GrResources /> 
+                <SidebarLabel>Resources</SidebarLabel>
+              </SidebarItem>
+
 
               <SidebarItem
                 href="/teacher/message"
@@ -128,6 +136,12 @@ export function ApplicationLayout({ children }: { children: React.ReactNode }) {
                 </svg>
                 <SidebarLabel>My Stats</SidebarLabel>
               </SidebarItem>
+
+              {showDivider && (
+                <div className="flex items-center">
+                  <div className="flex-grow border-t" style={{ borderColor: "#E4E4E4" }}></div>
+                </div>
+              )}
 
               <SidebarItem
                 href="/teacher/reviews"

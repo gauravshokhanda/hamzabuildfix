@@ -4,6 +4,7 @@ import InputField from "../components/InputField"; // Import your InputField com
 import Dropdown from "./DropDown";
 import { useState } from "react";
 import uploadIcon2 from "public/images/auth/upload2.png";
+import Image from "next/image";
 const EducationalBackground = () => {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const degreeOptions = [
@@ -154,7 +155,7 @@ const EducationalBackground = () => {
             className="flex flex-col items-center justify-center align-middle border-dashed border-2 border-light_gray rounded-md p-6 pt-9 pb-9 text-center cursor-pointer hover:bg-gray-100"
             onClick={() => document.getElementById("videoUploadInput")?.click()}
           >
-            <img src={uploadIcon2.src} />
+            <Image src={uploadIcon2.src} alt={""} />
             <p className="text-text_secondary mt-4">Click or drag file to this area to upload</p>
             <input
               type="file"

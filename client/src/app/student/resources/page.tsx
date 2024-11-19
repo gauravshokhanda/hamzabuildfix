@@ -6,6 +6,7 @@ import {
 } from "@headlessui/react";
 import { MinusIcon, PlusIcon } from "@heroicons/react/20/solid";
 import Image from "next/image";
+import DashboardHeader from "src/app/components/dashboard/DashboardHeader";
 
 const questions = [
   {
@@ -42,6 +43,7 @@ export default function page() {
   return (
     <div className="bg-gray-50 min-h-screen flex flex-col items-center bg-stone-50 rounded-md">
       <div className="w-full px-4 mx-auto">
+      <DashboardHeader />
         <div className="md:gap-0 flex flex-col gap-12 justify-center items-center md:flex-row md:items-start mt-8">
           <div className="bg-white xl:w-1/4 md:w-60 w-full p-4 rounded-md shadow-md h-60 overflow-auto">
             <ul className="space-y-4 text-gray-600">

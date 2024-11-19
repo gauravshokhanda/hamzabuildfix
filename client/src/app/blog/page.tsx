@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import blogHeroImage from "public/images/blog/blog-video.svg";
 import Image from "next/image";
@@ -116,7 +118,13 @@ function People() {
           ))}
         </div>
 
-        <Pagination />
+        <Pagination currentPage={0} totalPages={0} onPrevious={function (): void {
+          throw new Error("Function not implemented.");
+        } } onNext={function (): void {
+          throw new Error("Function not implemented.");
+        } } onPageChange={function (): void {
+          throw new Error("Function not implemented.");
+        } } />
       </div>
     </div>
   );

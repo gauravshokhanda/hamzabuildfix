@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+'use client';
+import React, { useEffect, useState, useRef } from "react";
 import { Button } from "../admin-panel/ui/button";
 import TutorProfile from "./TutorProfile";
 import { motion } from "framer-motion";
 
 function TeacherProfileModal() {
   const [isOpen, setIsOpen] = useState(false);
+  const modalRef = useRef<HTMLDivElement | null>(null);
 
   function closeModal() {
     setIsOpen(false);
@@ -14,24 +16,50 @@ function TeacherProfileModal() {
     setIsOpen(true);
   }
 
+  // Animation variants for sliding effect
   const slideInAnimation = {
     hidden: { x: "100%" },
     visible: { x: 0 },
     exit: { x: "100%" },
   };
 
+  // Close modal if clicked outside of it
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
+        closeModal();
+      }
+    }
+
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen]);
+
   return (
     <>
+      {/* Button to open the modal */}
       <Button
         onClick={openModal}
         color="button_primary"
-        className="bg-primary cursor-pointer border-primary w-fit"
+        className="bg-primary cursor-pointer border-primary w-fit mt-6"
       >
         View Full Profile
       </Button>
+
+      {/* Modal with backdrop */}
       {isOpen && (
-        <div className="fixed top-0 right-0 w-full h-screen bg-gray-900 bg-opacity-50 z-50 flex items-start justify-end">
+        <div className="fixed top-0 right-0 w-full h-screen bg-gray-900 bg-opacity-70 z-50 flex items-start justify-end">
+          {/* Background overlay with blur */}
+          <div className="absolute inset-0 bg-black opacity-50 backdrop-blur-md"></div>
+
+          {/* Motion div for sliding effect */}
           <motion.div
+            ref={modalRef}
             className="max-w-[616px] w-full relative"
             initial="hidden"
             animate="visible"
@@ -39,7 +67,10 @@ function TeacherProfileModal() {
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
             variants={slideInAnimation}
           >
+            {/* Tutor profile content */}
             <TutorProfile />
+
+            {/* Close button */}
             <button
               onClick={closeModal}
               className="text-black py-2 px-4 rounded-md mt-0 absolute right-2 top-2"

@@ -1,7 +1,9 @@
+'use client';
 import React, { useEffect, useRef, useState } from "react";
 import 'react-phone-input-2/lib/style.css';  // Importing styles for react-phone-input-2
 import Dropdown from "./DropDown";
 import { FaChevronDown } from "react-icons/fa6";
+import Image from "next/image";
 
 // Define a type for the currency option
 interface CurrencyOption {
@@ -123,7 +125,7 @@ const BusinessTafawwaq = () => {
                 className="cursor-pointer flex items-center justify-between w-full px-3 h-12 bg-white border-t border-b border-r border-light_gray rounded-r-md shadow-sm focus:outline-none"
               >
                 <div className="rounded-full shadow-sm h-8 w-8 bg-gray text-center align-middle flex justify-center overflow-hidden mr-3">
-                  <img src={selectedCurrency.flag} alt={selectedCurrency.label} className="object-cover" />
+                  <Image src={selectedCurrency.flag} alt={selectedCurrency.label} className="object-cover" />
                 </div>
                 <span className="mr-auto">{selectedCurrency.label}</span>
                 <span className="text-light_gray">
@@ -139,7 +141,7 @@ const BusinessTafawwaq = () => {
                       className="flex items-center px-3 py-0 cursor-pointer hover:bg-gray-100"
                       onClick={() => handleSelect(option)}
                     >
-                      <img src={option.flag} alt={option.label} className="w-4 h-4 mr-2" />
+                      <Image src={option.flag} alt={option.label} className="w-4 h-4 mr-2" />
                       <span>{option.label}</span>
                     </div>
                   ))}

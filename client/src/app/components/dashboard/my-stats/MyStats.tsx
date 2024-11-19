@@ -14,6 +14,8 @@ import {
   YAxis,
   ResponsiveContainer,
   ComposedChart,
+  CartesianGrid,
+  Tooltip,
 } from "recharts";
 
 const subjectData = [
@@ -145,18 +147,24 @@ export default function StatsDashboard() {
               <ComposedChart
                 data={subjectData}
                 margin={{ top: 10, right: 10, left: -10, bottom: 0 }}
+                barCategoryGap={20}
               >
+                <CartesianGrid strokeDasharray="1" vertical={false} />
                 <XAxis dataKey="subject" axisLine={false} tickLine={false} />
                 <YAxis axisLine={false} tickLine={false} />
                 <Bar
                   dataKey="courseVisit"
                   fill="#CCEABB"
-                  radius={[5, 5, 0, 0]}
+                  radius={[5, 5, 5, 5]}
+                  stackId="a"
+                  barSize={10}
                 />
                 <Bar
                   dataKey="courseSale"
                   fill="#42ABD1"
-                  radius={[5, 5, 0, 0]}
+                  radius={[5, 5, 5, 5]}
+                  stackId="a"
+                  barSize={0}
                 />
               </ComposedChart>
             </ResponsiveContainer>
@@ -183,11 +191,26 @@ export default function StatsDashboard() {
               <BarChart
                 data={peakHoursData}
                 margin={{ top: 10, right: 10, left: -10, bottom: 0 }}
+                barCategoryGap={20}
               >
+                <CartesianGrid strokeDasharray="3 3" vertical={false} />
+                <Tooltip cursor={{ fill: 'rgba(0, 0, 0, 0.1)' }} />
                 <XAxis dataKey="day" axisLine={false} tickLine={false} />
                 <YAxis axisLine={false} tickLine={false} />
-                <Bar dataKey="study" fill="#42ABD1" radius={[5, 5, 0, 0]} />
-                <Bar dataKey="days" fill="#CCEABB" radius={[5, 5, 0, 0]} />
+                <Bar
+                  dataKey="study"
+                  fill="#42ABD1"
+                  radius={[0, 0, 5, 5]}
+                  stackId="a"
+                  barSize={50}
+                />
+                <Bar
+                  dataKey="days"
+                  fill="#e3f7fe"
+                  radius={[0,0 , 5, 5]}
+                  stackId="a"
+                  barSize={50}
+                />
               </BarChart>
             </ResponsiveContainer>
           </div>

@@ -7,6 +7,7 @@ import facebook from "public/images/auth/facebook.png";
 import google from "public/images/auth/google.png";
 import Button from '../components/Button';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -23,11 +24,11 @@ const Login: React.FC = () => {
           <div className="flex space-x-4">
             {/* Google Icon */}
             <button className="bg-white p-2 rounded-full shadow-md">
-              <img src={google.src} alt="Google" className="w-5 h-5" />
+              <Image src={google.src} alt="Google" className="w-5 h-5" />
             </button>
             {/* Facebook Icon */}
             <button className="bg-white p-2 rounded-full shadow-md">
-              <img src={facebook.src} alt="Facebook" className="w-5 h-5" />
+              <Image src={facebook.src} alt="Facebook" className="w-5 h-5" />
             </button>
           </div>
         </div>

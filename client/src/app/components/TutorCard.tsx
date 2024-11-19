@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Star, Clock, MessageSquare } from "lucide-react";
+import Link from "next/link";
 
 interface TutorCardProps {
   tutor: {
@@ -65,10 +66,11 @@ const TutorCard = ({ tutor }: TutorCardProps) => {
               </div>
               <p className="text-blue-500">{tutor.title}</p>
               <p className="text-gray-600 ">
-                {tutor.description}{" "}
-                <a href="#" className="text-blue-500">
+                {tutor.description}
+
+                <Link href="#" className="text-blue-500">
                   See Full Profile
-                </a>
+                </Link>
               </p>
             </div>
             <div className="flex gap-3">
@@ -117,9 +119,9 @@ const TutorCard = ({ tutor }: TutorCardProps) => {
             </blockquote>
             <p className="mt-2 text-gray-600">
               {tutor.description}{" "}
-              <a href="#" className="text-blue-500">
+              <Link href="#" className="text-blue-500">
                 Read full review
-              </a>
+              </Link>
             </p>
             <p className="mt-2 text-gray-500">-{tutor.review.reviewer}</p>
           </div>

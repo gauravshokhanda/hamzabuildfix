@@ -3,6 +3,7 @@ import { useState } from "react";
 import InputField from "../components/InputField";
 import uploadIcon from "public/images/auth/upload.png";
 import uploadIcon2 from "public/images/auth/upload2.png";
+import Image from "next/image";
 const PublicProfile = () => {
     const [headline, setHeadline] = useState("");
     const [bio, setBio] = useState("");
@@ -43,13 +44,17 @@ const PublicProfile = () => {
                     <div className="flex flex-col  items-start ">
                         <div className="w-32 h-32 border border-light_gray rounded-full flex justify-center items-center">
                             {profileImage ? (
-                                <img
+                                <Image
                                     src={URL.createObjectURL(profileImage)}
                                     alt="Profile"
-                                    className="rounded-full object-cover w-full h-full"
+                                    width={100}
+                                    height={100}
+                                    className="rounded-full object-cover"
+                                    
                                 />
                             ) : (
-                                <img src={uploadIcon.src} />
+                                <Image src={uploadIcon.src} alt={""}  width={100}
+                                height={100} />
                             )}
                         </div>
                         <button
@@ -88,7 +93,7 @@ const PublicProfile = () => {
                     <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-4">
                         {/* Profile Image */}
                         <div>
-                            <img
+                            <Image
                                 src="https://images.pexels.com/photos/1040880/pexels-photo-1040880.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                                 alt="Profile Preview"
                                 className="w-36 h-36 rounded-lg object-cover"
@@ -135,7 +140,7 @@ const PublicProfile = () => {
                         className="flex flex-col items-center justify-center align-middle border-dashed border-2 border-light_gray rounded-md p-6 pt-9 pb-9 text-center cursor-pointer hover:bg-gray-100"
                         onClick={() => document.getElementById("videoUploadInput")?.click()}
                     >
-                        <img src={uploadIcon2.src} />
+                        <Image src={uploadIcon2.src} alt={""} />
                         <p className="text-text_secondary mt-4">Click or drag file to this area to upload</p>
                         <input
                             type="file"

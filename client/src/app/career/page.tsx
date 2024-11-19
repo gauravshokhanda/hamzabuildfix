@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 
 import { IoLocationSharp } from "react-icons/io5";
@@ -25,7 +27,13 @@ export default function CareerPage() {
           <Jobs />
         </div>
       </div>
-      <Pagination />
+      <Pagination currentPage={0} totalPages={0} onPrevious={function (): void {
+        throw new Error("Function not implemented.");
+      } } onNext={function (): void {
+        throw new Error("Function not implemented.");
+      } } onPageChange={function (): void {
+        throw new Error("Function not implemented.");
+      } }  />
     </div>
   );
 }

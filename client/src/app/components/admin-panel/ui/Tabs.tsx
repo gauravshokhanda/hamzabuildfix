@@ -1,3 +1,4 @@
+'use client';
 import clsx from "clsx";
 import React from "react";
 
@@ -11,7 +12,7 @@ type Props = {
 
 function Tabs({ tabItems = [], tabIndex = 0, setTabIndex = () => {} }: Props) {
   return (
-    <div className=" shadow-md border flex items-center gap-1 rounded-2xl p-1">
+    <div className=" shadow-md border border-slate flex items-center gap-1 rounded-2xl p-1">
       {tabItems.map((tabItem, index) => {
         return (
           <button

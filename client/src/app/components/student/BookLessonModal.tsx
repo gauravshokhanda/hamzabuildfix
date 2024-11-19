@@ -1,3 +1,4 @@
+'use client';
 import React from "react";
 import { Button } from "../admin-panel/ui/button";
 import {
@@ -19,20 +20,26 @@ const BookLessonModal = ({ handleClose }: { handleClose: () => void }) => {
           Please update the following fields to book a lesson.
         </p>
       </div>
-
+  
       {/* Form Section */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:divide-x-2">
-        <div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Left Form Section */}
+        <div className="space-y-4">
           <label className="block text-sm font-medium mb-2">
             Select preferred date & time
+            <p className="ml-10">
+    <span className="font-bold">Your Time Zone:</span> Gulf Standard Time
+  </p>
           </label>
+         
           <div className="flex gap-2">
             <Dropdown>
               <DropdownButton
-                className="flex border rounded-xl w-full"
+                className="flex rounded-xl w-full border border-slate"
                 as={NavbarItem}
+                onClick={(e: { stopPropagation: () => unknown }) => e.stopPropagation()}
               >
-                <span className=" flex w-full justify-center gap-2 cursor-pointer">
+                <span className="flex w-full justify-center gap-2 cursor-pointer">
                   {CalenderIcon}
                   Jan 6, 2022
                 </span>
@@ -40,10 +47,11 @@ const BookLessonModal = ({ handleClose }: { handleClose: () => void }) => {
             </Dropdown>
             <Dropdown>
               <DropdownButton
-                className="flex border rounded-xl w-full"
+                className="flex rounded-xl w-full border border-slate"
                 as={NavbarItem}
+                onClick={(e: { stopPropagation: () => unknown }) => e.stopPropagation()}
               >
-                <span className=" flex w-full justify-center gap-2 cursor-pointer">
+                <span className="flex w-full justify-center gap-2 cursor-pointer">
                   {ClockIcon}
                   09:00 AM
                 </span>
@@ -51,40 +59,35 @@ const BookLessonModal = ({ handleClose }: { handleClose: () => void }) => {
               <AccountDropdownMenu anchor="bottom end" />
             </Dropdown>
           </div>
-
-          {/* Total Hours */}
-          <InputField
-            label="Total hours"
-            placeholder="Add hours"
-            type="number"
-          />
-
+  
           {/* Description */}
-          <TextAreaField label="Description" placeholder="I need help for..." />
+          <TextAreaField
+            label="Description"
+            placeholder="I need help for..."
+          />
         </div>
-
+  
         {/* Summary Section */}
-        <div className="md:*:pl-3">
-          <div className="text-sm">
+        <div className="md:pl-3">
+          <div className="text-sm text-black">
             <CostSummaryItem label="Selected hours" value="10" />
             <CostSummaryItem label="Total hours cost" value="$320" />
             <CostSummaryItem label="Service fee" value="$20" />
-
-            <hr className="mb-4" />
-            <div className="flex justify-between">
-              <p className="font-semibold text-lg">Total Cost</p>
-              <p className="text-xl">$340</p>
+  
+            <div className="flex justify-between mt-4">
+              <p className="font-semibold text-lg text-black">Total Cost</p>
+              <p className="text-xl text-black">$340</p>
             </div>
           </div>
         </div>
       </div>
-
+  
       {/* Footer Buttons */}
       <div className="mt-6 flex justify-between w-full gap-3">
         <Button
           onClick={handleClose}
           outline
-          className="bg-transparent !text-[#111111af] border-gray-500 sm:py-2 px-4 w-full rounded-md"
+          className="bg-transparent border border-slate !text-[#111111af] sm:py-2 px-4 w-full rounded-md"
         >
           Cancel
         </Button>
@@ -97,39 +100,26 @@ const BookLessonModal = ({ handleClose }: { handleClose: () => void }) => {
       </div>
     </div>
   );
+  
 };
 
 export default BookLessonModal;
 
-const InputField: React.FC<{
-  label: string;
-  placeholder: string;
-  type?: string;
-}> = ({ label, placeholder, type = "text" }) => {
-  return (
-    <div className="mt-4">
-      <label className="block text-sm font-medium mb-2">{label}</label>
-      <input
-        type={type}
-        placeholder={placeholder}
-        className="w-full px-3 py-2 border rounded-md border-gray-300 text-sm"
-      />
-    </div>
-  );
-};
+
 
 const TextAreaField: React.FC<{
   label: string;
   placeholder: string;
   rows?: number;
-}> = ({ label, placeholder, rows = 3 }) => {
+}> = ({ label, placeholder, rows = 6 }) => {
   return (
     <div className="mt-4">
       <label className="block text-sm font-medium mb-2">{label}</label>
       <textarea
         rows={rows}
         placeholder={placeholder}
-        className="w-full px-3 py-2 border rounded-md border-gray-300 text-sm"
+        className="w-full px-3 py-2  rounded-md border border-slate text-sm"
+        
       ></textarea>
     </div>
   );
@@ -140,7 +130,7 @@ const CostSummaryItem: React.FC<{
   value: string;
 }> = ({ label, value }) => {
   return (
-    <div className="flex justify-between">
+    <div className="flex justify-between text-black text-17" >
       <p className="font-medium mb-2">{label}</p>
       <p className="mb-4">{value}</p>
     </div>
@@ -156,7 +146,11 @@ function AccountDropdownMenu({
   const times = ["09:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "01:00 PM"];
 
   return (
-    <DropdownMenu className=" w-[173px]" anchor={anchor}>
+    <DropdownMenu
+      className="w-[173px]"
+      anchor={anchor}
+      onClick={(e) => e.stopPropagation()} // Stop click propagation
+    >
       {times.map((time) => (
         <React.Fragment key={time}>
           <DropdownItem>
@@ -168,7 +162,6 @@ function AccountDropdownMenu({
     </DropdownMenu>
   );
 }
-
 const ClockIcon = (
   <svg
     width="21"

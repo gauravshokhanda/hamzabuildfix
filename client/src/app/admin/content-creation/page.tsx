@@ -25,7 +25,7 @@ export default function Home() {
 
   return (
     <div className=" flex flex-col gap-5 w-full h-full mt-5">
-      <div className="flex md:flex-row flex-col items-center gap-5 w-full justify-between px-5">
+      <div className="flex md:flex-row flex-col items-center gap-5 w-full justify-between px-2">
         <TabComponent
           tabIndex={tabIndex}
           setTabIndex={setTabIndex}
@@ -64,7 +64,7 @@ const Careers = () => {
     <AdminContainer
       footer={<Paginations />}
       rightComponent={<Searchbar placeholder="Search blog here..." />}
-      title="Blogs"
+      title="Careers"
     >
       <div className=" grid grid-cols-1 lg:p-8 p-5 lg:gap-8 gap-5 flex-1">
         {careers.map((career, index) => (
