@@ -7,26 +7,19 @@ function BookLessonButton() {
   const [isOpen, setIsOpen] = useState(false);
   const modalRef = useRef<HTMLDivElement | null>(null);
 
-  function closeModal() {
-    setIsOpen(false);
-  }
+  const closeModal = () => setIsOpen(false);
+  const openModal = () => setIsOpen(true);
 
-  function openModal() {
-    setIsOpen(true);
-  }
-
-  // Close modal if clicked outside of it
   useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
+    const handleClickOutside = (event: MouseEvent) => {
       if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
         closeModal();
       }
-    }
+    };
 
     if (isOpen) {
       document.addEventListener("mousedown", handleClickOutside);
     }
-
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
@@ -34,7 +27,6 @@ function BookLessonButton() {
 
   return (
     <>
-      {/* Button to open the modal */}
       <Button
         onClick={openModal}
         color="button_primary"
@@ -43,21 +35,18 @@ function BookLessonButton() {
         Book a Lesson
       </Button>
 
-      {/* Modal with backdrop */}
       {isOpen && (
         <div className="fixed top-0 right-0 w-full h-screen bg-gray-900 bg-opacity-50 z-50 flex items-center justify-center">
-          {/* Background overlay with blur */}
-          <div className="absolute inset-0 bg-black opacity-60 backdrop-blur-md"></div>
-
-          {/* Modal content */}
+          <div
+            className="absolute inset-0 bg-black opacity-60 backdrop-blur-md"
+            onClick={closeModal}
+          ></div>
           <div
             ref={modalRef}
             className="bg-white w-full relative max-w-[792px] mx-auto shadow-xl rounded-lg p-6"
+            onClick={(e) => e.stopPropagation()}
           >
-            {/* Book lesson modal content */}
             <BookLessonModal handleClose={closeModal} />
-
-            {/* Close button */}
             <button
               onClick={closeModal}
               className="text-black py-2 px-4 rounded-md mt-0 absolute right-2 top-2"
@@ -72,6 +61,7 @@ function BookLessonButton() {
 }
 
 export default BookLessonButton;
+
 
 const CircleIcon = (
   <svg
